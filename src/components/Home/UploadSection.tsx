@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import React, { ChangeEvent, ReactElement, useEffect, useMemo, useState } from 'react';
-import Linkify from 'react-linkify';
 
 import UploadIcon from '../../assets/upload_icon.svg';
 import ImageIcon from '../../assets/image_icon.svg';
 import QrScanner from 'qr-scanner';
 import CircularProgress from '../../assets/CircularProgress';
 import { copyToClipboard } from '../../utils/link';
+import { Linkify } from '../Linkify';
 
 type DateType = {
   isLoading: boolean;

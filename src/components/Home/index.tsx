@@ -12,7 +12,7 @@ function Home(): ReactElement {
         <Title>
           QR코드가 포함된
           <br />
-          이미지를 업로드하세요
+          이미지를 업로드하세요.
         </Title>
         <UploadSection />
       </View>
@@ -39,4 +39,5 @@ const Title = styled.h1`
   font-weight: 700;
   line-height: 46px;
   color: #454545;
+  text-align: center;
 `;

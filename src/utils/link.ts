@@ -6,3 +6,7 @@ export const copyToClipboard = (text: string) => {
   document.execCommand('copy');
   document.body.removeChild(textArea);
 };
+
+export const openExternalLink = (url: string) => {
+  window.location.href = url;
+};
