@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import { ReactElement } from 'react';
-
 import NavigationBar from './NavigationBar';
-import UploadSection from './UploadSection';
 
 function Home(): ReactElement {
   return (
@@ -14,7 +12,6 @@ function Home(): ReactElement {
           <br />
           이미지를 업로드하세요.
         </Title>
-        <UploadSection />
       </View>
     </>
   );

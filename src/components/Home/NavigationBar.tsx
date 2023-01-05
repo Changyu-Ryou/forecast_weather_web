@@ -7,7 +7,7 @@ function NavigationBar(): ReactElement {
     <Wrapper>
       <TitleWrapper>
         <IconImage src={QrIcon} />
-        <Title>사진 속 QR코드 리더기</Title>
+        <Title>Quick Access</Title>
       </TitleWrapper>
     </Wrapper>
   );
