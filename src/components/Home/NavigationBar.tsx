@@ -1,12 +1,15 @@
 import styled from '@emotion/styled';
 import { ReactElement } from 'react';
-import QrIcon from '../../assets/qr_icon.svg';
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 
 function NavigationBar(): ReactElement {
   return (
     <Wrapper>
       <TitleWrapper>
-        <IconImage src={QrIcon} />
+        <DirectionsRunIcon
+          fontSize="medium"
+          style={{ color: 'white', borderRadius: '50%', background: '#2e7d32', padding: '4px' }}
+        />
         <Title>Quick Access</Title>
       </TitleWrapper>
     </Wrapper>
@@ -37,12 +40,10 @@ const TitleWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const IconImage = styled.img``;
-
 const Title = styled.h1`
-  color: #747474;
+  color: #333333;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 46px;
 

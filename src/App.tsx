@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
+import Home from './pages/Home';
 import './utils/firebase';
 
 function App(): ReactElement {
