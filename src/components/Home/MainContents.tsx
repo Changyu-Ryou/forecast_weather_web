@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import React, { ReactElement } from 'react';
 import { TabHandlerProps } from '../../pages/Home';
+import HomeTab from './HomeTab';
+import MassageTab from './MassageTab';
 import MetroTab from './MetroTab';
 
 function MainContents({ tab, setTab }: TabHandlerProps): ReactElement {
@@ -11,11 +13,11 @@ function MainContents({ tab, setTab }: TabHandlerProps): ReactElement {
   const renderTab = () => {
     switch (tab) {
       case 0:
-        return <TempHome />;
+        return <HomeTab />;
       case 1:
         return <MetroTab />;
       case 2:
-        return <TempHome />;
+        return <MassageTab />;
       default:
         return <TempHome />;
     }
@@ -26,7 +28,7 @@ function MainContents({ tab, setTab }: TabHandlerProps): ReactElement {
 const View = styled.div`
   width: 100%;
   flex: 1;
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   align-items: center;

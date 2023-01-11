@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Box, Modal, TextField } from '@mui/material';
+import { Modal, TextField } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useMemo } from 'react';
 import { LineType, line_all_flat, LINE_COLOR_HEX } from './constant/lines';
@@ -14,7 +14,7 @@ export function SearchBarDialog({
   openDetailBottomSheetHandler,
 }: SimpleDialogProps) {
   const [openSearchModal, setOpenSearchModal] = openSearchBarHandler;
-  const [openDetailBottomSheet, setOpenDetailBottomSheet] = openDetailBottomSheetHandler;
+  const [, setOpenDetailBottomSheet] = openDetailBottomSheetHandler;
 
   const handleClose = () => {
     setOpenSearchModal(false);
@@ -29,40 +29,39 @@ export function SearchBarDialog({
 
   return (
     <Modal onClose={handleClose} open={openSearchModal}>
-      <Box sx={{ ...style }}>
+      <ModalWrapper>
         <Autocomplete
+          openOnFocus
+          autoSelect
           autoHighlight
-          id="combo-box-demo"
           options={stations}
           sx={{ zIndex: 1000, fontSize: '13px' }}
-          renderInput={(params) => <TextField label="역 이름을 입력해주세요" {...params} />}
+          renderInput={(params) => (
+            <TextField label="역 이름을 입력해주세요" {...params} autoFocus />
+          )}
           getOptionLabel={(option) => option?.station_name ?? ''}
           renderOption={(props, option) => (
-            <OptionWrapper {...props} onClick={() => handleListItemClick(option)}>
+            <OptionWrapper
+              {...props}
+              key={option?.line_id + '-' + option?.station_id}
+              onClick={() => handleListItemClick(option)}
+            >
               <LineName lineId={option?.line_id}>{option?.line_name}</LineName>
               &nbsp;
               {option?.station_name}
             </OptionWrapper>
           )}
         />
-      </Box>
+      </ModalWrapper>
     </Modal>
   );
 }
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '80%',
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  pt: 2,
-  px: 4,
-  pb: 3,
-};
+const ModalWrapper = styled.div`
+  width: 100%;
+  background-color: white;
+  padding-top: 10px;
+`;
 
 const Wrapper = styled.div`
   display: flex;

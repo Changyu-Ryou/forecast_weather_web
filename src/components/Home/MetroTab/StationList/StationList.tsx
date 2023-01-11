@@ -1,31 +1,24 @@
 import styled from '@emotion/styled';
-import React, {
-  ReactElement,
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useState,
-} from 'react';
+import { useLayoutEffect, useMemo, useState } from 'react';
 import StationItem from './StationItem';
 import Xarrow from 'react-xarrows';
-import { LineType, LINE_COLOR_HEX } from './constant/lines';
-import { line_1 } from './constant/line_1';
-import { line_2 } from './constant/line_2';
-import { line_3 } from './constant/line_3';
-import { line_4 } from './constant/line_4';
-import { line_5 } from './constant/line_5';
-import { line_6 } from './constant/line_6';
-import { line_7 } from './constant/line_7';
-import { line_8 } from './constant/line_8';
-import { line_9 } from './constant/line_9';
-import { line_gonghang } from './constant/line_gonghang';
-import { line_oohi } from './constant/line_oohi';
-import { line_kyongei } from './constant/line_kyongei';
-import { line_sooin } from './constant/line_sooin';
-import { line_uijungboo } from './constant/line_uijungboo';
-import { line_incheon } from './constant/line_incheon';
-import { line_sinbundang } from './constant/line_sinbundang';
+import { LineType, LINE_COLOR_HEX } from '../constant/lines';
+import { line_1 } from '../constant/line_1';
+import { line_2 } from '../constant/line_2';
+import { line_3 } from '../constant/line_3';
+import { line_4 } from '../constant/line_4';
+import { line_5 } from '../constant/line_5';
+import { line_6 } from '../constant/line_6';
+import { line_7 } from '../constant/line_7';
+import { line_8 } from '../constant/line_8';
+import { line_9 } from '../constant/line_9';
+import { line_gonghang } from '../constant/line_gonghang';
+import { line_oohi } from '../constant/line_oohi';
+import { line_kyongei } from '../constant/line_kyongei';
+import { line_sooin } from '../constant/line_sooin';
+import { line_uijungboo } from '../constant/line_uijungboo';
+import { line_incheon } from '../constant/line_incheon';
+import { line_sinbundang } from '../constant/line_sinbundang';
 
 interface Props {
   lineName: string | undefined;
@@ -152,10 +145,12 @@ function MetroInfoList({ lineName, openDetailBottomSheetHandler }: Props) {
 }
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: fit-content;
   padding: 0 30px;
-  overflow: auto;
+  /* flex: 1; */
+  /* overflow: auto; */
   position: relative;
+  padding-bottom: 50px;
 `;
 
 const ListWrapper = styled.div`
