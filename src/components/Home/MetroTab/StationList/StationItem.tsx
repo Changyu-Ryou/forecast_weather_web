@@ -43,7 +43,7 @@ const ItemWrapper = styled.div`
   gap: 10px;
   margin: 10px 5px;
 
-  min-width: 100px;
+  min-width: 80px;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;

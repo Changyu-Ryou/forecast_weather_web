@@ -17,10 +17,10 @@ function BottomNav({ tab, setTab }: TabHandlerProps): ReactElement {
         setTab(newValue);
       }}
     >
-      <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+      {/* <BottomNavigationAction label="Home" icon={<HomeIcon />} /> */}
       <BottomNavigationAction
         label={
-          tab === 1 ? (
+          tab === 0 ? (
             <div style={{ display: 'flex', alignItems: 'center' }}>
               승장강 내 <WcIcon style={{ marginLeft: '3px', fontSize: '16px' }} />
             </div>
@@ -30,7 +30,7 @@ function BottomNav({ tab, setTab }: TabHandlerProps): ReactElement {
         }
         icon={<DirectionsTransitIcon />}
       />
-      <BottomNavigationAction label="지연 혈자리" icon={<HealingIcon />} />
+      <BottomNavigationAction label="진정 지압" icon={<HealingIcon />} />
     </BottomNavigation>
   );
 }

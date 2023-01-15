@@ -12,11 +12,11 @@ function MainContents({ tab, setTab }: TabHandlerProps): ReactElement {
 
   const renderTab = () => {
     switch (tab) {
+      // case 0:
+      //   return <HomeTab />;
       case 0:
-        return <HomeTab />;
-      case 1:
         return <MetroTab />;
-      case 2:
+      case 1:
         return <MassageTab />;
       default:
         return <TempHome />;
@@ -28,7 +28,6 @@ function MainContents({ tab, setTab }: TabHandlerProps): ReactElement {
 const View = styled.div`
   width: 100%;
   flex: 1;
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   align-items: center;

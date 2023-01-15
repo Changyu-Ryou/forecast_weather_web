@@ -73,15 +73,18 @@ const Wrapper = styled.div`
 
 const TitleWrapper = styled.div`
   width: 100%;
-  padding: 20px 20px 10px 20px;
+  padding: 20px 20px 5px 20px;
 `;
 const HeaderWrapper = styled.div`
   width: 100%;
   position: sticky;
   top: 0;
-  background: white;
-  padding: 5px 0 5px;
-  /* padding-top: 20px; */
+  padding: 10px 0 10px;
+
   z-index: 999;
+  background: #ffffff;
+  backdrop-filter: blur(2px) saturate(149%);
+  -webkit-backdrop-filter: blur(2px) saturate(149%);
+  background-color: rgba(255, 255, 255, 0.6);
 `;
 export default MetroTab;

@@ -29,7 +29,7 @@ function LineNameList({ stateHandler }: Props): ReactElement {
 
   return (
     <>
-      <Spacing height={10} />
+      <Spacing height={5} />
       <Wrapper>
         {LINE_NAME_LIST.map((line) => {
           return (
