@@ -1,19 +1,21 @@
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
-import HomeIcon from '@mui/icons-material/Home';
 import DirectionsTransitIcon from '@mui/icons-material/DirectionsTransit';
 import WcIcon from '@mui/icons-material/Wc';
 import { TabHandlerProps } from '../../pages/Home';
 import HealingIcon from '@mui/icons-material/Healing';
+import useSendNativeEventBridge from '../../hooks/useSendNativeEventBridge';
 
 function BottomNav({ tab, setTab }: TabHandlerProps): ReactElement {
+  const { sendToNative } = useSendNativeEventBridge();
   return (
     <BottomNavigation
       style={{ width: '100%', borderTop: '1px solid #e0e0e0' }}
       value={tab}
       onChange={(event, newValue) => {
+        sendToNative('tabChange', { data: newValue });
         setTab(newValue);
       }}
     >

@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { ReactElement, useState } from 'react';
 import BottomNav from '../../components/Home/BottomNav';
 import MainContents from '../../components/Home/MainContents';
-import NavigationBar from '../../components/Home/NavigationBar';
 
 function Home(): ReactElement {
   const [tab, setTab] = useState(0);
