@@ -1,5 +1,5 @@
 {
-  "name": "quick_access",
+  "name": "abroad_card_payments",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,7 +18,9 @@
     "qr-scanner": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.42.1",
     "react-linkify": "^1.0.0-alpha",
+    "react-number-format": "^5.1.3",
     "react-router-dom": "^6.4.3",
     "react-scripts": "^5.0.1",
     "react-xarrows": "^2.0.2",

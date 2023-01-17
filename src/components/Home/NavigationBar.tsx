@@ -1,17 +1,16 @@
 import styled from '@emotion/styled';
 import { ReactElement } from 'react';
-import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 function NavigationBar(): ReactElement {
   return (
     <Wrapper>
       <TitleWrapper>
-        <DirectionsRunIcon
-          fontSize="medium"
-          style={{ color: 'white', borderRadius: '50%', background: '#2e7d32', padding: '4px' }}
-        />
-        <Title>Quick Access</Title>
+        <Title>해외결제 청구금액 계산</Title>
       </TitleWrapper>
+      <MoreInfoButtonWrapper>
+        <InfoOutlinedIcon />
+      </MoreInfoButtonWrapper>
     </Wrapper>
   );
 }
@@ -20,17 +19,17 @@ export default NavigationBar;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 56px;
+  height: 46px;
   background: white;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   padding: 1rem;
-
-  -webkit-box-shadow: 0px -14px 42px -7px rgba(0, 0, 0, 0.74);
-  box-shadow: 0px -14px 42px -7px rgba(0, 0, 0, 0.74);
+  box-shadow: 2px -1px 21px -3px rgba(0, 0, 0, 0.56);
+  -webkit-box-shadow: 2px -1px 21px -3px rgba(0, 0, 0, 0.56);
+  -moz-box-shadow: 2px -1px 21px -3px rgba(0, 0, 0, 0.56);
 `;
 
 const TitleWrapper = styled.div`
@@ -43,9 +42,15 @@ const TitleWrapper = styled.div`
 const Title = styled.h1`
   color: #333333;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 46px;
 
   margin-left: 10px;
+`;
+
+const MoreInfoButtonWrapper = styled.div`
+  position: absolute;
+  top: 0.6875rem;
+  right: 0.6875rem;
 `;

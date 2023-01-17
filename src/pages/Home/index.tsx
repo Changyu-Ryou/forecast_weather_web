@@ -1,15 +1,17 @@
 import styled from '@emotion/styled';
-import { ReactElement, useState } from 'react';
-import BottomNav from '../../components/Home/BottomNav';
+import { ReactElement } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 import MainContents from '../../components/Home/MainContents';
+import NavigationBar from '../../components/Home/NavigationBar';
 
 function Home(): ReactElement {
-  const [tab, setTab] = useState(0);
+  const formMathods = useForm();
   return (
     <Wrapper>
-      {/* <NavigationBar /> */}
-      <MainContents tab={tab} setTab={setTab} />
-      <BottomNav tab={tab} setTab={setTab} />
+      <FormProvider {...formMathods}>
+        <NavigationBar />
+        <MainContents />
+      </FormProvider>
     </Wrapper>
   );
 }

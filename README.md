@@ -1,10 +1,10 @@
 # Getting Started with Create React App
 
-퀵 액세스 - 급똥 가이드
+해외 결제 청구금액 계산기
 
 - 초기 개발 순서
 
-  - /public/index.html 내 description, title 변경, Google ads script 제거
+  - /public/index.html 내 description, title 변경
   - /util/firebase 내용 변경
   - git init, git remote 변경
     - 기존 리포지토리 remote 변경
