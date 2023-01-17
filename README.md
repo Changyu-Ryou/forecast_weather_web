@@ -11,5 +11,9 @@
       > `git remote set-url origin <새로운GITURL>`
 
 - cloudflare 초기 셋팅시
+
   - setting > environment variables 에서
     - prod/prev 둘 다 NODE_VERSION 16 추가 필요
+
+- ui 레퍼런스
+  https://cdn.dribbble.com/users/409091/screenshots/5831158/pay_04_4x.png?compress=1&resize=1600x1200&vertical=top

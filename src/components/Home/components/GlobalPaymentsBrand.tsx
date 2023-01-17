@@ -68,7 +68,7 @@ const GLOBAL_PAYMENTS = [
   {
     id: 'amex',
     name: '아맥스',
-    icon: <Icon src={amexIcon} size={13} />,
+    icon: <Icon src={amexIcon} size={1} />,
   },
   {
     id: 'jcb',
@@ -86,7 +86,8 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 16px 0 0 0;
+  padding: 20px 0 0 0;
+  overflow: hidden;
 `;
 
 const PaymentsMethodWrapper = styled.div`
@@ -94,6 +95,7 @@ const PaymentsMethodWrapper = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: auto;
+  overflow-y: visible;
   gap: 10px;
   padding: 16px;
   flex-wrap: nowrap;
@@ -108,6 +110,8 @@ const PaymentsMethodWrapper = styled.div`
 `;
 
 const CardWrapper = styled.label<{ checked: boolean }>`
+  height: 40px;
+  max-height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -115,8 +119,8 @@ const CardWrapper = styled.label<{ checked: boolean }>`
   gap: 8px;
 
   flex-shrink: 0;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 10px 15px;
+  border-radius: 14px;
   font-size: 14px;
   font-weight: 600;
   background-color: ${({ checked }) => (checked ? '#5670F7' : '#9faff3')};

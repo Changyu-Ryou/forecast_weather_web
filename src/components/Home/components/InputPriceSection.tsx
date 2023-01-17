@@ -48,7 +48,7 @@ const Wrapper = styled.div`
 
 export const Title = styled.h1`
   color: #7d8186;
-  font-size: 16px;
+  font-size: 15px;
 `;
 
 const InputWrapper = styled.div`
