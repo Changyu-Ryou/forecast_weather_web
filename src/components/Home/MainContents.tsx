@@ -24,7 +24,7 @@ const View = styled.div`
 
   overflow-y: auto;
 
-  background-color: #eff2f1;
+  background-color: #f5f5f5;
 `;
 
 export default MainContents;
