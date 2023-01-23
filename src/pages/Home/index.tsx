@@ -5,7 +5,12 @@ import MainContents from '../../components/Home/MainContents';
 import NavigationBar from '../../components/Home/NavigationBar';
 
 function Home(): ReactElement {
-  const formMathods = useForm();
+  const formMathods = useForm({
+    defaultValues: {
+      amount: 10,
+      dollar: 1200,
+    },
+  });
   return (
     <Wrapper>
       <FormProvider {...formMathods}>

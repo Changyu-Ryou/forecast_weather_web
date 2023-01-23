@@ -1,14 +1,10 @@
 import styled from '@emotion/styled';
-import React, { ChangeEvent, ReactElement, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { ReactElement } from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
 import { NumericFormat } from 'react-number-format';
 
 function InputPriceSection(): ReactElement {
-  const { register, handleSubmit, watch, control, setValue } = useForm();
-  const amountValue = watch('amount');
-
-  //   const handleChange = (event: ChangeEvent<HTMLInputElement>) =>
-  //     setValue(addCommas(removeNonNumeric(event.target.value)));
+  const { control, setValue } = useFormContext();
 
   return (
     <Wrapper>
@@ -22,7 +18,6 @@ function InputPriceSection(): ReactElement {
               customInput={AmountInput}
               thousandSeparator={true}
               onValueChange={(v) => {
-                console.log(v.value);
                 setValue('amount', v.value);
               }}
               defaultValue="10"
@@ -44,11 +39,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  flex-shrink: 0;
 `;
 
 export const Title = styled.h1`
   color: #7d8186;
   font-size: 15px;
+  line-height: 18px;
 `;
 
 const InputWrapper = styled.div`
@@ -59,7 +56,7 @@ const InputWrapper = styled.div`
   justify-content: flex-start;
 
   color: #5975f9;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 800;
   padding-top: 10px;
 `;
@@ -68,7 +65,7 @@ const AmountInput = styled.input<{ hasValue: boolean }>`
   width: 100%;
   border: none;
   color: #5975f9;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 800;
   margin-left: 10px;
 
