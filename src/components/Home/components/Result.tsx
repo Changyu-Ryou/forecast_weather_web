@@ -73,7 +73,6 @@ function Result(): ReactElement {
       <Spacing height={20} />
       <ResultWrapper>
         <SmallName>예상 한화 금액</SmallName>
-        <BigValue>{(15655).toLocaleString()}원</BigValue>
         <BigValue>{calcResult().toLocaleString()}원</BigValue>
       </ResultWrapper>
     </Wrapper>

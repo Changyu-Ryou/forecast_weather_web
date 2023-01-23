@@ -43,7 +43,7 @@ const Wrapper = styled.div`
 
 const ValueWrapper = styled.div`
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   color: #5975f9;
 `;
 
@@ -52,14 +52,15 @@ const DollarInput2 = styled.input`
   min-width: 20px;
   max-width: 100px;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   color: #5975f9;
   margin-right: 5px;
   padding: 0 10px;
   line-height: 28px;
   border: none;
   background-color: transparent;
-  text-align: right;
+  text-align: center;
+  border-bottom: 1px solid gray;
 `;
 
 export default UsDollar;
