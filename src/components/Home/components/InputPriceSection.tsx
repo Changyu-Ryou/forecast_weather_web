@@ -2,9 +2,12 @@ import styled from '@emotion/styled';
 import { ReactElement } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { NumericFormat } from 'react-number-format';
+import { useStorage } from '../../../hooks/useStorage';
 
 function InputPriceSection(): ReactElement {
-  const { control, setValue } = useFormContext();
+  const { watch, control, setValue } = useFormContext();
+  const [, setAmount] = useStorage('amount', undefined);
+  const amountValue = watch('amount');
 
   return (
     <Wrapper>
@@ -19,8 +22,9 @@ function InputPriceSection(): ReactElement {
               thousandSeparator={true}
               onValueChange={(v) => {
                 setValue('amount', v.value);
+                setAmount(v.value);
               }}
-              defaultValue="10"
+              value={amountValue}
               {...props}
             />
           )}

@@ -1,16 +1,34 @@
 import styled from '@emotion/styled';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import { Box, Modal, Typography } from '@mui/material';
 
 function NavigationBar(): ReactElement {
+  const [open, setOpen] = useState(false);
   return (
     <Wrapper>
       <TitleWrapper>
         <Title>해외결제 청구금액 계산</Title>
       </TitleWrapper>
-      <MoreInfoButtonWrapper>
+      <MoreInfoButtonWrapper onClick={() => setOpen(true)}>
         <InfoOutlinedIcon />
       </MoreInfoButtonWrapper>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      >
+        <ModalWrapper>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </Typography>
+        </ModalWrapper>
+      </Modal>
     </Wrapper>
   );
 }
@@ -53,4 +71,10 @@ const MoreInfoButtonWrapper = styled.div`
   position: absolute;
   top: 0.6875rem;
   right: 0.6875rem;
+`;
+
+const ModalWrapper = styled.div`
+  width: 50%;
+  height: 50%;
+  background: white;
 `;

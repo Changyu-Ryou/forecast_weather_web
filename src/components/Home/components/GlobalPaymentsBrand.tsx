@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ReactElement, useCallback, useMemo } from 'react';
+import { ReactElement, useCallback, useMemo, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import visaIcon from '../../../assets/Icon/visa-icon.svg';
 import masterIcon from '../../../assets/Icon/master-card-icon.svg';
@@ -10,15 +10,27 @@ import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import { Title } from './InputPriceSection';
 import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 import ControlPointOutlinedIcon from '@mui/icons-material/ControlPointOutlined';
+import { useStorage } from '../../../hooks/useStorage';
 
 function GlobalPaymentsBrand(): ReactElement {
   const { register, watch, setValue } = useFormContext();
   const globalPaymentsValue = watch('globalPayments');
-  const globalPaymentsFeeValue = watch('globalPaymentsFee');
+
+  const [, setglobalPayments] = useStorage('globalPayments', undefined);
+
+  const [globalPaymentsFeeStorageValue, setglobalPaymentsFee] = useStorage(
+    'globalPaymentsFee',
+    undefined
+  );
 
   const selectedItem = useMemo(() => {
     const result = GLOBAL_PAYMENTS.find((item) => item.id === globalPaymentsValue);
+    setglobalPayments(globalPaymentsValue);
+
     setValue('globalPaymentsFee', result?.fee ?? 0);
+    if (result?.id === 'custom') {
+      setglobalPaymentsFee(globalPaymentsFeeStorageValue ?? 0);
+    }
     return result;
   }, [globalPaymentsValue]);
 
@@ -28,6 +40,7 @@ function GlobalPaymentsBrand(): ReactElement {
       if (!isPlus) value = Math.round((value - 0.1) * 10) / 10;
       if (value < 0) value = 0;
       setValue('globalPaymentsFee', value);
+      setglobalPaymentsFee(value);
     },
     [setValue]
   );
@@ -36,17 +49,17 @@ function GlobalPaymentsBrand(): ReactElement {
     return (
       <ControllerWrapper>
         <RemoveCircleOutlineOutlinedIcon
-          onClick={() => onChangeFee(globalPaymentsFeeValue, false)}
+          onClick={() => onChangeFee(globalPaymentsFeeStorageValue, false)}
           style={{ fontSize: '18px' }}
         />
-        {globalPaymentsFeeValue}%
+        {globalPaymentsFeeStorageValue}%
         <ControlPointOutlinedIcon
-          onClick={() => onChangeFee(globalPaymentsFeeValue, true)}
+          onClick={() => onChangeFee(globalPaymentsFeeStorageValue, true)}
           style={{ fontSize: '18px' }}
         />
       </ControllerWrapper>
     );
-  }, [globalPaymentsFeeValue, onChangeFee]);
+  }, [globalPaymentsFeeStorageValue, onChangeFee]);
 
   const displayText = useMemo(() => {
     if (!selectedItem) return '선택해주세요';
@@ -153,7 +166,7 @@ export const GLOBAL_PAYMENTS = [
     icon: <Icon src={upi} size={27} />,
   },
   {
-    id: 'custon',
+    id: 'custom',
     name: '직접선택',
     fee: '0',
     displayText: undefined,

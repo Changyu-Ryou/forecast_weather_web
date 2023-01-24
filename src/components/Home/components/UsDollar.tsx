@@ -1,11 +1,28 @@
 import styled from '@emotion/styled';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Title } from './InputPriceSection';
 import { NumericFormat } from 'react-number-format';
+import axios from 'axios';
+import { useStorage } from '../../../hooks/useStorage';
 
 function UsDollar(): ReactElement {
-  const { control, setValue } = useFormContext();
+  const { watch, control, setValue } = useFormContext();
+  const dollarValue = watch('dollar');
+  const [, setDollar] = useStorage('dollar', undefined);
+
+  const getDollar = async () => {
+    const dollarRequest = await axios.get(
+      'https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD'
+    );
+    const dollarRequestData = dollarRequest.data[0].ttBuyingPrice;
+    setValue('dollar', dollarRequestData);
+    setDollar(dollarRequestData);
+  };
+
+  useEffect(() => {
+    getDollar();
+  }, []);
 
   return (
     <Wrapper>
@@ -18,8 +35,9 @@ function UsDollar(): ReactElement {
               thousandSeparator={true}
               onValueChange={(v) => {
                 setValue('dollar', v.value);
+                setDollar(v.value);
               }}
-              defaultValue="1200"
+              value={dollarValue}
               {...props}
             />
           )}
@@ -50,7 +68,7 @@ const ValueWrapper = styled.div`
 const DollarInput2 = styled.input`
   width: auto;
   min-width: 20px;
-  max-width: 100px;
+  max-width: 150px;
   font-size: 32px;
   font-weight: 700;
   color: #5975f9;

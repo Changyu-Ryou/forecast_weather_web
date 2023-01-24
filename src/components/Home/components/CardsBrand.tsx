@@ -1,20 +1,31 @@
 import styled from '@emotion/styled';
-import { ReactElement, useCallback, useMemo } from 'react';
+import { ReactElement, useCallback, useMemo, useRef, useState } from 'react';
 import { useForm, useFormContext } from 'react-hook-form';
 import { Title } from './InputPriceSection';
 import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 import ControlPointOutlinedIcon from '@mui/icons-material/ControlPointOutlined';
+import { parsingBankUrl } from '../constants/parsingUrl';
+import axios from 'axios';
+import { useStorage } from '../../../hooks/useStorage';
 
 // https://namu.wiki/w/%EC%8B%A0%EC%9A%A9%EC%B9%B4%EB%93%9C/%ED%95%B4%EC%99%B8%EC%82%AC%EC%9A%A9#s-4.1
 function CardsBrand(): ReactElement {
   const { register, watch, setValue } = useFormContext();
   const cardsValue = watch('cards');
-  const cardsFeeValue = watch('cardsFee');
-  // const selectedItem = CARDS.find((item) => item.id === cardsValue);
+
+  const [, setCards] = useStorage('cards', undefined);
+  const [cardsFeeStorageValue, setCardsFee] = useStorage('cardsFee', undefined);
 
   const selectedItem = useMemo(() => {
     const result = CARDS.find((item) => item.id === cardsValue);
+    setCards(cardsValue);
+
     setValue('cardsFee', result?.fee ?? 0);
+
+    if (result?.id === 'custom') {
+      setCardsFee(cardsFeeStorageValue ?? 0);
+    }
+
     return result;
   }, [cardsValue, setValue]);
 
@@ -24,25 +35,33 @@ function CardsBrand(): ReactElement {
       if (!isPlus) value = Math.round((value - 0.1) * 10) / 10;
       if (value < 0) value = 0;
       setValue('cardsFee', value);
+      setCardsFee(value);
     },
     [setValue]
   );
+
+  const openBankPage = () => {
+    const parsingUrl = parsingBankUrl.find((item) => item.id === selectedItem?.transaction);
+    if (parsingUrl) {
+      window.open(parsingUrl.url, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   const CustomInputController = useCallback(() => {
     return (
       <ControllerWrapper>
         <RemoveCircleOutlineOutlinedIcon
-          onClick={() => onChangeFee(cardsFeeValue, false)}
+          onClick={() => onChangeFee(cardsFeeStorageValue, false)}
           style={{ fontSize: '18px' }}
         />
-        {cardsFeeValue}%
+        {cardsFeeStorageValue}%
         <ControlPointOutlinedIcon
-          onClick={() => onChangeFee(cardsFeeValue, true)}
+          onClick={() => onChangeFee(cardsFeeStorageValue, true)}
           style={{ fontSize: '18px' }}
         />
       </ControllerWrapper>
     );
-  }, [cardsFeeValue, onChangeFee]);
+  }, [cardsFeeStorageValue, onChangeFee]);
 
   const displayText = useMemo(() => {
     if (!selectedItem) return '선택해주세요';
@@ -58,7 +77,7 @@ function CardsBrand(): ReactElement {
         <PaymentsFee>{displayText}</PaymentsFee>
       </Header>
       <SelectorWrapper id="cards-select" {...register('cards')}>
-        <option value="none" disabled selected>
+        <option value="none" disabled selected={true}>
           결제 카드사를 선택해주세요
         </option>
         {CARDS.map((card) => {
@@ -69,6 +88,17 @@ function CardsBrand(): ReactElement {
           );
         })}
       </SelectorWrapper>
+      {selectedItem?.transaction ? (
+        <InfoWrapper>
+          <b>{selectedItem?.name} 카드사</b>는 <b>{selectedItem?.transaction}</b>의 최초고시
+          매매기준율을 기준으로 환율을 계산합니다.
+          <Button onClick={openBankPage}>확인하러가기</Button>
+        </InfoWrapper>
+      ) : (
+        <InfoWrapper>
+          <b>해당 카드사</b>는 직접 최초고시 매매기준율 기준 환율을 확인해주셔야해요.
+        </InfoWrapper>
+      )}
     </Wrapper>
   );
 }
@@ -106,7 +136,7 @@ const PaymentsFee = styled.div`
 
 export const CARDS = [
   {
-    id: 'custon',
+    id: 'custom',
     name: '직접입력',
     displayText: undefined,
     onceFee: '0.5',
@@ -197,12 +227,6 @@ export const CARDS = [
     displayText: '수협은행(0.3%)',
     fee: '0.3',
   },
-  {
-    id: '토스',
-    name: '토스뱅크',
-    displayText: '토스뱅크(건당 0.5$)',
-    onceFee: '0.5',
-  },
 ];
 
 const SelectorWrapper = styled.select`
@@ -228,5 +252,25 @@ const ControllerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 7px;
+`;
+
+const InfoWrapper = styled.div`
+  width: 100%;
+
+  padding: 5px 20px 30px 20px;
+  font-size: 13px;
+  line-height: 16px;
+  div,
+  b {
+    display: inline-block;
+    flex: 1;
+    white-space: nowrap;
+  }
+`;
+
+const Button = styled.div`
+  font-weight: 800;
+  padding: 0 3px;
+  text-decoration: underline;
 `;
 export default CardsBrand;

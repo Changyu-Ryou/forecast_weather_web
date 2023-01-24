@@ -4,7 +4,6 @@ import { Spacing } from '../common/Spacing';
 import CardsBrand from './components/CardsBrand';
 import GlobalPaymentsBrand from './components/GlobalPaymentsBrand';
 import InputPriceSection from './components/InputPriceSection';
-import Result from './components/Result';
 import UsDollar from './components/UsDollar';
 
 function MainContents(): ReactElement {
@@ -23,8 +22,7 @@ function MainContents(): ReactElement {
       <GlobalPaymentsBrand />
       <CardsBrand />
       <UsDollar />
-      <Spacing />
-      <Result />
+      <Spacing height={40} />
     </View>
   );
 }
