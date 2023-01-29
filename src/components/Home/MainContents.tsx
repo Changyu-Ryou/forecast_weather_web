@@ -4,6 +4,7 @@ import { Spacing } from '../common/Spacing';
 import CardsBrand from './components/CardsBrand';
 import GlobalPaymentsBrand from './components/GlobalPaymentsBrand';
 import InputPriceSection from './components/InputPriceSection';
+import NoticeInfo from './components/NoticeInfo';
 import UsDollar from './components/UsDollar';
 
 function MainContents(): ReactElement {

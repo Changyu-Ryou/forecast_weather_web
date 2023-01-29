@@ -14,7 +14,6 @@ function Home(): ReactElement {
   const { get: cardsFeeValue } = storage('cardsFee');
   const { get: dollarValue } = storage('dollar');
 
-  console.log('defaluyt ', globalPaymentsFeeValue());
   const formMathods = useForm({
     defaultValues: {
       amount: amountValue() ?? 10,
@@ -23,6 +22,7 @@ function Home(): ReactElement {
       globalPaymentsFee: globalPaymentsFeeValue() ?? undefined,
       cards: cardsValue() ?? undefined,
       cardsFee: cardsFeeValue() ?? undefined,
+      openModal: false,
     },
   });
 

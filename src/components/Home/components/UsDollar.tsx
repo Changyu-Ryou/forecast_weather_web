@@ -44,7 +44,7 @@ function UsDollar(): ReactElement {
           name="dollar"
           control={control}
         />
-        원
+        <p>원</p>
       </ValueWrapper>
     </Wrapper>
   );
@@ -63,12 +63,18 @@ const ValueWrapper = styled.div`
   font-size: 32px;
   font-weight: 700;
   color: #5975f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    flex: 1;
+  }
 `;
 
 const DollarInput2 = styled.input`
-  width: auto;
   min-width: 20px;
-  max-width: 150px;
+  max-width: 120px;
   font-size: 32px;
   font-weight: 700;
   color: #5975f9;

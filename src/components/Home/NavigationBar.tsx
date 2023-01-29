@@ -1,32 +1,96 @@
 import styled from '@emotion/styled';
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import { Box, Modal, Typography } from '@mui/material';
+import { Modal, Typography } from '@mui/material';
+import { Spacing } from '../common/Spacing';
+import { useFormContext } from 'react-hook-form';
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 
 function NavigationBar(): ReactElement {
-  const [open, setOpen] = useState(false);
+  const { setValue, watch } = useFormContext();
+
+  const openModalValue = watch('openModal');
+
   return (
     <Wrapper>
       <TitleWrapper>
         <Title>해외결제 청구금액 계산</Title>
       </TitleWrapper>
-      <MoreInfoButtonWrapper onClick={() => setOpen(true)}>
+      <MoreInfoButtonWrapper onClick={() => setValue('openModal', true)}>
         <InfoOutlinedIcon />
       </MoreInfoButtonWrapper>
       <Modal
-        open={open}
-        onClose={() => setOpen(false)}
+        open={openModalValue}
+        onClose={() => setValue('openModal', false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <ModalWrapper>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <Contetns>
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              style={{ fontWeight: 900 }}
+            >
+              계산기 사용 안내
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              <Li>
+                위 계산 결과는 <b>실제결과와 다를 수 있습니다.</b>
+              </Li>
+              <br />
+              <Li>
+                위 계산기는 참고용이므로 계산결과는 법적인 효력이 없습니다. (카드사에 이의를
+                청구하는 목적으로 사용할 수 없음)
+              </Li>
+              <br />
+              <Li>계산에 따른 결제, 청구, 납입 등의 책임은 전적으로 사용자에게 있습니다.</Li>
+              <br />
+              <Li>위 계산기와 카드사의 결과가 다를 경우 카드사 결과가 우선합니다.</Li>
+              <br />
+              <Li>
+                각종 수수료율은 실제와 다를 경우 이는 제작자가 책임지지 않으며 업데이트 의무도
+                존재하지 않습니다.
+              </Li>
+              <br />
+              <Li>기타 정해지지 않은 내용은 사회 관습에 따릅니다.</Li>
+              <br />
+            </Typography>
+
+            <Spacing />
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              style={{ fontWeight: 900 }}
+            >
+              해외결제 청구금액 계산 원리
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              <Li>
+                <b>원화 청구금액 = 해외 이용금액(원화) + 해외 서비스 수수료 해외 이용금액(원화)</b>
+              </Li>
+              <br />
+              <Li>
+                해외 이용금액(원화) = 미화환산금액 X 접수일자 1회차 전신환매도율(신한은행 송금 보낼
+                때 환율)
+              </Li>
+              <Li>
+                미화환산금액은 해외 현지통화 이용금액을 국제브랜드사가 정한 환율에 의해 미화로
+                환산된 금액입니다.
+              </Li>
+              <Li>미화환산금액에는 국제브랜드수수료가 포함되어 있습니다.</Li>
+              <br />
+              <Li>
+                (국제브랜드수수료 : 비자/마스터/유어스 : 1%, 아멕스/S& : 1.4%, JCB/UPI : 없음)
+              </Li>
+            </Typography>
+          </Contetns>
+          <ButtonWrapper onClick={() => setValue('openModal', false)}>
+            <CancelRoundedIcon />
+          </ButtonWrapper>
         </ModalWrapper>
       </Modal>
     </Wrapper>
@@ -74,7 +138,34 @@ const MoreInfoButtonWrapper = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 70%;
   background: white;
+  padding: 1.4rem 0;
+  border-radius: 5px;
+  position: relative;
+`;
+const Contetns = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 0 1.4rem;
+`;
+
+const Li = styled.li`
+  font-size: 14px;
+  line-height: 17px;
+`;
+
+const ButtonWrapper = styled.div`
+  position: absolute;
+  top: -30px;
+  right: 0;
+  /* width: 40px;
+  height: 40px; */
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

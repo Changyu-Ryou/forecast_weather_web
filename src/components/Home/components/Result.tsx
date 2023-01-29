@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useCallback, useMemo, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { Spacing } from '../../common/Spacing';
 import { CARDS } from './CardsBrand';
@@ -7,6 +7,7 @@ import { GLOBAL_PAYMENTS } from './GlobalPaymentsBrand';
 
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+import NoticeInfo from './NoticeInfo';
 function Result(): ReactElement {
   const { watch } = useFormContext();
   const amountValue = watch('amount');
@@ -23,12 +24,17 @@ function Result(): ReactElement {
   const globalPaymentsFee = globalPaymentsFeeValue ?? globalPaymentsItem?.fee;
   const cardsFee = cardsFeeValue ?? cardsItem?.fee;
 
-  const calcResult = () => {
+  const calcResult = useCallback(() => {
     const amountPayInDollar =
       (Number(amountValue) / 100) * (Number(globalPaymentsFee) + 100) * Number(dollarValue);
     const amountServiceFee = (Number(amountValue) / 100) * cardsFee * Number(dollarValue);
     return amountPayInDollar + amountServiceFee;
-  };
+  }, [amountValue, cardsFee, dollarValue, globalPaymentsFee]);
+
+  const calcOnlyFee = useMemo(
+    () => calcResult() - Number(amountValue) * Number(dollarValue),
+    [amountValue, calcResult, dollarValue]
+  );
 
   const [open, setOpen] = useState(false);
   return (
@@ -44,9 +50,7 @@ function Result(): ReactElement {
         </OpenButton>
         <Wrapper open={open}>
           <Header>
-            <DotLine />
             <Title>예상 청구금액</Title>
-            <DotLine />
           </Header>
           <ContentsWrapper>
             <Spacing />
@@ -85,11 +89,17 @@ function Result(): ReactElement {
             </Item>
           </ContentsWrapper>
           <Spacing height={20} />
+          <Item>
+            <Name>수수료 합계(한화)</Name>
+            <SmallDotLine />
+            <Name>₩ {Number(calcOnlyFee).toLocaleString()}</Name>
+          </Item>
         </Wrapper>
+        <NoticeInfo />
       </RelativeWrapper>
       <NavWrapper>
         <ResultWrapper>
-          <SmallName>예상 한화 금액</SmallName>
+          <SmallName>예상 청구 금액</SmallName>
           <BigValue>{calcResult().toLocaleString()}원</BigValue>
         </ResultWrapper>
       </NavWrapper>
@@ -147,15 +157,18 @@ const OpenButton = styled.div`
   padding: 3px;
   background-color: white;
   z-index: 2;
+  box-shadow: 0px 21px 49px 7px rgba(0, 0, 0, 0.46);
+  -webkit-box-shadow: 0px 21px 49px 7px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 0px 21px 49px 7px rgba(0, 0, 0, 0.46);
 `;
 
 const Wrapper = styled.div<{ open: boolean }>`
   width: 100%;
-  z-index: 1;
-  padding: 16px;
+  z-index: 3;
+  padding: 10px 16px 16px 16px;
   background-color: white;
-  opacity: ${({ open }) => (open ? 1 : 0)};
-  height: ${({ open }) => (open ? 'auto' : 0)};
+  /* opacity: ${({ open }) => (open ? 1 : 0)}; */
+  /* height: ${({ open }) => (open ? 'auto' : 0)}; */
   /* transform: ${({ open }) => (open ? 'translate(0px, -100%)' : 'translate(0px, 0%)')}; */
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
