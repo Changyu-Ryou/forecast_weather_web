@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-해외 결제 청구금액 계산기
+> 유튜브 맛집 지도
 
 - 초기 개발 순서
 
