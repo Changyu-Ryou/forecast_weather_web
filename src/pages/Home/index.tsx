@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { ReactElement } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import Result from '../../components/Home/components/Result';
 import MainContents from '../../components/Home/MainContents';
 import NavigationBar from '../../components/Home/NavigationBar';
 import { storage } from '../../hooks/useStorage';
@@ -31,7 +30,6 @@ function Home(): ReactElement {
       <FormProvider {...formMathods}>
         <NavigationBar />
         <MainContents />
-        <Result />
       </FormProvider>
     </Wrapper>
   );
