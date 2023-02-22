@@ -1,5 +1,5 @@
 {
-  "name": "abroad_card_payments",
+  "name": "youtube_matzip",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,6 @@
     "axios": "^1.2.3",
     "firebase": "^9.14.0",
     "http-proxy-middleware": "^2.0.6",
-    "qr-scanner": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.42.1",
@@ -57,6 +56,5 @@
   "devDependencies": {
     "@types/react-linkify": "^1.0.1",
     "eslint-config-prettier": "^8.5.0"
-  },
-  "proxy": "https://sbiz.wooribank.com"
+  }
 }
