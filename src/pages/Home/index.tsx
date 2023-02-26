@@ -3,27 +3,9 @@ import { ReactElement } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import MainContents from '../../components/Home/MainContents';
 import NavigationBar from '../../components/Home/NavigationBar';
-import { storage } from '../../hooks/useStorage';
 
 function Home(): ReactElement {
-  const { get: amountValue } = storage('amount');
-  const { get: globalPaymentsValue } = storage('globalPayments');
-  const { get: globalPaymentsFeeValue } = storage('globalPaymentsFee');
-  const { get: cardsValue } = storage('cards');
-  const { get: cardsFeeValue } = storage('cardsFee');
-  const { get: dollarValue } = storage('dollar');
-
-  const formMathods = useForm({
-    defaultValues: {
-      amount: amountValue() ?? 10,
-      dollar: dollarValue() ?? 1200,
-      globalPayments: globalPaymentsValue() ?? undefined,
-      globalPaymentsFee: globalPaymentsFeeValue() ?? undefined,
-      cards: cardsValue() ?? undefined,
-      cardsFee: cardsFeeValue() ?? undefined,
-      openModal: false,
-    },
-  });
+  const formMathods = useForm({});
 
   return (
     <Wrapper>

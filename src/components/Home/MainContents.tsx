@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { ReactElement } from 'react';
-import { Spacing } from '../common/Spacing';
 import MapView from './components/MapView';
 
 function MainContents(): ReactElement {
@@ -21,9 +20,8 @@ const View = styled.div`
   justify-content: flex-start;
 
   overflow-y: auto;
-
   background-color: #f5f5f5;
-  z-index: 1;
+  /* z-index: 1; */
 `;
 
 export default MainContents;
