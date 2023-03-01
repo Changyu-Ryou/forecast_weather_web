@@ -1,13 +1,14 @@
 import { ReactElement, useMemo, useRef, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { Map, MarkerClusterer, useInjectKakaoMapApi } from 'react-kakao-maps-sdk';
-import data from '../../../constants/data_geo.json';
+import { Map, useInjectKakaoMapApi } from 'react-kakao-maps-sdk';
+
 import useMapCenter, { CureentPositionType, GangnamPositon } from '../hooks/useMapCenter';
 import InfoBox from './InfoBox';
 import MyLocationController from './mapController/MyLocationController';
 import ZoomController from './mapController/ZoomController';
+import MarkerListFilter from './MarkerListFilter';
 import CurrentLocationMarkers from './Markers/CurrentLocationMarkers';
-import RestaurantMarkers from './Markers/RestaurantMarkers';
+import RestaurantList from './Markers/RestaurantList';
 //https://react-kakao-maps-sdk.jaeseokim.dev/
 
 function MapView(): ReactElement {
@@ -47,23 +48,19 @@ function MapView(): ReactElement {
         });
       }}
     >
+      {/* 지도 컨트롤러 */}
       <MyLocationController />
       <ZoomController />
+
+      {/* 음식점 필터 */}
+      <MarkerListFilter />
+
+      {/* 현재 위치 마커 */}
       <CurrentLocationMarkers />
-      <MarkerClusterer
-        averageCenter={true} // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
-        minLevel={8} // 클러스터 할 최소 지도 레벨
-      >
-        {data.map((item) => {
-          return (
-            <RestaurantMarkers
-              key={item.index}
-              position={{ lat: parseFloat(item.y), lng: parseFloat(item.x) }}
-              item={item}
-            />
-          );
-        })}
-      </MarkerClusterer>
+
+      {/* 음식점 마커 */}
+      <RestaurantList />
+
       <InfoBox />
     </Map>
   ) : (
