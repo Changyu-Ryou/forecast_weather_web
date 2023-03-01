@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
-import React, { ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import { ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import YouTube from 'react-youtube';
+import { openYoutube } from '../../../../utils/deeplink';
+import YoutubePlayButton from './YoutubePlayButton';
 
 interface Props {
   index?: number;
@@ -9,6 +11,7 @@ interface Props {
 
 function YoutubeWrapper({ index, youtubeUrl }: Props): ReactElement {
   const [width, setWidth] = useState(window.innerWidth - 60 + 'px');
+  const [youtubeReady, setYoutubeReady] = useState<boolean | undefined>(undefined);
   const videoId = useMemo(() => {
     if (!youtubeUrl) return '';
     const search = youtubeUrl.split('?')[1];
@@ -24,29 +27,72 @@ function YoutubeWrapper({ index, youtubeUrl }: Props): ReactElement {
     setWidth(`${width}px`);
   }, []);
 
+  useEffect(() => {
+    setYoutubeReady(undefined);
+  }, [youtubeUrl]);
+
   return (
     <Wrapper ref={ref}>
-      <YouTube
-        id={index?.toString()}
-        videoId={videoId}
-        opts={{
-          width: width,
-          height: 'auto',
+      <Thumbnail
+        src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
+        onClick={() => {
+          openYoutube(videoId);
         }}
-        onError={(e) => console.log(e)}
       />
+      {youtubeReady === false && <YoutubePlayButton />}
+      {youtubeReady !== false && (
+        <YouTubeWrapper isReady={youtubeReady}>
+          <YouTube
+            id={index?.toString() ?? ''}
+            videoId={videoId}
+            opts={{
+              width: width,
+              height: 'auto',
+            }}
+            onReady={(e) => {
+              setYoutubeReady(e.target.getPlayerState() > 0);
+            }}
+            onError={() => {
+              setYoutubeReady(false);
+            }}
+          />
+        </YouTubeWrapper>
+      )}
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
   width: 100%;
-
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 15px 15px 0 0;
   overflow: hidden;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  background-color: white;
+`;
+
+const YouTubeWrapper = styled.div<{ isReady: boolean | undefined }>`
+  width: 100%;
+  height: 100%;
+  opacity: ${({ isReady }) => (isReady ? 1 : 0)};
+  pointer-events: ${({ isReady }) => (isReady ? 'auto' : 'none')};
+  z-index: ${({ isReady }) => (isReady ? 999 : -1)};
+`;
+
+const Thumbnail = styled.img`
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 export default YoutubeWrapper;

@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   position: absolute;
   bottom: 20px;
   width: calc(100% - 60px);
+  max-width: 400px;
   height: auto;
   min-height: 100px;
   border-radius: 15px;
@@ -36,6 +37,9 @@ const Wrapper = styled.div`
   padding: 0;
   border: 3px solid #f2f2f2;
   box-sizing: border-box;
+
+  border-radius: 15px;
+  overflow: hidden;
 `;
 
 const ContentsWrapper = styled.div`

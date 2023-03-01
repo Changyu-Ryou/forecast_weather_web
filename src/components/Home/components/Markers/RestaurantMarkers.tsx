@@ -33,7 +33,7 @@ const DEFAULT_PIN = 'https://blog.kakaocdn.net/dn/uH2dr/btr0Gbn9PEJ/11fhgd9KleUL
 const SELECTED_PIN =
   'https://blog.kakaocdn.net/dn/bkSbb7/btr01TMjM93/BWE3z9mQBDJZY5Zou197Ek/img.png';
 
-const MapMarkerItem = ({ position, item, ...rest }: Props) => {
+const RestaurantMarkers = ({ position, item, ...rest }: Props) => {
   const map = useMap();
 
   const { setValue, watch } = useFormContext();
@@ -59,7 +59,7 @@ const MapMarkerItem = ({ position, item, ...rest }: Props) => {
       }}
       image={markerImage}
       zIndex={markerImage?.options.zIndex}
-    ></MapMarker>
+    />
   );
 };
 
@@ -80,4 +80,4 @@ const getMargerImage = (selectedItemValue: number, index: number) => {
   };
 };
 
-export default MapMarkerItem;
+export default RestaurantMarkers;
