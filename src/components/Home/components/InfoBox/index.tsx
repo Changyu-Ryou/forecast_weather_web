@@ -21,12 +21,12 @@ function InfoBox() {
 
 const Wrapper = styled.div`
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   width: calc(100% - 60px);
   max-width: 400px;
   height: auto;
   min-height: 100px;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   background-color: white;
   z-index: 999;
 
@@ -36,10 +36,15 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   padding: 0;
   border: 3px solid #f2f2f2;
+  border-bottom: none;
+
   box-sizing: border-box;
 
-  border-radius: 15px;
   overflow: hidden;
+
+  @media (max-width: 360px) {
+    width: 100%;
+  }
 `;
 
 const ContentsWrapper = styled.div`

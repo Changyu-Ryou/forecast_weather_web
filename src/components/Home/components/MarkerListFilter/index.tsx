@@ -2,30 +2,21 @@ import styled from '@emotion/styled';
 import React, { ReactElement, useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 
-const FilterList = [
+export const FilterList = [
+  {
+    name: '전체',
+    value: 'all',
+    id: 0,
+  },
   {
     name: '쯔양',
+    value: 'zzyang',
     id: 1,
   },
   {
     name: '성시경',
+    value: 'ssg',
     id: 2,
-  },
-  {
-    name: '쯔양',
-    id: 3,
-  },
-  {
-    name: '성시경',
-    id: 4,
-  },
-  {
-    name: '쯔양',
-    id: 5,
-  },
-  {
-    name: '성시경',
-    id: 6,
   },
 ];
 

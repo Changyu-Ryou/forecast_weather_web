@@ -1,24 +1,38 @@
-import React, { ReactElement } from 'react';
+import { ReactElement, useMemo } from 'react';
 import { MarkerClusterer } from 'react-kakao-maps-sdk';
 import RestaurantMarkers from './RestaurantMarkers';
-import data from '../../../../constants/data_geo.json';
+
+import ssgData from '../../../../constants/ssg_all_data.json';
+import zzyangData from '../../../../constants/zzyang_all_data.json';
+import { useFormContext } from 'react-hook-form';
 
 function RestaurantList(): ReactElement {
+  const { watch } = useFormContext();
+  const filterValue = watch('filter');
+
+  const restaurantList = useMemo(() => {
+    if (filterValue?.value === 'ssg') {
+      return ssgData;
+    }
+    if (filterValue?.value === 'zzyang') {
+      return zzyangData;
+    }
+
+    return [...ssgData, ...zzyangData];
+  }, [filterValue?.value]);
+
   return (
-    <MarkerClusterer
-      averageCenter={true} // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
-      minLevel={8} // 클러스터 할 최소 지도 레벨
-    >
-      {data.map((item) => {
+    <>
+      {restaurantList.map((item) => {
         return (
           <RestaurantMarkers
-            key={item.index}
+            key={item.type + ' ' + item.index}
             position={{ lat: parseFloat(item.y), lng: parseFloat(item.x) }}
             item={item}
           />
         );
       })}
-    </MarkerClusterer>
+    </>
   );
 }
 

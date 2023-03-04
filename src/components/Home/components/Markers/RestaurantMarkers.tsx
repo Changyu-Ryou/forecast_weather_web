@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { MapMarker, useMap } from 'react-kakao-maps-sdk';
 
 export type ItemType = {
+  type: string;
   index: number;
   youtubeUrl?: string;
   naverUrl?: string;
@@ -14,6 +14,13 @@ export type ItemType = {
   pictures: string[];
   x: string;
   y: string;
+  naver_map_url?: string | undefined;
+  kakao_detail_url?: string;
+  naver_score?: string;
+  visitor_review_count?: number | string;
+  blog_review_count?: number | string;
+  kakao_score?: string;
+  naver_review_count?: string;
 };
 
 type Props = {
@@ -33,13 +40,23 @@ const DEFAULT_PIN = 'https://blog.kakaocdn.net/dn/uH2dr/btr0Gbn9PEJ/11fhgd9KleUL
 const SELECTED_PIN =
   'https://blog.kakaocdn.net/dn/bkSbb7/btr01TMjM93/BWE3z9mQBDJZY5Zou197Ek/img.png';
 
+const ZZYANG_DEFAULT_PIN =
+  'https://blog.kakaocdn.net/dn/b6Iosn/btr1UTyWR4d/6y6u9r77uw9Z6peorshgWK/img.png';
+const ZZYANG_SELECTED_PIN =
+  'https://blog.kakaocdn.net/dn/cC96uI/btr1Xxvw9F2/Yjl2IGnrrw6ka203eKo5p1/img.png';
+
+const SSG_DEFAULT_PIN =
+  'https://blog.kakaocdn.net/dn/b4dq03/btr1USUl9qD/2kwb9Ibu3skzqhLTfowokk/img.png';
+const SSG_SELECTED_PIN =
+  'https://blog.kakaocdn.net/dn/DaX2J/btr1XQuUhZs/wuopTcUtjWDKTJWHYzvy41/img.png';
+
 const RestaurantMarkers = ({ position, item, ...rest }: Props) => {
   const map = useMap();
 
   const { setValue, watch } = useFormContext();
   const selectedItemValue = watch('selectedItem');
 
-  const markerImage = getMargerImage(selectedItemValue?.index ?? -1, item.index);
+  const markerImage = getMargerImage(item, selectedItemValue?.index ?? -1);
 
   return (
     <MapMarker
@@ -63,15 +80,23 @@ const RestaurantMarkers = ({ position, item, ...rest }: Props) => {
   );
 };
 
-const getMargerImage = (selectedItemValue: number, index: number) => {
-  const isSelected = selectedItemValue === index;
-  const markerImage = isSelected ? SELECTED_PIN : DEFAULT_PIN;
+const getMargerImage = (item: ItemType, selectedItemValue: number) => {
+  const isSelected = selectedItemValue === item.index;
+  const markerImage = () => {
+    if (item.type === 'zzyang') {
+      return isSelected ? ZZYANG_SELECTED_PIN : ZZYANG_DEFAULT_PIN;
+    }
+    if (item.type === 'ssg') {
+      return isSelected ? SSG_SELECTED_PIN : SSG_DEFAULT_PIN;
+    }
+    return isSelected ? SELECTED_PIN : DEFAULT_PIN;
+  };
 
   const size = isSelected ? { width: 55, height: 55 } : { width: 35, height: 35 };
   const offset = isSelected ? { x: 0, y: 55 } : { x: 0, y: 35 };
 
   return {
-    src: markerImage, // 마커이미지의 주소입니다
+    src: markerImage(), // 마커이미지의 주소입니다
     size: size, // 마커이미지의 크기입니다
     options: {
       offset, // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
