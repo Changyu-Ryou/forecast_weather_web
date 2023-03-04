@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { MapMarker, useMap } from 'react-kakao-maps-sdk';
 

@@ -7,7 +7,8 @@ import { useFormContext } from 'react-hook-form';
 
 function MyLocationController(): ReactElement {
   const map = useMap();
-  const { setValue } = useFormContext();
+  const { setValue, watch } = useFormContext();
+  const currentLocationValue: CureentPositionType = watch('currentLocation');
 
   const setCurrentLocationIconHandler = (position: CureentPositionType) => {
     if (!position) return;
@@ -17,7 +18,16 @@ function MyLocationController(): ReactElement {
     <Wrapper className="my-location">
       <Button
         onClick={async () => {
-          const result = await moveToMyLocation({ mapEl: map, setCurrentLocationIconHandler });
+          if (currentLocationValue) {
+            map.panTo(new kakao.maps.LatLng(currentLocationValue.lat, currentLocationValue.lng));
+            return;
+          }
+
+          const result = await moveToMyLocation({
+            mapEl: map,
+            setCurrentLocationIconHandler,
+            panToMyLocation: true,
+          });
           if (!result) {
             alert('위치정보를 찾을 수 없습니다.');
           }

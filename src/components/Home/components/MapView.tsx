@@ -2,7 +2,7 @@ import { ReactElement, useMemo, useRef, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { Map, useInjectKakaoMapApi } from 'react-kakao-maps-sdk';
 
-import useMapCenter, { CureentPositionType, GangnamPositon } from '../hooks/useMapCenter';
+import useInitMapCenter, { CureentPositionType, GangnamPositon } from '../hooks/useMapCenter';
 import InfoBox from './InfoBox';
 import MyLocationController from './mapController/MyLocationController';
 import ZoomController from './mapController/ZoomController';
@@ -18,14 +18,22 @@ function MapView(): ReactElement {
     libraries: ['services', 'clusterer'], // 사용하고자 하는 라이브러리
   });
   const mapRef = useRef<kakao.maps.Map>(null);
-  const { setValue } = useFormContext();
+  const { setValue, watch } = useFormContext();
+
+  const currentLocationValue = watch('currentLocation');
 
   const setCurrentLocationIconHandler = (position: CureentPositionType) => {
     if (!position) return;
     setValue('currentLocation', position);
   };
 
-  useMapCenter({ mapRef, loading, error: !!error, setCurrentLocationIconHandler });
+  useInitMapCenter({
+    mapRef,
+    loading,
+    error: !!error,
+    setCurrentLocationIconHandler,
+    currentPosition: currentLocationValue,
+  });
 
   const message = useMemo(() => {
     if (error) return '에러가 발생했어요. 재시작 해주세요.';

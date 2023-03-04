@@ -5,6 +5,7 @@ interface Props {
   loading: boolean;
   error: boolean;
   setCurrentLocationIconHandler?: (position: CureentPositionType) => void;
+  currentPosition: CureentPositionType;
 }
 export const GangnamPositon = {
   lat: 37.4978,
@@ -28,9 +29,6 @@ const getCurrentPostion = async (): Promise<CureentPositionType> =>
       },
       function () {
         reject(undefined);
-      },
-      {
-        enableHighAccuracy: false,
       }
     );
   });
@@ -38,14 +36,16 @@ const getCurrentPostion = async (): Promise<CureentPositionType> =>
 export const moveToMyLocation = async ({
   mapEl,
   setCurrentLocationIconHandler,
+  panToMyLocation = false,
 }: {
   mapEl: kakao.maps.Map;
   setCurrentLocationIconHandler?: (position: CureentPositionType) => void;
+  panToMyLocation?: boolean;
 }) => {
   try {
     const postion = await getCurrentPostion();
     if (!postion) return false;
-    mapEl?.panTo(new kakao.maps.LatLng(postion.lat, postion.lng));
+    panToMyLocation && mapEl?.panTo(new kakao.maps.LatLng(postion.lat, postion.lng));
     setCurrentLocationIconHandler?.(postion);
     return true;
   } catch (e) {
@@ -54,28 +54,46 @@ export const moveToMyLocation = async ({
   }
 };
 
-function useMapCenter({ mapRef, loading, error, setCurrentLocationIconHandler }: Props) {
+function useInitMapCenter({
+  mapRef,
+  loading,
+  error,
+  setCurrentLocationIconHandler,
+  currentPosition,
+}: Props) {
   const checkInfo = useCallback(async () => {
     if (!mapRef.current) return false;
-    const result = await moveToMyLocation({ mapEl: mapRef.current, setCurrentLocationIconHandler });
-    if (!result)
-      mapRef.current?.setCenter(new kakao.maps.LatLng(GangnamPositon.lat, GangnamPositon.lng));
+    mapRef.current?.setCenter(new kakao.maps.LatLng(GangnamPositon.lat, GangnamPositon.lng));
     return true;
   }, [mapRef]);
 
   useEffect(() => {
     if (loading || error) return;
+    checkInfo();
+    const moveToMyLocationTimer = setTimeout(() => {
+      console.log('my locait  ======>', currentPosition);
+      if (currentPosition) {
+        mapRef.current?.panTo(new kakao.maps.LatLng(currentPosition.lat, currentPosition.lng));
+      }
+    }, 1000);
 
-    let timer: NodeJS.Timer;
-    if (!mapRef.current) {
-      timer = setInterval(async () => {
-        const result = await checkInfo();
-        if (result) clearInterval(timer);
-      }, 500);
-    } else checkInfo();
-
-    return () => clearInterval(timer);
+    return () => clearTimeout(moveToMyLocationTimer);
   }, [checkInfo, error, loading, mapRef]);
+
+  const checkMyLocation = useCallback(async () => {
+    if (!mapRef.current) return false;
+    const watchId = navigator.geolocation.watchPosition(function (position) {
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      console.log('lat, lng =====>', lat, lng);
+      setCurrentLocationIconHandler?.({ lat, lng });
+    });
+    return () => navigator.geolocation.clearWatch(watchId);
+  }, [mapRef, setCurrentLocationIconHandler]);
+
+  useEffect(() => {
+    checkMyLocation();
+  }, [checkMyLocation]);
 }
 
-export default useMapCenter;
+export default useInitMapCenter;
