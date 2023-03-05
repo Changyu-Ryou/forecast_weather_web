@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { ReactElement, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { ItemType } from '../Markers/RestaurantMarkers';
 import NaverLogoIcon from '../../../../assets/Icon/naver_logo_icon.png';
@@ -44,11 +44,9 @@ export default AccessoryBar;
 
 const ButtonWrapper = styled.div`
   width: 100%;
-  height: 45px;
+  height: auto;
 
-  position: fixed;
-  bottom: 0;
-  padding: 10px;
+  padding: 10px 0 0;
   background-color: white;
 
   display: flex;
@@ -58,15 +56,12 @@ const ButtonWrapper = styled.div`
 
   gap: 5px;
 
-  //box shadow to top
-  box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.2);
-
   button {
     color: white;
     font-weight: 900;
-    font-size: 12px;
+    font-size: 14px;
 
-    padding: 7px 10px;
+    padding: 10px;
     flex: 1;
 
     border-radius: 5px;

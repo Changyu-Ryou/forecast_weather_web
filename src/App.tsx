@@ -4,6 +4,7 @@ import useGetNativeEventBridge from './hooks/useGetNativeEventBridge';
 import Home from './pages/Home';
 import './utils/firebase';
 import 'react-spring-bottom-sheet/dist/style.css';
+import './styles/bottomsheet.css';
 
 function App(): ReactElement {
   useGetNativeEventBridge();

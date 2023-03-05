@@ -7,6 +7,7 @@ import { ItemType } from '../Markers/RestaurantMarkers';
 import PinIcon from '../../../../assets/Icon/pin.png';
 import PhoneCallIcon from '../../../../assets/Icon/phone-call.png';
 import { motion } from 'framer-motion';
+import AccessoryBar from './AccessoryBar';
 
 function AdditionalInfoSection(): ReactElement {
   const { watch } = useFormContext();
@@ -21,7 +22,7 @@ function AdditionalInfoSection(): ReactElement {
       initial={{ opacity: 0, height: '0px' }}
       animate={show ? { opacity: 1, height: '100%' } : { opacity: 0, height: '0px' }}
       transition={{
-        duration: 0.5,
+        duration: 0.2,
       }}
     >
       <AdditionalInfoWrapper>
@@ -61,7 +62,8 @@ function AdditionalInfoSection(): ReactElement {
             </>
           )}
         </MenuWrapper>
-        <Spacing height={80} />
+        <Spacing height={10} />
+        <AccessoryBar />
       </AdditionalInfoWrapper>
     </motion.div>
   );

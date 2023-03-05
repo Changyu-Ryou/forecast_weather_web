@@ -76,15 +76,28 @@ const Wrapper = styled.div`
 
 const Item = styled.div<{ selected: boolean }>`
   flex-shrink: 0;
-  padding: 4px 7px;
-  border-radius: 20px;
+  padding: 7px 10px;
+  border-radius: 30px;
   background-color: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
 
-  font-weight: ${({ selected }) => (selected ? 'bold' : 'normal')};
-  border: ${({ selected }) => (selected ? '3px solid #3b70ff' : 'none')};
-  color: ${({ selected }) => (selected ? '#3b70ff' : '#000')};
+  ${({ selected }) => {
+    if (selected) {
+      return `
+        background-color: #3b70ff;
+        color: white;
+        font-weight: bold;
+      `;
+    }
+    return `
+      border: none;
+      color: #000;
+      font-weight: normal;
+      
+    `;
+  }};
+
   font-size: 14px;
   box-sizing: border-box;
 `;

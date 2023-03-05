@@ -1,13 +1,11 @@
 import styled from '@emotion/styled';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { BottomSheet, BottomSheetRef } from 'react-spring-bottom-sheet';
 import { Spacing } from '../../../common/Spacing';
 import useInfoBoxExpander from '../../hooks/useInfoBoxExpander';
 import YoutubeWrapper from './YoutubeWrapper';
-import NaverMapIcon from '../../../../assets/Icon/naver_map_icon.png';
-import KakaoMapIcon from '../../../../assets/Icon/kakao_map_icon.png';
 
 import { ItemType } from '../Markers/RestaurantMarkers';
 import DefaultPlaceInfoSection from './DefaultPlaceInfoSection';
@@ -61,7 +59,7 @@ function InfoBox() {
           } else {
             setValue('infoBoxHeight', undefined);
           }
-        }, 500);
+        }, 400);
 
         return () => clearTimeout(timer);
       }}
@@ -83,15 +81,9 @@ function InfoBox() {
           }
         }
       }}
-      // onSpringStart={(event) => {
-      //   if (event.type === 'SNAP' && event.source === 'dragging') {
-      //     setValue('infoBoxHeight', undefined);
-      //   }
-      // }}
     >
       {selectedItemValue ? (
         <Wrapper onTouchMove={(e) => e.stopPropagation()}>
-          <Spacing height={10} />
           <YoutubeWrapper
             index={selectedItemValue?.index}
             youtubeUrl={selectedItemValue?.youtubeUrl}
@@ -104,9 +96,8 @@ function InfoBox() {
 
             {/* infoBox 확장시에 나오는 추가정보들 */}
             <AdditionalInfoSection />
+            {/* infoBox 확장시에 나오는 지도 이동 버튼 */}
           </ContentsWrapper>
-          {/* infoBox 확장시에 나오는 지도 이동 버튼 */}
-          <AccessoryBar />
         </Wrapper>
       ) : (
         <Skelton />

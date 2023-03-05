@@ -1,0 +1,8 @@
+[data-rsbs-header] {
+  padding-top: calc(22px + env(safe-area-inset-top)) !important;
+}
+
+[data-rsbs-header]:before {
+  width: 45px !important;
+  height: 8px !important;
+}

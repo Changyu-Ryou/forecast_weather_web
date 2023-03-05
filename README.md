@@ -14,3 +14,6 @@
 
   - setting > environment variables 에서
     - prod/prev 둘 다 NODE_VERSION 16 추가 필요
+
+- ui ref
+  - https://dribbble.com/shots/6085446-Kulinarium-app-map
