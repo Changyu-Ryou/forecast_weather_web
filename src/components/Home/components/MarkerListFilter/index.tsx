@@ -65,7 +65,7 @@ const Wrapper = styled.div`
   height: auto;
   overflow-x: auto;
 
-  z-index: 9999;
+  z-index: 1;
 
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

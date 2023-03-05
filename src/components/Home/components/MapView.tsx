@@ -43,10 +43,11 @@ function MapView(): ReactElement {
   return !loading ? (
     <Map
       center={position}
-      style={{ width: '100%', height: '100%' }}
+      style={{ width: '100%', height: '100%', zIndex: 1 }}
       level={5}
       ref={mapRef}
       onClick={() => {
+        setValue('infoBoxHeight', undefined);
         setValue('selectedItem', undefined);
       }}
       onDragEnd={(map) => {

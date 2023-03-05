@@ -8,8 +8,7 @@
     "address": "서울 서대문구 통일로 155-1",
     "naver_map_url": "https://m.place.naver.com/share?id=11877646&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.4",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-364-2141",
     "menus": ["살치스페셜", "한우스페셜 150g", "육사시미200g", "육회200g"],
     "pictures": [
@@ -23,7 +22,10 @@
     "kakao_review_count": "11",
     "kakao_detail_url": "https://place.map.kakao.com/12638457",
     "x": "126.9641455",
-    "y": "37.5679360"
+    "y": "37.5679360",
+    "naver_review_score": "4.4",
+    "naver_visitor_review_count": "234",
+    "naver_blog_review_count": "84"
   },
   {
     "type": "ssg",
@@ -33,8 +35,7 @@
     "category": "돼지고기구이",
     "address": "서울 용산구 한강대로80길 17",
     "naver_map_url": "https://m.place.naver.com/share?id=19774046&tabsPath=%2Fhome&appMode=detail",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-793-3598",
     "menus": [
       "육즙가득 삼겹살",
@@ -49,7 +50,9 @@
     "kakao_review_count": "885",
     "kakao_detail_url": "https://place.map.kakao.com/1228257268",
     "x": "126.9737787",
-    "y": "37.5427549"
+    "y": "37.5427549",
+    "naver_visitor_review_count": "1,741",
+    "naver_blog_review_count": "2,249"
   },
   {
     "type": "ssg",
@@ -60,8 +63,7 @@
     "address": "서울 송파구 삼학사로 71",
     "naver_map_url": "https://m.place.naver.com/share?id=13128033&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.28",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-413-3670",
     "menus": ["해장국", "감자탕(소)", "감자탕(중)", "감자탕(대)"],
     "pictures": [
@@ -73,7 +75,10 @@
     "kakao_review_count": "191",
     "kakao_detail_url": "https://place.map.kakao.com/9427365",
     "x": "127.0968108",
-    "y": "37.5036907"
+    "y": "37.5036907",
+    "naver_review_score": "4.28",
+    "naver_visitor_review_count": "2,150",
+    "naver_blog_review_count": "904"
   },
   {
     "type": "ssg",
@@ -84,8 +89,7 @@
     "address": "서울 용산구 대사관로5길 17 1층",
     "naver_map_url": "https://m.place.naver.com/share?id=1989802801&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.38",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1326-0908",
     "menus": [
       "매운짜장떡볶이 L",
@@ -101,7 +105,10 @@
     "kakao_review_count": "109",
     "kakao_detail_url": "https://place.map.kakao.com/21329787",
     "x": "127.0005745",
-    "y": "37.5349669"
+    "y": "37.5349669",
+    "naver_review_score": "4.38",
+    "naver_visitor_review_count": "397",
+    "naver_blog_review_count": "332"
   },
   {
     "type": "ssg",
@@ -112,8 +119,7 @@
     "address": "서울 은평구 서오릉로 8",
     "naver_map_url": "https://m.place.naver.com/share?id=11679271&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.29",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-356-4555",
     "menus": ["서부감자국(小)", "뼈 추가", "우거지 사리", "볶음밥"],
     "pictures": [
@@ -124,7 +130,10 @@
     "kakao_review_count": "129",
     "kakao_detail_url": "https://place.map.kakao.com/7945775",
     "x": "126.9269527",
-    "y": "37.6022640"
+    "y": "37.6022640",
+    "naver_review_score": "4.29",
+    "naver_visitor_review_count": "1,070",
+    "naver_blog_review_count": "406"
   },
   {
     "type": "ssg",
@@ -134,8 +143,7 @@
     "category": "전통,민속주점",
     "address": "서울 강북구 월계로7나길 30-3",
     "naver_score": "4.57",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1330-1680",
     "menus": [
       "그대로 슬라이스 감자전",
@@ -165,8 +173,7 @@
     "address": "서울 강남구 언주로148길 8",
     "naver_map_url": "https://m.place.naver.com/share?id=1613373762&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.35",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-3448-9991",
     "menus": ["강화갯벌장어", "민물장어", "야채모듬", "독도새우 300g"],
     "pictures": [
@@ -179,7 +186,10 @@
     "kakao_review_count": "164",
     "kakao_detail_url": "https://place.map.kakao.com/1257441291",
     "x": "127.0353321",
-    "y": "37.5203144"
+    "y": "37.5203144",
+    "naver_review_score": "4.35",
+    "naver_visitor_review_count": "302",
+    "naver_blog_review_count": "471"
   },
   {
     "type": "ssg",
@@ -190,8 +200,7 @@
     "address": "서울 강남구 역삼로5길 6",
     "naver_map_url": "https://m.place.naver.com/share?id=1465658248&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.47",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-564-4559",
     "menus": ["생물생태", "동태탕", "제육볶음", "아구수육"],
     "pictures": [
@@ -201,7 +210,10 @@
     "kakao_review_count": "20",
     "kakao_detail_url": "https://place.map.kakao.com/1276802054",
     "x": "127.0324763",
-    "y": "37.4943144"
+    "y": "37.4943144",
+    "naver_review_score": "4.47",
+    "naver_visitor_review_count": "296",
+    "naver_blog_review_count": "55"
   },
   {
     "type": "ssg",
@@ -212,8 +224,7 @@
     "address": "서울 강남구 도산대로85길 14 1층",
     "naver_map_url": "https://m.place.naver.com/share?id=1302783006&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "5",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1496-1308",
     "menus": ["하이볼"],
     "pictures": [
@@ -227,7 +238,10 @@
     "kakao_review_count": "20",
     "kakao_detail_url": "https://place.map.kakao.com/1968658790",
     "x": "127.0492152",
-    "y": "37.5254274"
+    "y": "37.5254274",
+    "naver_review_score": "5",
+    "naver_visitor_review_count": "67",
+    "naver_blog_review_count": "53"
   },
   {
     "type": "ssg",
@@ -238,8 +252,7 @@
     "address": "서울 강남구 학동로 305-3",
     "naver_map_url": "https://m.place.naver.com/share?id=37912785&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.31",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-515-3469",
     "menus": [
       "어복쟁반 소",
@@ -256,7 +269,10 @@
     "kakao_review_count": "889",
     "kakao_detail_url": "https://place.map.kakao.com/27584230",
     "x": "127.0360410",
-    "y": "37.5161510"
+    "y": "37.5161510",
+    "naver_review_score": "4.31",
+    "naver_visitor_review_count": "2,781",
+    "naver_blog_review_count": "2,824"
   },
   {
     "type": "ssg",
@@ -267,8 +283,7 @@
     "address": "서울 강남구 도산대로 130 하림타워 지하 1층",
     "naver_map_url": "https://m.place.naver.com/share?id=1908328156&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.48",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1422-8524",
     "menus": ["한우 탕수육", "사천닭날개튀김", "유린기 L", "전가복 L"],
     "pictures": [
@@ -282,7 +297,10 @@
     "kakao_review_count": "11",
     "kakao_detail_url": "https://place.map.kakao.com/1178003813",
     "x": "127.0229741",
-    "y": "37.5171895"
+    "y": "37.5171895",
+    "naver_review_score": "4.48",
+    "naver_visitor_review_count": "377",
+    "naver_blog_review_count": "164"
   },
   {
     "type": "ssg",
@@ -292,8 +310,7 @@
     "category": "찜닭",
     "address": "서울 중구 다산로10길 6 1층 골목길",
     "naver_score": "4.36",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1306-2969",
     "menus": [
       "이북식찜닭",
@@ -323,8 +340,7 @@
     "address": "서울 강서구 강서로 395 1층 109~110호",
     "naver_map_url": "https://m.place.naver.com/share?id=1597203693&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.53",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2668-7776",
     "menus": ["한우모듬구이", "한우소곱창", "곱해장국", "한우막창구이"],
     "pictures": [
@@ -338,7 +354,10 @@
     "kakao_review_count": "115",
     "kakao_detail_url": "https://place.map.kakao.com/198593457",
     "x": "126.8386106",
-    "y": "37.5610585"
+    "y": "37.5610585",
+    "naver_review_score": "4.53",
+    "naver_visitor_review_count": "548",
+    "naver_blog_review_count": "384"
   },
   {
     "type": "ssg",
@@ -349,8 +368,7 @@
     "address": "서울 서대문구 연희로 36",
     "naver_map_url": "https://m.place.naver.com/share?id=36667682&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.41",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-363-5887",
     "menus": ["찐만두", "군만두", "생선물만두", "탕수육"],
     "pictures": [
@@ -361,7 +379,10 @@
     "kakao_review_count": "63",
     "kakao_detail_url": "https://place.map.kakao.com/21556724",
     "x": "126.9275020",
-    "y": "37.5618327"
+    "y": "37.5618327",
+    "naver_review_score": "4.41",
+    "naver_visitor_review_count": "408",
+    "naver_blog_review_count": "489"
   },
   {
     "type": "ssg",
@@ -372,8 +393,7 @@
     "address": "서울 강남구 테헤란로5길 11",
     "naver_map_url": "https://m.place.naver.com/share?id=993043508&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.34",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-557-2662",
     "menus": ["양선지해장국", "곱창전골", "양지내장탕", "사골곰탕"],
     "pictures": [
@@ -384,7 +404,10 @@
     "kakao_review_count": "263",
     "kakao_detail_url": "https://place.map.kakao.com/1428481536",
     "x": "127.0292786",
-    "y": "37.4995047"
+    "y": "37.4995047",
+    "naver_review_score": "4.34",
+    "naver_visitor_review_count": "1,703",
+    "naver_blog_review_count": "765"
   },
   {
     "type": "ssg",
@@ -395,8 +418,7 @@
     "address": "서울 용산구 이태원로55가길 28",
     "naver_map_url": "https://m.place.naver.com/share?id=35142937&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.42",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-794-9474",
     "menus": [
       "부자 클라시카 피자",
@@ -415,7 +437,10 @@
     "kakao_review_count": "263",
     "kakao_detail_url": "https://place.map.kakao.com/21212902",
     "x": "126.9998151",
-    "y": "37.5372634"
+    "y": "37.5372634",
+    "naver_review_score": "4.42",
+    "naver_visitor_review_count": "1,502",
+    "naver_blog_review_count": "1,479"
   },
   {
     "type": "ssg",
@@ -426,8 +451,7 @@
     "address": "서울 마포구 동교로 251 2층",
     "naver_map_url": "https://m.place.naver.com/share?id=1882480351&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.3",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-6085-5888",
     "menus": [
       "양고기 전골",
@@ -446,7 +470,10 @@
     "kakao_review_count": "61",
     "kakao_detail_url": "https://place.map.kakao.com/1012940590",
     "x": "126.9242063",
-    "y": "37.5624052"
+    "y": "37.5624052",
+    "naver_review_score": "4.3",
+    "naver_visitor_review_count": "233",
+    "naver_blog_review_count": "113"
   },
   {
     "type": "ssg",
@@ -457,8 +484,7 @@
     "address": "서울 중구 을지로 99",
     "naver_map_url": "https://m.place.naver.com/share?id=18007297&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.41",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2273-5989",
     "menus": [
       "참게메기매운탕 (점심/1인분)",
@@ -473,7 +499,10 @@
     "kakao_review_count": "60",
     "kakao_detail_url": "https://place.map.kakao.com/18241603",
     "x": "126.9889664",
-    "y": "37.5664523"
+    "y": "37.5664523",
+    "naver_review_score": "4.41",
+    "naver_visitor_review_count": "785",
+    "naver_blog_review_count": "225"
   },
   {
     "type": "ssg",
@@ -484,8 +513,7 @@
     "address": "서울 강남구 봉은사로108길 21",
     "naver_map_url": "https://m.place.naver.com/share?id=33877438&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.33",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-569-8726",
     "menus": ["설렁탕", "특 설렁탕", "내장탕", "족수육 소"],
     "pictures": [
@@ -496,7 +524,10 @@
     "kakao_review_count": "102",
     "kakao_detail_url": "https://place.map.kakao.com/16649489",
     "x": "127.0644831",
-    "y": "37.5136134"
+    "y": "37.5136134",
+    "naver_review_score": "4.33",
+    "naver_visitor_review_count": "1,211",
+    "naver_blog_review_count": "272"
   },
   {
     "type": "ssg",
@@ -507,8 +538,7 @@
     "address": "서울 강남구 도산대로89길 9",
     "naver_map_url": "https://m.place.naver.com/share?id=13574818&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.38",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-546-3727",
     "menus": ["족발(소)", "족발(중)", "족발(대)", "쟁반국수(대)"],
     "pictures": [
@@ -518,7 +548,10 @@
     "kakao_review_count": "22",
     "kakao_detail_url": "https://place.map.kakao.com/10466580",
     "x": "127.0505384",
-    "y": "37.5253105"
+    "y": "37.5253105",
+    "naver_review_score": "4.38",
+    "naver_visitor_review_count": "119",
+    "naver_blog_review_count": "85"
   },
   {
     "type": "ssg",
@@ -528,8 +561,7 @@
     "category": "떡볶이",
     "address": "서울 서초구 신반포로 27-6 (한신상가 지하 2층)",
     "naver_score": "4.53",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1367-0547",
     "menus": ["즉석떡볶이", "튀김순대", "양념만두(4개)", "김말이 4개"],
     "pictures": [
@@ -554,8 +586,7 @@
     "address": "서울 관악구 봉천로 248",
     "naver_map_url": "https://m.place.naver.com/share?id=18169872&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.28",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-886-4463",
     "menus": ["한우생등심", "한우꽃등심", "한우갈비살", "한우생고기"],
     "pictures": [
@@ -566,7 +597,10 @@
     "kakao_review_count": "40",
     "kakao_detail_url": "https://place.map.kakao.com/16044661",
     "x": "126.9288658",
-    "y": "37.4886597"
+    "y": "37.4886597",
+    "naver_review_score": "4.28",
+    "naver_visitor_review_count": "189",
+    "naver_blog_review_count": "93"
   },
   {
     "type": "ssg",
@@ -577,8 +611,7 @@
     "address": "부산 수영구 남천바다로33번길 7",
     "naver_map_url": "https://m.place.naver.com/share?id=16705373&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.33",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "051-753-1632",
     "menus": ["언양불고기", "등심구이", "꽃등심구이", "등심슬라이스"],
     "pictures": [
@@ -588,7 +621,10 @@
     "kakao_review_count": "57",
     "kakao_detail_url": "https://place.map.kakao.com/8093058",
     "x": "129.1141049",
-    "y": "35.1488844"
+    "y": "35.1488844",
+    "naver_review_score": "4.33",
+    "naver_visitor_review_count": "471",
+    "naver_blog_review_count": "250"
   },
   {
     "type": "ssg",
@@ -599,8 +635,7 @@
     "address": "대구 중구 경상감영길 101 중앙상가",
     "naver_map_url": "https://m.place.naver.com/share?id=13030442&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.3",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "053-252-1294",
     "menus": [
       "순대국밥, 내장국밥, 돼지국밥 각",
@@ -619,7 +654,10 @@
     "kakao_review_count": "217",
     "kakao_detail_url": "https://place.map.kakao.com/10137426",
     "x": "128.5930871",
-    "y": "35.8723628"
+    "y": "35.8723628",
+    "naver_review_score": "4.3",
+    "naver_visitor_review_count": "701",
+    "naver_blog_review_count": "471"
   },
   {
     "type": "ssg",
@@ -629,15 +667,16 @@
     "category": "중식당",
     "address": "서울 중구 남대문로 52-13",
     "naver_map_url": "https://m.place.naver.com/share?id=1665179984&tabsPath=%2Fhome&appMode=detail",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "menus": ["짜장면", "삼선짜장", "짬뽕", "삼선짬뽕"],
     "pictures": [],
     "kakao_score": "2.9",
     "kakao_review_count": "120",
     "kakao_detail_url": "https://place.map.kakao.com/7912905",
     "x": "126.9822588",
-    "y": "37.5621386"
+    "y": "37.5621386",
+    "naver_visitor_review_count": "77",
+    "naver_blog_review_count": "48"
   },
   {
     "type": "ssg",
@@ -648,8 +687,7 @@
     "address": "대구 북구 복현로 78",
     "naver_map_url": "https://m.place.naver.com/share?id=32481052&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.58",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "053-939-9090",
     "menus": ["생고기(중~대)", "탕탕 육회(중~대)", "육회(소~대)", "육전"],
     "pictures": [
@@ -661,7 +699,10 @@
     "kakao_review_count": "29",
     "kakao_detail_url": "https://place.map.kakao.com/16545260",
     "x": "128.6232653",
-    "y": "35.8986913"
+    "y": "35.8986913",
+    "naver_review_score": "4.58",
+    "naver_visitor_review_count": "147",
+    "naver_blog_review_count": "149"
   },
   {
     "type": "ssg",
@@ -672,8 +713,7 @@
     "address": "전남 여수시 교동남1길 5-8",
     "naver_map_url": "https://m.place.naver.com/share?id=11889051&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.11",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "061-662-5260",
     "menus": ["아귀찜", "아귀찜(1인)", "아귀탕 1인", "아귀대창 1인"],
     "pictures": [
@@ -683,7 +723,10 @@
     "kakao_review_count": "160",
     "kakao_detail_url": "https://place.map.kakao.com/9025490",
     "x": "127.7340754",
-    "y": "34.7395732"
+    "y": "34.7395732",
+    "naver_review_score": "4.11",
+    "naver_visitor_review_count": "1,251",
+    "naver_blog_review_count": "562"
   },
   {
     "type": "ssg",
@@ -694,8 +737,7 @@
     "address": "전남 여수시 화양면 화양로 1391 나진국밥",
     "naver_map_url": "https://m.place.naver.com/share?id=19568733&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.23",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "061-683-4425",
     "menus": ["소주맥주", "수육 소", "수육 대", "국밥"],
     "pictures": [
@@ -709,7 +751,10 @@
     "kakao_review_count": "358",
     "kakao_detail_url": "https://place.map.kakao.com/12895639",
     "x": "127.6132247",
-    "y": "34.7069338"
+    "y": "34.7069338",
+    "naver_review_score": "4.23",
+    "naver_visitor_review_count": "1,383",
+    "naver_blog_review_count": "954"
   },
   {
     "type": "ssg",
@@ -720,8 +765,7 @@
     "address": "대전 동구 중앙로203번길 78",
     "naver_map_url": "https://m.place.naver.com/share?id=11710925&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.23",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "042-256-2407",
     "menus": ["짜장면", "짬뽕", "기스면", "우동"],
     "pictures": [
@@ -735,7 +779,10 @@
     "kakao_review_count": "294",
     "kakao_detail_url": "https://place.map.kakao.com/10033021",
     "x": "127.4293614",
-    "y": "36.3338483"
+    "y": "36.3338483",
+    "naver_review_score": "4.23",
+    "naver_visitor_review_count": "1,525",
+    "naver_blog_review_count": "773"
   },
   {
     "type": "ssg",
@@ -746,8 +793,7 @@
     "address": "서울 마포구 대흥로 38",
     "naver_map_url": "https://m.place.naver.com/share?id=18770890&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.45",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1316-7897",
     "menus": ["신촌우동", "오뎅우동", "유부우동", "김치얼큰우동"],
     "pictures": [
@@ -758,7 +804,10 @@
     "kakao_review_count": "46",
     "kakao_detail_url": "https://place.map.kakao.com/15779972",
     "x": "126.9387266",
-    "y": "37.5441228"
+    "y": "37.5441228",
+    "naver_review_score": "4.45",
+    "naver_visitor_review_count": "873",
+    "naver_blog_review_count": "192"
   },
   {
     "type": "ssg",
@@ -769,8 +818,7 @@
     "address": "서울 중구 다산로 159",
     "naver_map_url": "https://m.place.naver.com/share?id=1764618287&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.1",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2233-7130",
     "menus": ["연포탕/탕탕이", "낙지초무침/낙지볶음", "산낙지", "낙지전"],
     "pictures": [
@@ -781,7 +829,10 @@
     "kakao_review_count": "27",
     "kakao_detail_url": "https://place.map.kakao.com/16791648",
     "x": "127.0121872",
-    "y": "37.5579904"
+    "y": "37.5579904",
+    "naver_review_score": "4.1",
+    "naver_visitor_review_count": "100",
+    "naver_blog_review_count": "55"
   },
   {
     "type": "ssg",
@@ -792,8 +843,7 @@
     "address": "서울 강남구 도산대로55길 18 4층",
     "naver_map_url": "https://m.place.naver.com/share?id=1938359158&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.47",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-547-8807",
     "menus": ["런치", "디너"],
     "pictures": [
@@ -805,7 +855,10 @@
     "kakao_review_count": "147",
     "kakao_detail_url": "https://place.map.kakao.com/643434656",
     "x": "127.0405771",
-    "y": "37.5246312"
+    "y": "37.5246312",
+    "naver_review_score": "4.47",
+    "naver_visitor_review_count": "280",
+    "naver_blog_review_count": "440"
   },
   {
     "type": "ssg",
@@ -814,8 +867,7 @@
     "title": "을지칼국수",
     "category": "칼국수,만두",
     "address": "서울 중구 충무로 54-3",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2278-5003",
     "menus": ["손 칼국수", "손만두칼국수", "생고기삼겹살(150g)", "왕만두 포장"],
     "pictures": [
@@ -840,8 +892,7 @@
     "address": "서울 중구 동호로14길 2",
     "naver_map_url": "https://m.place.naver.com/share?id=11680069&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.29",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2235-1357",
     "menus": ["물막국수", "만두국", "찜닭", "접시만두"],
     "pictures": [
@@ -855,7 +906,10 @@
     "kakao_review_count": "256",
     "kakao_detail_url": "https://place.map.kakao.com/21722308",
     "x": "127.0103317",
-    "y": "37.5558024"
+    "y": "37.5558024",
+    "naver_review_score": "4.29",
+    "naver_visitor_review_count": "1,275",
+    "naver_blog_review_count": "757"
   },
   {
     "type": "ssg",
@@ -866,8 +920,7 @@
     "address": "서울 광진구 동일로60길 53",
     "naver_map_url": "https://m.place.naver.com/share?id=11687205&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.4",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1433-5222",
     "menus": [
       "오리탕 (한마리)",
@@ -886,7 +939,10 @@
     "kakao_review_count": "274",
     "kakao_detail_url": "https://place.map.kakao.com/8476706",
     "x": "127.0763026",
-    "y": "37.5576741"
+    "y": "37.5576741",
+    "naver_review_score": "4.4",
+    "naver_visitor_review_count": "1,084",
+    "naver_blog_review_count": "754"
   },
   {
     "type": "ssg",
@@ -897,8 +953,7 @@
     "address": "서울 동대문구 전농로 48",
     "naver_map_url": "https://m.place.naver.com/share?id=13123822&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.55",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-489-5055",
     "menus": ["쪽갈비 1인분 200g"],
     "pictures": [
@@ -912,7 +967,10 @@
     "kakao_review_count": "19",
     "kakao_detail_url": "https://place.map.kakao.com/15597468",
     "x": "127.0573367",
-    "y": "37.5690793"
+    "y": "37.5690793",
+    "naver_review_score": "4.55",
+    "naver_visitor_review_count": "192",
+    "naver_blog_review_count": "126"
   },
   {
     "type": "ssg",
@@ -923,8 +981,7 @@
     "address": "서울 서초구 서래로10길 9",
     "naver_map_url": "https://m.place.naver.com/share?id=18371926&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.59",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-535-2544",
     "menus": ["감자국", "돌솥비빔밥", "김치찌개", "순두부찌개"],
     "pictures": [
@@ -934,7 +991,10 @@
     "kakao_review_count": "74",
     "kakao_detail_url": "https://place.map.kakao.com/16470308",
     "x": "126.9988948",
-    "y": "37.4995446"
+    "y": "37.4995446",
+    "naver_review_score": "4.59",
+    "naver_visitor_review_count": "550",
+    "naver_blog_review_count": "182"
   },
   {
     "type": "ssg",
@@ -944,8 +1004,7 @@
     "category": "일식튀김,꼬치",
     "address": "서울 성동구 성덕정17길 11 1층",
     "naver_map_url": "https://m.place.naver.com/share?id=1933103682&tabsPath=%2Fhome&appMode=detail",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1366-6720",
     "menus": ["토종-닭 야키토리", "다리살 대파", "다리살", "가슴살무침"],
     "pictures": [
@@ -954,7 +1013,9 @@
     "kakao_review_count": "83",
     "kakao_detail_url": "https://place.map.kakao.com/1990658906",
     "x": "127.0551567",
-    "y": "37.5382728"
+    "y": "37.5382728",
+    "naver_visitor_review_count": "104",
+    "naver_blog_review_count": "148"
   },
   {
     "type": "ssg",
@@ -965,8 +1026,7 @@
     "address": "서울 용산구 우사단로 2",
     "naver_map_url": "https://m.place.naver.com/share?id=308433581&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.48",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-798-6518",
     "menus": ["양등심", "양갈비", "양꼬치", "넘버원 탕수육"],
     "pictures": [
@@ -979,7 +1039,10 @@
     "kakao_review_count": "23",
     "kakao_detail_url": "https://place.map.kakao.com/12411257",
     "x": "126.9969624",
-    "y": "37.5304688"
+    "y": "37.5304688",
+    "naver_review_score": "4.48",
+    "naver_visitor_review_count": "148",
+    "naver_blog_review_count": "70"
   },
   {
     "type": "ssg",
@@ -990,8 +1053,7 @@
     "address": "서울 중구 을지로20길 36",
     "naver_map_url": "https://m.place.naver.com/share?id=1997438817&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.31",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2278-9436",
     "menus": ["김치찌개", "된장찌개", "청국장", "동태찌개"],
     "pictures": [],
@@ -999,7 +1061,10 @@
     "kakao_review_count": "91",
     "kakao_detail_url": "https://place.map.kakao.com/27072057",
     "x": "126.9953883",
-    "y": "37.5648374"
+    "y": "37.5648374",
+    "naver_review_score": "4.31",
+    "naver_visitor_review_count": "526",
+    "naver_blog_review_count": "246"
   },
   {
     "type": "ssg",
@@ -1010,8 +1075,7 @@
     "address": "서울 광진구 자양번영로 20 1층",
     "naver_map_url": "https://m.place.naver.com/share?id=1906115036&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.67",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-447-2155",
     "menus": [
       "우육면",
@@ -1030,7 +1094,10 @@
     "kakao_review_count": "112",
     "kakao_detail_url": "https://place.map.kakao.com/1266002088",
     "x": "127.0753718",
-    "y": "37.5314025"
+    "y": "37.5314025",
+    "naver_review_score": "4.67",
+    "naver_visitor_review_count": "415",
+    "naver_blog_review_count": "269"
   },
   {
     "type": "ssg",
@@ -1041,8 +1108,7 @@
     "address": "서울 강남구 강남대로124길 20 남경빌딩",
     "naver_map_url": "https://m.place.naver.com/share?id=19882368&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.39",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-515-8708",
     "menus": ["순대국", "한우 소머리국밥", "돼지머리국밥", "내장국밥"],
     "pictures": [
@@ -1053,7 +1119,10 @@
     "kakao_review_count": "71",
     "kakao_detail_url": "https://place.map.kakao.com/11831548",
     "x": "127.0242365",
-    "y": "37.5090540"
+    "y": "37.5090540",
+    "naver_review_score": "4.39",
+    "naver_visitor_review_count": "607",
+    "naver_blog_review_count": "227"
   },
   {
     "type": "ssg",
@@ -1064,8 +1133,7 @@
     "address": "서울 서초구 강남대로 545-12 106호",
     "naver_map_url": "https://m.place.naver.com/share?id=1132970795&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.34",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-548-5529",
     "menus": ["제육", "제육 반접시", "물막국수", "비빔막국수"],
     "pictures": [
@@ -1076,7 +1144,10 @@
     "kakao_review_count": "94",
     "kakao_detail_url": "https://place.map.kakao.com/862508200",
     "x": "127.0207291",
-    "y": "37.5104410"
+    "y": "37.5104410",
+    "naver_review_score": "4.34",
+    "naver_visitor_review_count": "415",
+    "naver_blog_review_count": "260"
   },
   {
     "type": "ssg",
@@ -1087,8 +1158,7 @@
     "address": "서울 서초구 서래로 29 A동 서이축산",
     "naver_map_url": "https://m.place.naver.com/share?id=1678156488&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.33",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-535-1145",
     "menus": [],
     "pictures": [
@@ -1102,7 +1172,10 @@
     "kakao_review_count": "11",
     "kakao_detail_url": "https://place.map.kakao.com/1238960275",
     "x": "126.9981445",
-    "y": "37.4975965"
+    "y": "37.4975965",
+    "naver_review_score": "4.33",
+    "naver_visitor_review_count": "129",
+    "naver_blog_review_count": "31"
   },
   {
     "type": "ssg",
@@ -1113,8 +1186,7 @@
     "address": "서울 중구 동호로5길 2",
     "naver_map_url": "https://m.place.naver.com/share?id=13499059&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.58",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2234-8538",
     "menus": ["전복죽", "전복회", "전복구이", "전복버터구이"],
     "pictures": [
@@ -1124,7 +1196,10 @@
     "kakao_review_count": "9",
     "kakao_detail_url": "https://place.map.kakao.com/10616945",
     "x": "127.0119907",
-    "y": "37.5526918"
+    "y": "37.5526918",
+    "naver_review_score": "4.58",
+    "naver_visitor_review_count": "113",
+    "naver_blog_review_count": "24"
   },
   {
     "type": "ssg",
@@ -1135,8 +1210,7 @@
     "address": "서울 서초구 강남대로101안길 24",
     "naver_map_url": "https://m.place.naver.com/share?id=11678754&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.26",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-543-4716",
     "menus": ["설렁탕", "수육"],
     "pictures": [
@@ -1150,7 +1224,10 @@
     "kakao_review_count": "302",
     "kakao_detail_url": "https://place.map.kakao.com/8008344",
     "x": "127.0173880",
-    "y": "37.5161592"
+    "y": "37.5161592",
+    "naver_review_score": "4.26",
+    "naver_visitor_review_count": "3,068",
+    "naver_blog_review_count": "995"
   },
   {
     "type": "ssg",
@@ -1161,8 +1238,7 @@
     "address": "서울 중구 서애로 26",
     "naver_map_url": "https://m.place.naver.com/share?id=11678838&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.25",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2266-2611",
     "menus": ["냉면", "비빔", "온면", "사리"],
     "pictures": [
@@ -1175,7 +1251,10 @@
     "kakao_review_count": "556",
     "kakao_detail_url": "https://place.map.kakao.com/11231325",
     "x": "126.9970044",
-    "y": "37.5603932"
+    "y": "37.5603932",
+    "naver_review_score": "4.25",
+    "naver_visitor_review_count": "2,990",
+    "naver_blog_review_count": "2,661"
   },
   {
     "type": "ssg",
@@ -1186,8 +1265,7 @@
     "address": "서울 종로구 종로 19 르메이에르종로타운1",
     "naver_map_url": "https://m.place.naver.com/share?id=11679997&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.29",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-735-0670",
     "menus": ["낙지볶음", "베이컨쏘세지구이", "조개탕", "계란말이"],
     "pictures": [
@@ -1200,7 +1278,10 @@
     "kakao_review_count": "180",
     "kakao_detail_url": "https://place.map.kakao.com/7937472",
     "x": "126.9798606",
-    "y": "37.5708345"
+    "y": "37.5708345",
+    "naver_review_score": "4.29",
+    "naver_visitor_review_count": "2,670",
+    "naver_blog_review_count": "1,215"
   },
   {
     "type": "ssg",
@@ -1211,8 +1292,7 @@
     "address": "경기 파주시 문산읍 반구정로85번길 13",
     "naver_map_url": "https://m.place.naver.com/share?id=11817094&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.38",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "031-952-3472",
     "menus": [
       "장어간장구이 1인분(250g)",
@@ -1231,7 +1311,10 @@
     "kakao_review_count": "335",
     "kakao_detail_url": "https://place.map.kakao.com/7897203",
     "x": "126.7517522",
-    "y": "37.8684220"
+    "y": "37.8684220",
+    "naver_review_score": "4.38",
+    "naver_visitor_review_count": "2,465",
+    "naver_blog_review_count": "1,518"
   },
   {
     "type": "ssg",
@@ -1242,8 +1325,7 @@
     "address": "서울 강서구 금낭화로24나길 21 이루미팰리스 101호",
     "naver_map_url": "https://m.place.naver.com/share?id=35162514&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.42",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2665-5778",
     "menus": ["교동짬뽕", "교동짬뽕 밥", "순두부 짬뽕밥", "백짬뽕"],
     "pictures": [
@@ -1257,7 +1339,10 @@
     "kakao_review_count": "151",
     "kakao_detail_url": "https://place.map.kakao.com/25858128",
     "x": "126.8157655",
-    "y": "37.5773273"
+    "y": "37.5773273",
+    "naver_review_score": "4.42",
+    "naver_visitor_review_count": "1,358",
+    "naver_blog_review_count": "444"
   },
   {
     "type": "ssg",
@@ -1268,8 +1353,7 @@
     "address": "서울 광진구 자양번영로1길 22",
     "naver_map_url": "https://m.place.naver.com/share?id=17990788&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.52",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-458-5737",
     "menus": ["순대국밥", "술국", "내장", "머리고기"],
     "pictures": [
@@ -1279,7 +1363,10 @@
     "kakao_review_count": "40",
     "kakao_detail_url": "https://place.map.kakao.com/10346328",
     "x": "127.0737266",
-    "y": "37.5308827"
+    "y": "37.5308827",
+    "naver_review_score": "4.52",
+    "naver_visitor_review_count": "337",
+    "naver_blog_review_count": "101"
   },
   {
     "type": "ssg",
@@ -1290,8 +1377,7 @@
     "address": "서울 마포구 도화길 20-6",
     "naver_map_url": "https://m.place.naver.com/share?id=34006943&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.25",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1315-0315",
     "menus": ["어죽", "파김치 붕장어 전골", "우럭구이", "닭볶음탕"],
     "pictures": [
@@ -1305,7 +1391,10 @@
     "kakao_review_count": "43",
     "kakao_detail_url": "https://place.map.kakao.com/24066933",
     "x": "126.9482173",
-    "y": "37.5400683"
+    "y": "37.5400683",
+    "naver_review_score": "4.25",
+    "naver_visitor_review_count": "348",
+    "naver_blog_review_count": "108"
   },
   {
     "type": "ssg",
@@ -1316,8 +1405,7 @@
     "address": "서울 용산구 녹사평대로46길 13",
     "naver_map_url": "https://m.place.naver.com/share?id=1102024337&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.31",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "menus": ["버거 스낵", "더블치즈 버거", "콜라", "패티"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180922_52%2F1537619249379vR6DN_JPEG%2F-mdOMGctGJVArCzzBlDAEKdx.jpg"
@@ -1326,7 +1414,10 @@
     "kakao_review_count": "27",
     "kakao_detail_url": "https://place.map.kakao.com/1927045218",
     "x": "126.9876282",
-    "y": "37.5373214"
+    "y": "37.5373214",
+    "naver_review_score": "4.31",
+    "naver_visitor_review_count": "137",
+    "naver_blog_review_count": "69"
   },
   {
     "type": "ssg",
@@ -1336,8 +1427,7 @@
     "category": "육류,고기요리",
     "address": "서울 강남구 도산대로55길 23 1층 우정",
     "naver_map_url": "https://m.place.naver.com/share?id=1642364450&tabsPath=%2Fhome&appMode=detail",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1392-1808",
     "menus": ["한우 불고기", "한마리 수육(대)", "한마리수육 (중)", "우개장"],
     "pictures": [
@@ -1347,7 +1437,9 @@
     "kakao_review_count": "95",
     "kakao_detail_url": "https://place.map.kakao.com/1615184494",
     "x": "127.0403697",
-    "y": "37.5250801"
+    "y": "37.5250801",
+    "naver_visitor_review_count": "155",
+    "naver_blog_review_count": "181"
   },
   {
     "type": "ssg",
@@ -1358,8 +1450,7 @@
     "address": "서울 강남구 테헤란로51길 15 남경선능빌딩 1층",
     "naver_map_url": "https://m.place.naver.com/share?id=19861766&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.35",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-566-6312",
     "menus": ["손국시", "부추장떡", "북어구이", "보쌈(중)"],
     "pictures": [
@@ -1373,7 +1464,10 @@
     "kakao_review_count": "35",
     "kakao_detail_url": "https://place.map.kakao.com/8115170",
     "x": "127.0461000",
-    "y": "37.5048816"
+    "y": "37.5048816",
+    "naver_review_score": "4.35",
+    "naver_visitor_review_count": "267",
+    "naver_blog_review_count": "122"
   },
   {
     "type": "ssg",
@@ -1383,8 +1477,7 @@
     "category": "한식",
     "address": "서울 강남구 봉은사로 167",
     "naver_map_url": "https://m.place.naver.com/share?id=1985529752&tabsPath=%2Fhome&appMode=detail",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-516-9181",
     "menus": ["한우육개장", "양지온반", "한우수육 소", "한우수육 중"],
     "pictures": [
@@ -1394,7 +1487,9 @@
     "kakao_review_count": "153",
     "kakao_detail_url": "https://place.map.kakao.com/1808543028",
     "x": "127.0322839",
-    "y": "37.5072478"
+    "y": "37.5072478",
+    "naver_visitor_review_count": "363",
+    "naver_blog_review_count": "321"
   },
   {
     "type": "ssg",
@@ -1405,8 +1500,7 @@
     "address": "서울 성동구 연무장길 45",
     "naver_map_url": "https://m.place.naver.com/share?id=11721256&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.39",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-465-6580",
     "menus": ["감자국식사 일반", "감자탕 (소)", "감자탕 (중)", "감자탕 (대)"],
     "pictures": [
@@ -1419,7 +1513,10 @@
     "kakao_review_count": "1,189",
     "kakao_detail_url": "https://place.map.kakao.com/13289056",
     "x": "127.0544255",
-    "y": "37.5428792"
+    "y": "37.5428792",
+    "naver_review_score": "4.39",
+    "naver_visitor_review_count": "9,063",
+    "naver_blog_review_count": "3,719"
   },
   {
     "type": "ssg",
@@ -1430,8 +1527,7 @@
     "address": "서울 마포구 토정로 268",
     "naver_map_url": "https://m.place.naver.com/share?id=11626202&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.5",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-716-2413",
     "menus": ["부추복어살(대)", "류산슬(대)", "짜장면", "짬뽕"],
     "pictures": [
@@ -1443,7 +1539,10 @@
     "kakao_review_count": "81",
     "kakao_detail_url": "https://place.map.kakao.com/10470081",
     "x": "126.9395043",
-    "y": "37.5425111"
+    "y": "37.5425111",
+    "naver_review_score": "4.5",
+    "naver_visitor_review_count": "630",
+    "naver_blog_review_count": "207"
   },
   {
     "type": "ssg",
@@ -1454,8 +1553,7 @@
     "address": "서울 용산구 녹사평대로32길 43",
     "naver_map_url": "https://m.place.naver.com/share?id=11725735&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.24",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-797-7777",
     "menus": ["특등심", "일반등심", "양곰탕", "막국수"],
     "pictures": [
@@ -1467,7 +1565,10 @@
     "kakao_review_count": "15",
     "kakao_detail_url": "https://place.map.kakao.com/27510733",
     "x": "126.9908132",
-    "y": "37.5328398"
+    "y": "37.5328398",
+    "naver_review_score": "4.24",
+    "naver_visitor_review_count": "174",
+    "naver_blog_review_count": "71"
   },
   {
     "type": "ssg",
@@ -1478,8 +1579,7 @@
     "address": "서울 강남구 언주로167길 46 제일빌딩 2층",
     "naver_map_url": "https://m.place.naver.com/share?id=12068351&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.24",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-548-4986",
     "menus": ["안동국수", "건진국시", "우리밀국시", "수육 小"],
     "pictures": [
@@ -1490,7 +1590,10 @@
     "kakao_review_count": "37",
     "kakao_detail_url": "https://place.map.kakao.com/10583440",
     "x": "127.0293930",
-    "y": "37.5266107"
+    "y": "37.5266107",
+    "naver_review_score": "4.24",
+    "naver_visitor_review_count": "208",
+    "naver_blog_review_count": "113"
   },
   {
     "type": "ssg",
@@ -1501,8 +1604,7 @@
     "address": "경기 의정부시 둔야로49번길 21",
     "naver_map_url": "https://m.place.naver.com/share?id=11591170&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.43",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "0507-1420-5464",
     "menus": ["부대찌개 1인분", "생삼겹살 1인분", "모듬사리", "김치찌개"],
     "pictures": [
@@ -1516,7 +1618,10 @@
     "kakao_review_count": "75",
     "kakao_detail_url": "https://place.map.kakao.com/10180071",
     "x": "127.0382909",
-    "y": "37.7402791"
+    "y": "37.7402791",
+    "naver_review_score": "4.43",
+    "naver_visitor_review_count": "1,791",
+    "naver_blog_review_count": "344"
   },
   {
     "type": "ssg",
@@ -1527,8 +1632,7 @@
     "address": "서울 강남구 압구정로 214 현대종합상가빌딩 1층",
     "naver_map_url": "https://m.place.naver.com/share?id=19882193&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.41",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-516-4900",
     "menus": [
       "생삼겹살(200g)",
@@ -1547,7 +1651,10 @@
     "kakao_review_count": "93",
     "kakao_detail_url": "https://place.map.kakao.com/11892123",
     "x": "127.0307466",
-    "y": "37.5279938"
+    "y": "37.5279938",
+    "naver_review_score": "4.41",
+    "naver_visitor_review_count": "621",
+    "naver_blog_review_count": "355"
   },
   {
     "type": "ssg",
@@ -1558,8 +1665,7 @@
     "address": "서울 영등포구 여의대방로 383 1F (경도상가 1층)",
     "naver_map_url": "https://m.place.naver.com/share?id=11725872&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.3",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-780-8191",
     "menus": ["순대국", "내장탕", "순대탕", "모듬안주"],
     "pictures": [
@@ -1569,7 +1675,10 @@
     "kakao_review_count": "464",
     "kakao_detail_url": "https://place.map.kakao.com/21423297",
     "x": "126.9315136",
-    "y": "37.5193464"
+    "y": "37.5193464",
+    "naver_review_score": "4.3",
+    "naver_visitor_review_count": "1,752",
+    "naver_blog_review_count": "1,096"
   },
   {
     "type": "ssg",
@@ -1579,8 +1688,7 @@
     "category": "순대,순댓국",
     "address": "서울 중구 다산로8길 7",
     "naver_map_url": "https://m.place.naver.com/share?id=1874301580&tabsPath=%2Fhome&appMode=detail",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-2236-5926",
     "menus": ["머릿고기(약500g)", "순대국", "순대국(특)"],
     "pictures": [
@@ -1590,7 +1698,9 @@
     "kakao_review_count": "146",
     "kakao_detail_url": "https://place.map.kakao.com/13499817",
     "x": "127.0100517",
-    "y": "37.5530119"
+    "y": "37.5530119",
+    "naver_visitor_review_count": "343",
+    "naver_blog_review_count": "81"
   },
   {
     "type": "ssg",
@@ -1601,8 +1711,7 @@
     "address": "서울 동대문구 왕산로11길 4",
     "naver_map_url": "https://m.place.naver.com/share?id=11623967&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.35",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-923-1718",
     "menus": ["해장국", "육회비빔밥", "육 회", "소고기수육"],
     "pictures": [
@@ -1615,7 +1724,10 @@
     "kakao_review_count": "368",
     "kakao_detail_url": "https://place.map.kakao.com/907979960",
     "x": "127.0285889",
-    "y": "37.5774796"
+    "y": "37.5774796",
+    "naver_review_score": "4.35",
+    "naver_visitor_review_count": "2,256",
+    "naver_blog_review_count": "1,359"
   },
   {
     "type": "ssg",
@@ -1626,8 +1738,7 @@
     "address": "서울 종로구 사직로 5",
     "naver_map_url": "https://m.place.naver.com/share?id=13517178&tabsPath=%2Fhome&appMode=detail",
     "naver_score": "4.38",
-    "visitor_review_count": 0,
-    "blog_review_count": 0,
+
     "phone": "02-735-4259",
     "menus": ["도가니탕", "도가니탕 특", "수육", "소주"],
     "pictures": [
@@ -1640,6 +1751,9 @@
     "kakao_review_count": "222",
     "kakao_detail_url": "https://place.map.kakao.com/24448306",
     "x": "126.9609262",
-    "y": "37.5727492"
+    "y": "37.5727492",
+    "naver_review_score": "4.38",
+    "naver_visitor_review_count": "3,167",
+    "naver_blog_review_count": "1,132"
   }
 ]

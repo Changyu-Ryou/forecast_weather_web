@@ -15,13 +15,14 @@ export type ItemType = {
   pictures: string[];
   x: string;
   y: string;
-  naver_map_url?: string | undefined;
+  naver_map_url?: string;
   kakao_detail_url?: string;
-  naver_score?: string;
-  visitor_review_count?: number | string;
-  blog_review_count?: number | string;
+  naver_review_score?: string;
+  naver_visitor_review_count?: string;
+  naver_blog_review_count?: string;
   kakao_score?: string;
   naver_review_count?: string;
+  kakao_review_count?: string;
 };
 
 type Props = {

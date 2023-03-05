@@ -61,12 +61,7 @@
     "category": "초밥,롤",
     "address": "서울 마포구 월드컵북로 352-18",
     "phone": "02-3152-0900",
-    "menus": [
-      "김영섭초밥(12p)",
-      "모듬초밥(12p)",
-      "특선초밥(12p)",
-      "달인 SET(24p)"
-    ],
+    "menus": ["김영섭초밥(12p)", "모듬초밥(12p)", "특선초밥(12p)", "달인 SET(24p)"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20160203_278%2F1454484284378ActRa_JPEG%2F176153565463039_0.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20160203_216%2F1454484284431aWNRL_JPEG%2F176153565463039_1.jpg",
@@ -756,12 +751,7 @@
     "category": "한식",
     "address": "경기 의정부시 동일로128번길 11",
     "phone": "031-876-6999",
-    "menus": [
-      "소양념구이(300g)",
-      "소생고기구이(200g)",
-      "돼지양념구이(250g)",
-      "우리곰탕"
-    ],
+    "menus": ["소양념구이(300g)", "소생고기구이(200g)", "돼지양념구이(250g)", "우리곰탕"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20201129_15%2F1606624251561hsFOg_JPEG%2FvVofvWGG89yqQ8uaSXqiGcWG.jpg"
     ],
@@ -840,11 +830,7 @@
     "category": "곱창,막창,양",
     "address": "서울 마포구 동교로38길 4 2층",
     "phone": "0507-1472-1503",
-    "menus": [
-      "한우 곱창(210g)",
-      "한우 대창(210g)",
-      "모듬구이 (곱창 대창 막창)"
-    ],
+    "menus": ["한우 곱창(210g)", "한우 대창(210g)", "모듬구이 (곱창 대창 막창)"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220204_79%2F1643971558535nVwBP_JPEG%2F220128_%25B4%25EB%25BD%25C2%25B0%25F6%25C3%25A2.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220204_294%2F1643971567195pp144_JPEG%2Fphoto_9.JPG",
@@ -994,12 +980,7 @@
     "category": "스테이크,립",
     "address": "서울 서초구 사평대로 205",
     "phone": "02-6282-5000",
-    "menus": [
-      "평일런치",
-      "평일 디너",
-      "디너,주말,공휴일 초등학생",
-      "평일런치 초등학생"
-    ],
+    "menus": ["평일런치", "평일 디너", "디너,주말,공휴일 초등학생", "평일런치 초등학생"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170522_16%2F1495441037150TIn6n_JPEG%2F186472574736240_4.jpeg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150901_156%2F1441113727073jCDIE_JPEG%2F166753553846901_1.jpeg",
@@ -1190,12 +1171,7 @@
     "category": "아귀찜,해물찜",
     "address": "경기 파주시 청암로17번길 61 M타워 108, 109호",
     "phone": "0507-1368-2205",
-    "menus": [
-      "콜라겐 아구찜 1인",
-      "콜라겐 아구찜小",
-      "콜라겐 아구찜中",
-      "콜라겐 아구찜大"
-    ],
+    "menus": ["콜라겐 아구찜 1인", "콜라겐 아구찜小", "콜라겐 아구찜中", "콜라겐 아구찜大"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221112_71%2F166822875944537kXp_JPEG%2F20221112_135226.jpg"
     ],
@@ -1298,12 +1274,7 @@
     "category": "중식당",
     "address": "서울 강남구 논현로176길 22 1층",
     "phone": "02-549-9339",
-    "menus": [
-      "마카롱 멘보샤",
-      "스테이크트러플짜장면",
-      "고추 유린기",
-      "한우 차돌 짬뽕"
-    ],
+    "menus": ["마카롱 멘보샤", "스테이크트러플짜장면", "고추 유린기", "한우 차돌 짬뽕"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20201110_111%2F1604984990484bRKgV_JPEG%2FvlEKBzm7cfnFbA2FY-9SUXtI.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20201110_258%2F1604984991241F7FuO_JPEG%2FidjSrb5gfgavbRfFmAPLNgTO.jpg",
@@ -1328,12 +1299,7 @@
     "category": "닭갈비",
     "address": "서울 동대문구 천호대로85길 40 1층 계포동 숯불닭갈비",
     "phone": "02-2244-9958",
-    "menus": [
-      "숯불원조양념닭갈비",
-      "숯불소금구이닭갈비",
-      "숯불양념닭목살",
-      "숯불소금구이닭목살"
-    ],
+    "menus": ["숯불원조양념닭갈비", "숯불소금구이닭갈비", "숯불양념닭목살", "숯불소금구이닭목살"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221206_76%2F1670300336955fA86e_PNG%2F2022-09-23_%252834%2529.png",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221206_33%2F1670300297836Eao7E_PNG%2F2022-09-19_%252814%2529.png",
@@ -1435,12 +1401,7 @@
     "category": "중식당",
     "address": "서울 중구 난계로 205 2층",
     "phone": "0507-1497-7851",
-    "menus": [
-      "무한리필 1set",
-      "무한리필2set",
-      "생 고급 양갈비 (300g)",
-      "무한리필3set"
-    ],
+    "menus": ["무한리필 1set", "무한리필2set", "생 고급 양갈비 (300g)", "무한리필3set"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230223_235%2F1677158854412LsUru_JPEG%2F20211202_115659.jpg"
     ],
@@ -1631,12 +1592,7 @@
     "category": "냉면",
     "address": "서울 강남구 학동로 305-3",
     "phone": "02-515-3469",
-    "menus": [
-      "어복쟁반 소",
-      "편육(미국/호주산)",
-      "편육반(미국/호주산)",
-      "제육(국내산돼지)"
-    ],
+    "menus": ["어복쟁반 소", "편육(미국/호주산)", "편육반(미국/호주산)", "제육(국내산돼지)"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180607_51%2F15283397669538Mj1r_JPEG%2Ft0rzpbFHC6QZDErtQEzlpvzZ.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200418_177%2F1587218787589A1HlQ_JPEG%2Ff3MNz4rjn4twjYQtbDw9xpBa.jpeg.jpg",
@@ -1775,12 +1731,7 @@
     "category": "종합분식",
     "address": "서울 강남구 논현로171길 12",
     "phone": "02-546-3051",
-    "menus": [
-      "오징어김치볶음밥",
-      "참치김치볶음밥",
-      "햄치즈김치볶음밥",
-      "치즈베이컨김치볶음밥"
-    ],
+    "menus": ["오징어김치볶음밥", "참치김치볶음밥", "햄치즈김치볶음밥", "치즈베이컨김치볶음밥"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200727_148%2F1595834700906ywXjW_JPEG%2Ffpwjf7-CU0FAxqtBg-BQ1WsC.jpg"
     ],
@@ -1892,12 +1843,7 @@
     "category": "떡볶이",
     "address": "서울 송파구 동남로18길 39",
     "phone": "02-407-0675",
-    "menus": [
-      "라면피자떡볶이",
-      "스파게티피자떡볶이",
-      "짜장피자떡볶이",
-      "고추장피자떡볶이"
-    ],
+    "menus": ["라면피자떡볶이", "스파게티피자떡볶이", "짜장피자떡볶이", "고추장피자떡볶이"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200514_203%2F15894242515780uxzD_JPEG%2Fb0NnL2vY4V7H9dczbpADZ3Gw.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190407_176%2F155463613820127QyQ_JPEG%2Fblbs-bQs2EypbN-pUFoeUXuS.jpeg.jpg"
@@ -1950,12 +1896,7 @@
     "category": "우동,소바",
     "address": "서울 송파구 백제고분로45길 38",
     "phone": "0507-1408-1108",
-    "menus": [
-      "마제소바",
-      "도니꾸 마제소바",
-      "네기 시오 마제소바",
-      "타이완라멘"
-    ],
+    "menus": ["마제소바", "도니꾸 마제소바", "네기 시오 마제소바", "타이완라멘"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221117_281%2F1668649320375uobtB_JPEG%2F1.jpeg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221117_83%2F1668649326828sMMxL_PNG%2F%25BD%25BA%25C5%25A9%25B8%25B0%25BC%25A6_2022-11-17_%25BF%25C0%25C0%25FC_10.39.24.png",
@@ -2028,12 +1969,7 @@
     "category": "백숙,삼계탕",
     "address": "서울 강남구 압구정로28길 22-11",
     "phone": "02-518-3988",
-    "menus": [
-      "건강한방삼계탕",
-      "들깨한방삼계탕",
-      "미용한방삼계탕",
-      "죽한방삼계탕"
-    ],
+    "menus": ["건강한방삼계탕", "들깨한방삼계탕", "미용한방삼계탕", "죽한방삼계탕"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170407_227%2F1491552078457WpDXN_JPEG%2F186357573135108_0.jpeg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170407_235%2F1491552078695cTrFK_JPEG%2F186357573135108_1.jpeg",
@@ -2279,12 +2215,7 @@
     "category": "육류,고기요리",
     "address": "서울 마포구 마포대로 173-14 마포센텀슬로우스퀘어 401호",
     "phone": "0507-1384-9245",
-    "menus": [
-      "지극정성 명품 목살 150g(대표)",
-      "황금비율 삼겹살150g",
-      "한우염통구이",
-      "특양구이"
-    ],
+    "menus": ["지극정성 명품 목살 150g(대표)", "황금비율 삼겹살150g", "한우염통구이", "특양구이"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221126_289%2F1669451518066CkJYr_JPEG%2FKakaoTalk_20221125_160721064.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221126_35%2F166945151814536pAN_JPEG%2FKakaoTalk_20221125_160721064_05.jpg",
@@ -2436,12 +2367,7 @@
     "category": "분식",
     "address": "서울 구로구 개봉로 17-1 1층",
     "phone": "02-6084-5678",
-    "menus": [
-      "마피아떡볶이",
-      "마피아세트1번",
-      "마피아세트2번",
-      "마피아세트3번 21000"
-    ],
+    "menus": ["마피아떡볶이", "마피아세트1번", "마피아세트2번", "마피아세트3번 21000"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210101_177%2F1609483371675VCAmp_JPEG%2FW2159OolsyFMJ-znDsrG9IOT.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210101_195%2F1609483375842iyKJL_JPEG%2FN_3UwTZ-WECKvKN8sZO1BP0h.jpg",
@@ -2491,12 +2417,7 @@
     "category": "한식",
     "address": "서울 중구 퇴계로 411-15",
     "phone": "02-3298-6909",
-    "menus": [
-      "알곤이 샤브샤브",
-      "알곤이칼국수",
-      "알곤이전골(포장) 비조리",
-      "수육"
-    ],
+    "menus": ["알곤이 샤브샤브", "알곤이칼국수", "알곤이전골(포장) 비조리", "수육"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220222_182%2F1645485553002FHawx_JPEG%2FKakaoTalk_Photo_2022-02-21-00-22-48_004.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220222_276%2F164548553235533yzK_JPEG%2FIMG_0947.jpg",
@@ -2573,12 +2494,7 @@
     "category": "일본식라면",
     "address": "서울 강남구 강남대로122길 14",
     "phone": "02-547-4433",
-    "menus": [
-      "돈코츠 쇼유라멘",
-      "돈코츠 미소라멘",
-      "츠케멘(찍어 먹는 라멘)",
-      "토마토 라멘"
-    ],
+    "menus": ["돈코츠 쇼유라멘", "돈코츠 미소라멘", "츠케멘(찍어 먹는 라멘)", "토마토 라멘"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180817_156%2F1534496365303ok1Ck_JPEG%2FbScSER-fyYO0OsqMgrK51Rmn.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180817_217%2F1534496538384PqnDT_JPEG%2FmUkk8qzKiVjreah2xZnWwVxJ.jpg",
@@ -2679,12 +2595,7 @@
     "category": "양식",
     "address": "서울 용산구 이태원로 136-13",
     "phone": "02-790-2920",
-    "menus": [
-      "오리지널 플래터",
-      "스페어립 플래터",
-      "풀드포크 샌드위치",
-      "브리스킷 샌드위치"
-    ],
+    "menus": ["오리지널 플래터", "스페어립 플래터", "풀드포크 샌드위치", "브리스킷 샌드위치"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200424_96%2F1587691940741PSrVG_JPEG%2F-OrgQbuyBGBC17M4IEZc2uFu.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_39%2F1440986683029Q5ymS_JPEG%2F166580548548211_16.jpg",
@@ -2801,12 +2712,7 @@
     "category": "곱창,막창,양",
     "address": "서울 동대문구 전농로14길 14",
     "phone": "02-2248-6191",
-    "menus": [
-      "곱창 전골 (소)",
-      "곱창 전골 (중)",
-      "곱창 전골 (대)",
-      "싱 전골 (소)"
-    ],
+    "menus": ["곱창 전골 (소)", "곱창 전골 (중)", "곱창 전골 (대)", "싱 전골 (소)"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150901_228%2F1441067148978LLPnA_JPEG%2FSUBMIT_1347638386340_20823357.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150901_284%2F1441067149220Ntgwh_JPEG%2FSUBMIT_1347638404504_20823357.jpg",
@@ -2980,12 +2886,7 @@
     "category": "주꾸미요리",
     "address": "서울 중랑구 사가정로51길 25 1층",
     "phone": "0507-1357-0523",
-    "menus": [
-      "오리지널 쭈꾸미",
-      "2set(오리지널2인+육전)",
-      "3set(오리지널3인+육전)",
-      "대창쭈꾸미"
-    ],
+    "menus": ["오리지널 쭈꾸미", "2set(오리지널2인+육전)", "3set(오리지널3인+육전)", "대창쭈꾸미"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20191004_269%2F1570156581648tjHXI_JPEG%2FRa0V8Y0eEAsjkM8D0SqBhfmR.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210918_110%2F1631893684869iITx7_JPEG%2FAybkOEASGahGk3AVomiOjf8-.jpg",
@@ -3066,12 +2967,7 @@
     "category": "육류,고기요리",
     "address": "서울 송파구 올림픽로35길 124 장미A상가 지하1층",
     "phone": "0507-1316-2203",
-    "menus": [
-      "한우육회비빔밥",
-      "뭉티기(육사시미)",
-      "소고기국밥",
-      "소곱창전골 중"
-    ],
+    "menus": ["한우육회비빔밥", "뭉티기(육사시미)", "소고기국밥", "소곱창전골 중"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200827_86%2F1598519286744rGP36_PNG%2Fimage.png",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200827_119%2F1598519307440ffkvq_JPEG%2Fimage.jpg"
@@ -3286,12 +3182,7 @@
     "category": "족발,보쌈",
     "address": "서울 동작구 동작대로23길 21 대원빌딩 1층",
     "phone": "02-522-2777",
-    "menus": [
-      "쟁반막국수(大)",
-      "쟁반막국수(中)",
-      "쟁반막국수(大)",
-      "쟁반막국수(中)"
-    ],
+    "menus": ["쟁반막국수(大)", "쟁반막국수(中)", "쟁반막국수(大)", "쟁반막국수(中)"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200819_166%2F1597835847401fum2F_JPEG%2FN4B-X4ikAeJeNmFicvL7YnfK.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200819_300%2F1597835847381Vi64g_JPEG%2FIp5uvpGeaGVcpen2TYo2AEOJ.jpg",
@@ -3412,11 +3303,7 @@
     "category": "찌개,전골",
     "address": "서울 중구 창경궁로8길 32",
     "phone": "02-2265-4669",
-    "menus": [
-      "(점심) 쌈싸먹는 김치찌개",
-      "(저녁)삼겹살+김치찌개",
-      "(점심)비빔쫄면"
-    ],
+    "menus": ["(점심) 쌈싸먹는 김치찌개", "(저녁)삼겹살+김치찌개", "(점심)비빔쫄면"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20160108_58%2F1452234909445RAOOj_JPEG%2F176058556528920_0.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20160108_159%2F1452234909518hx6e7_JPEG%2F176058556528920_1.jpg",
@@ -3568,12 +3455,7 @@
     "category": "닭갈비",
     "address": "경기 남양주시 진접읍 장현로 68 제일빌딩",
     "phone": "031-572-3790",
-    "menus": [
-      "뼈없는 닭갈비 1인분",
-      "낙지 닭갈비 1인분",
-      "막국수",
-      "막국수 곱"
-    ],
+    "menus": ["뼈없는 닭갈비 1인분", "낙지 닭갈비 1인분", "막국수", "막국수 곱"],
     "pictures": [],
     "x": "127.1807360",
     "y": "37.7168266",
@@ -3621,12 +3503,7 @@
     "category": "종합분식",
     "address": "서울 관악구 법원단지길 55 애동유치원앞",
     "phone": "02-6339-8171",
-    "menus": [
-      "취향저격 매콤,달콤 쫄면",
-      "별미 진한 냉콩국수",
-      "왕새우튀김 4개",
-      "떡볶이"
-    ],
+    "menus": ["취향저격 매콤,달콤 쫄면", "별미 진한 냉콩국수", "왕새우튀김 4개", "떡볶이"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20211027_166%2F1635281116734IRcTL_JPEG%2FQOJ3v5FyETic2q8xfk9AKQ-A.jpeg.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200509_141%2F1589005283665Do88l_JPEG%2FzOvMT6nmHxN1Rp2EJjdnZWtV.jpg"
@@ -3636,7 +3513,7 @@
     "naver_map_url": "https://m.place.naver.com/share?id=1889247631&tabsPath=%2Fhome&appMode=detail",
     "naver_review_score": "4.31",
     "naver_visitor_review_count": "86",
-    "naver_blog_review_count": 0,
+    "naver_blog_review_count": "0",
     "kakao_review_count": "0",
     "kakao_detail_url": "https://place.map.kakao.com/581176351"
   },
@@ -3932,8 +3809,8 @@
     "x": "126.9176383",
     "y": "37.5475663",
     "naver_map_url": "https://m.place.naver.com/share?id=1038148818&tabsPath=%2Fhome&appMode=detail",
-    "naver_visitor_review_count": 0,
-    "naver_blog_review_count": 0
+    "naver_visitor_review_count": "0",
+    "naver_blog_review_count": "0"
   },
   {
     "type": "zzyang",
@@ -3944,12 +3821,7 @@
     "category": "돼지고기구이",
     "address": "서울 송파구 올림픽로32길 19-9 1층",
     "phone": "0507-1345-8382",
-    "menus": [
-      "급랭삼겹살",
-      "용기상회떡볶이 < 2인분 >",
-      "급랭쫄깃살",
-      "급랭 가브리살"
-    ],
+    "menus": ["급랭삼겹살", "용기상회떡볶이 < 2인분 >", "급랭쫄깃살", "급랭 가브리살"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230224_158%2F1677233946478prvU8_JPEG%2FDSC07250.JPG",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230224_188%2F16772339376272e6oW_JPEG%2FDSC06904.JPG",
@@ -4186,7 +4058,7 @@
     "y": "36.4492419",
     "naver_map_url": "https://m.place.naver.com/share?id=1824479360&tabsPath=%2Fhome&appMode=detail",
     "naver_visitor_review_count": "43",
-    "naver_blog_review_count": 0,
+    "naver_blog_review_count": "0",
     "kakao_score": "4.3",
     "kakao_review_count": "18",
     "kakao_detail_url": "https://place.map.kakao.com/21437889"
@@ -4387,12 +4259,7 @@
     "category": "생선회",
     "address": "충남 홍성군 서부면 남당항로79번길 2-36 꽃동산횟집",
     "phone": "041-632-8506",
-    "menus": [
-      "해물손칼국수",
-      "숭어(1kg 2~3인)",
-      "우럭(1kg 2~3인)",
-      "바다송어(1kg 2~3인))"
-    ],
+    "menus": ["해물손칼국수", "숭어(1kg 2~3인)", "우럭(1kg 2~3인)", "바다송어(1kg 2~3인))"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200307_232%2F1583570638016AcTAO_JPEG%2Fib2WbMkKy5eEGZO0zd5IvGhD.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200307_261%2F1583570776106Ax9Sj_JPEG%2Fdby-mqWT92kzA9Znmd9JEuWr.jpg",
@@ -4418,12 +4285,7 @@
     "category": "떡볶이",
     "address": "서울 동작구 동작대로27다길 29 2층",
     "phone": "02-595-1629",
-    "menus": [
-      "일반 떡볶이",
-      "즉석 떡볶이2인세트(비조리 2인분)",
-      "무침 군만두(4개)",
-      "일반 떡볶이"
-    ],
+    "menus": ["일반 떡볶이", "즉석 떡볶이2인세트(비조리 2인분)", "무침 군만두(4개)", "일반 떡볶이"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220825_190%2F16614317215947q1nP_JPEG%2F56963FEB-7922-4361-ABA7-FF746355F0DD.jpeg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220825_115%2F1661431721601VY1zX_JPEG%2F4223CA19-647E-45DE-A100-BCC716C26A9E.jpeg",
@@ -4530,7 +4392,7 @@
     "y": "36.8123473",
     "naver_map_url": "https://m.place.naver.com/share?id=32220301&tabsPath=%2Fhome&appMode=detail",
     "naver_visitor_review_count": "43",
-    "naver_blog_review_count": 0,
+    "naver_blog_review_count": "0",
     "kakao_score": "2.3",
     "kakao_review_count": "15",
     "kakao_detail_url": "https://place.map.kakao.com/21275711"
@@ -4781,12 +4643,7 @@
     "category": "떡볶이",
     "address": "서울 중구 퇴계로56길 52",
     "phone": "02-2275-8078",
-    "menus": [
-      "쫄면",
-      "야끼만두 4개",
-      "즉석해물떡볶이 2인분",
-      "즉석치즈떡볶이 2인분"
-    ],
+    "menus": ["쫄면", "야끼만두 4개", "즉석해물떡볶이 2인분", "즉석치즈떡볶이 2인분"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190129_213%2F1548754921611zdECu_JPEG%2FX-RCZ7m9_l7NjUzJBnJUrtf6.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190927_11%2F1569563879661NSK1M_JPEG%2FZ6nVasKcWcCIfZH3JZKi52Cg.jpg",
@@ -4990,12 +4847,7 @@
     "category": "스테이크,립",
     "address": "경기 용인시 기흥구 상갈로 31 2층 스떼이끄300블랙",
     "phone": "0507-1462-3132",
-    "menus": [
-      "300g세트",
-      "200g세트",
-      "꽃등심(립아이)스테이크 300g",
-      "살치살 스테이크 100g"
-    ],
+    "menus": ["300g세트", "200g세트", "꽃등심(립아이)스테이크 300g", "살치살 스테이크 100g"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200802_171%2F1596354051586C8Vog_JPEG%2F0gdIyiueCMaU2mesg8HLThf-.JPG.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200802_113%2F1596354222583vXFH7_JPEG%2Fy0j-mXzz36hLgqqiZkgRC2ib.jpg",
@@ -5125,12 +4977,7 @@
     "category": "초밥,롤",
     "address": "대전 동구 동서대로1695번길 43 1층",
     "phone": "042-633-1345",
-    "menus": [
-      "초밥 셋트(일반)",
-      "초밥 셋트(스페셜)",
-      "초밥한접시",
-      "모듬회(소)"
-    ],
+    "menus": ["초밥 셋트(일반)", "초밥 셋트(스페셜)", "초밥한접시", "모듬회(소)"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220515_41%2F1652584028883HAcFl_JPEG%2F1652584021612.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20201220_239%2F1608434249811Ou4J2_PNG%2FYag50TrkL4UeSjZo0yafh0L8.png",
@@ -5228,12 +5075,7 @@
     "category": "양식",
     "address": "경기 김포시 김포한강2로23번길 74 라베니체 3차 113,114호",
     "phone": "031-985-0914",
-    "menus": [
-      "빠레뜨파스타",
-      "오므라이스",
-      "들기름 육회파스타",
-      "함박 스테이크"
-    ],
+    "menus": ["빠레뜨파스타", "오므라이스", "들기름 육회파스타", "함박 스테이크"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200828_252%2F1598586402053dIET4_JPEG%2FfYTadFhyeSwNvfA2ke1ekwUe.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200828_144%2F1598586468042ts0QX_PNG%2FVTXmQHluxuT3RW3kHsTAHIAv.png",
@@ -5260,12 +5102,7 @@
     "category": "분식",
     "address": "인천 부평구 충선로311번길 3-3 1층",
     "phone": "0507-1485-1216",
-    "menus": [
-      "로제파스타떡볶이",
-      "불맛떡볶이(1~2)",
-      "수제멘보샤",
-      "수제순살치킨"
-    ],
+    "menus": ["로제파스타떡볶이", "불맛떡볶이(1~2)", "수제멘보샤", "수제순살치킨"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220722_79%2F16584535889874Y2yq_JPEG%2F%25BD%25C3%25BE%25C83.jpg"
     ],
@@ -5739,12 +5576,7 @@
     "category": "초밥,롤",
     "address": "서울 동작구 동작대로23길 29 1층",
     "phone": "02-585-1015",
-    "menus": [
-      "로로초밥 12P",
-      "스페셜초밥10P",
-      "특초밥12P",
-      "오늘의추천초밥12p"
-    ],
+    "menus": ["로로초밥 12P", "스페셜초밥10P", "특초밥12P", "오늘의추천초밥12p"],
     "pictures": [],
     "x": "126.9801146",
     "y": "37.4841093",
@@ -5813,12 +5645,7 @@
     "category": "육류,고기요리",
     "address": "인천 남동구 문화서로28번길 25-2 1층 돈불식당",
     "phone": "032-435-1999",
-    "menus": [
-      "불고기 2인세트",
-      "불고기 3인세트",
-      "불고기 4인세트",
-      "소육수 불고기_추가메뉴"
-    ],
+    "menus": ["불고기 2인세트", "불고기 3인세트", "불고기 4인세트", "소육수 불고기_추가메뉴"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221118_86%2F1668743943134pWRsq_JPEG%2F%25B5%25B7%25BA%25D2%25BD%25C4%25B4%25E7_%25BF%25C0%25C2%25A1%25BE%25EE%25BA%25D2%25B0%25ED%25B1%25E2_%25BC%25BC%25C6%25AE.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221118_135%2F1668743943337GqjG2_JPEG%2F%25B5%25B7%25BA%25D2%25BD%25C4%25B4%25E7_%25BC%25D2%25C0%25B0%25BC%25F6%25BA%25D2%25B0%25ED%25B1%25E2_%25BF%25A1%25B5%25F0%25C6%25C3.jpg",
@@ -5845,12 +5672,7 @@
     "category": "육류,고기요리",
     "address": "인천 남동구 문화서로28번길 25-2 1층 돈불식당",
     "phone": "032-435-1999",
-    "menus": [
-      "불고기 2인세트",
-      "불고기 3인세트",
-      "불고기 4인세트",
-      "소육수 불고기_추가메뉴"
-    ],
+    "menus": ["불고기 2인세트", "불고기 3인세트", "불고기 4인세트", "소육수 불고기_추가메뉴"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221118_86%2F1668743943134pWRsq_JPEG%2F%25B5%25B7%25BA%25D2%25BD%25C4%25B4%25E7_%25BF%25C0%25C2%25A1%25BE%25EE%25BA%25D2%25B0%25ED%25B1%25E2_%25BC%25BC%25C6%25AE.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221118_135%2F1668743943337GqjG2_JPEG%2F%25B5%25B7%25BA%25D2%25BD%25C4%25B4%25E7_%25BC%25D2%25C0%25B0%25BC%25F6%25BA%25D2%25B0%25ED%25B1%25E2_%25BF%25A1%25B5%25F0%25C6%25C3.jpg",
@@ -6153,12 +5975,7 @@
     "category": "곱창,막창,양",
     "address": "서울 중구 동호로7길 13-6",
     "phone": "02-2234-2220",
-    "menus": [
-      "소곱창 180g",
-      "모둠(특양,대창,막창) 180g",
-      "특양 180g",
-      "곱창전골"
-    ],
+    "menus": ["소곱창 180g", "모둠(특양,대창,막창) 180g", "특양 180g", "곱창전골"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_170%2F1440994541374vOTAD_JPEG%2F146465568453317_0.jpeg",
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20181221_117%2F15453764763744mhlk_JPEG%2FmMNawmMGcyeugMFSfa9GcchH.jpg"
@@ -6182,12 +5999,7 @@
     "category": "종합분식",
     "address": "서울 도봉구 도봉로121길 35",
     "phone": "02-997-3234",
-    "menus": [
-      "피자떡볶이 소",
-      "피자떡볶이 대",
-      "김치치즈밥 소",
-      "김치치즈밥 대"
-    ],
+    "menus": ["피자떡볶이 소", "피자떡볶이 대", "김치치즈밥 소", "김치치즈밥 대"],
     "pictures": [
       "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200430_233%2F1588198648012qdOGx_JPEG%2Fmt4XKngaJxQB_OMUAlQhbeF3.jpg"
     ],
