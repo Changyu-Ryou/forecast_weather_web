@@ -82,7 +82,6 @@ const RestaurantMarkers = ({ position, item }: Props) => {
         const lat = marker.getPosition().getLat() - calcLat;
         const lng = marker.getPosition().getLng();
         const moveLatLon = new kakao.maps.LatLng(lat, lng);
-        console.log('lat', mapLevel, moveLatLon);
         map.panTo(moveLatLon);
 
         setValue('selectedItem', item);

@@ -71,7 +71,6 @@ function useInitMapCenter({
     if (loading || error) return;
     checkInfo();
     const moveToMyLocationTimer = setTimeout(() => {
-      console.log('my locait  ======>', currentPosition);
       if (currentPosition) {
         mapRef.current?.panTo(new kakao.maps.LatLng(currentPosition.lat, currentPosition.lng));
       }
@@ -85,7 +84,6 @@ function useInitMapCenter({
     const watchId = navigator.geolocation.watchPosition(function (position) {
       const lat = position.coords.latitude;
       const lng = position.coords.longitude;
-      console.log('lat, lng =====>', lat, lng);
       setCurrentLocationIconHandler?.({ lat, lng });
     });
     return () => navigator.geolocation.clearWatch(watchId);

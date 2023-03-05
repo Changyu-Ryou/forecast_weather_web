@@ -43,7 +43,8 @@ function InfoBox() {
         const bottomSheetHeader = (e.target as HTMLElement)?.getAttribute('data-rsbs-header');
         if (!bottomSheetHeader) return;
         const yTouchPos = e?.touches[0]?.clientY;
-        if (yTouchPos > (window.innerHeight / 3) * 2) {
+        console.log('yTouchPos', yTouchPos);
+        if (window.innerHeight - yTouchPos > (window.innerHeight / 3) * 2) {
           setValue('infoBoxHeight', '100%');
         } else {
           setValue('infoBoxHeight', undefined);
@@ -70,7 +71,6 @@ function InfoBox() {
         maxHeight - maxHeight / 10,
       ]}
       onSpringEnd={(event) => {
-        // console.log('event', event);
         // 위로 확장 드래깅 이벤트 발생 검출
         if (
           (event.type === 'RESIZE' && event.source === 'element') ||
@@ -83,11 +83,11 @@ function InfoBox() {
           }
         }
       }}
-      onSpringStart={(event) => {
-        if (event.type === 'SNAP' && event.source === 'dragging') {
-          setValue('infoBoxHeight', undefined);
-        }
-      }}
+      // onSpringStart={(event) => {
+      //   if (event.type === 'SNAP' && event.source === 'dragging') {
+      //     setValue('infoBoxHeight', undefined);
+      //   }
+      // }}
     >
       {selectedItemValue ? (
         <Wrapper onTouchMove={(e) => e.stopPropagation()}>
