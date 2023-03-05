@@ -16,10 +16,17 @@ export const openNaverMap = (url: string) => {
   const mobileFallback = url,
     app = `nmap://place?id=${placeId}`;
 
-  window.setTimeout(function () {
+  const openWebviewTimer = window.setTimeout(function () {
     window.open(mobileFallback, '_blank');
-  }, 25);
+  }, 500);
   window.location.href = app;
+
+  const hideHandler = () => {
+    window.removeEventListener('blur', hideHandler);
+    clearTimeout(openWebviewTimer);
+  };
+
+  window.addEventListener('blur', hideHandler);
 };
 
 export const openKakaoMap = (url: string) => {
@@ -31,8 +38,15 @@ export const openKakaoMap = (url: string) => {
   const mobileFallback = url,
     app = `kakaomap://place?id=${placeId}`;
 
-  window.setTimeout(function () {
+  const openWebviewTimer = window.setTimeout(function () {
     window.open(mobileFallback, '_blank');
-  }, 25);
+  }, 500);
   window.location.href = app;
+
+  const hideHandler = () => {
+    window.removeEventListener('blur', hideHandler);
+    clearTimeout(openWebviewTimer);
+  };
+
+  window.addEventListener('blur', hideHandler);
 };
