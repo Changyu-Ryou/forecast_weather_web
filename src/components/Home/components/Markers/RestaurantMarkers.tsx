@@ -52,6 +52,11 @@ const SSG_DEFAULT_PIN =
 const SSG_SELECTED_PIN =
   'https://blog.kakaocdn.net/dn/DaX2J/btr1XQuUhZs/wuopTcUtjWDKTJWHYzvy41/img.png';
 
+const BIGFACE_DEFAULT_PIN =
+  'https://blog.kakaocdn.net/dn/1s3If/btr2H6396mD/HN1lP84dNFnT8ymhIpm1vk/img.png';
+const BIGFACE_SELECTED_PIN =
+  'https://blog.kakaocdn.net/dn/GeDLy/btr2vVXLY3t/MWQjZ7Cs6tmvkJmhKA3b3K/img.png';
+
 const RestaurantMarkers = ({ position, item }: Props) => {
   const map = useMap();
 
@@ -67,6 +72,9 @@ const RestaurantMarkers = ({ position, item }: Props) => {
     }
     if (item.type === 'ssg') {
       return isSelected ? SSG_SELECTED_PIN : SSG_DEFAULT_PIN;
+    }
+    if (item.type === 'bigface') {
+      return isSelected ? BIGFACE_SELECTED_PIN : BIGFACE_DEFAULT_PIN;
     }
     return isSelected ? SELECTED_PIN : DEFAULT_PIN;
   }, [item.index, item.type, selectedItemValue?.index]);

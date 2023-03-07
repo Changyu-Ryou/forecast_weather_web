@@ -4,6 +4,7 @@ import RestaurantMarkers from './RestaurantMarkers';
 
 import ssgData from '../../../../constants/ssg_all_data.json';
 import zzyangData from '../../../../constants/zzyang_all_data.json';
+import bigfaceData from '../../../../constants/bigface_all_data.json';
 import { useFormContext } from 'react-hook-form';
 
 function RestaurantList(): ReactElement {
@@ -17,8 +18,11 @@ function RestaurantList(): ReactElement {
     if (filterValue?.value === 'zzyang') {
       return zzyangData;
     }
+    if (filterValue?.value === 'bigface') {
+      return bigfaceData;
+    }
 
-    return [...ssgData, ...zzyangData];
+    return [...ssgData, ...zzyangData, ...bigfaceData];
   }, [filterValue?.value]);
 
   return (

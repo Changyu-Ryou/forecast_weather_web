@@ -18,6 +18,11 @@ export const FilterList = [
     value: 'ssg',
     id: 2,
   },
+  {
+    name: '빅페이스',
+    value: 'bigface',
+    id: 3,
+  },
 ];
 
 function MarkerListFilter(): ReactElement {
