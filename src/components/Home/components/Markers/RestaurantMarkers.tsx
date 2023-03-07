@@ -66,7 +66,8 @@ const RestaurantMarkers = ({ position, item }: Props) => {
   const markerImage = getMargerImage(item, selectedItemValue?.index ?? -1);
 
   const markerImageUrl = useMemo(() => {
-    const isSelected = selectedItemValue?.index === item.index;
+    const isSelected =
+      selectedItemValue?.index === item.index && selectedItemValue?.type === item.type;
     if (item.type === 'zzyang') {
       return isSelected ? ZZYANG_SELECTED_PIN : ZZYANG_DEFAULT_PIN;
     }
@@ -77,7 +78,7 @@ const RestaurantMarkers = ({ position, item }: Props) => {
       return isSelected ? BIGFACE_SELECTED_PIN : BIGFACE_DEFAULT_PIN;
     }
     return isSelected ? SELECTED_PIN : DEFAULT_PIN;
-  }, [item.index, item.type, selectedItemValue?.index]);
+  }, [item.index, item.type, selectedItemValue?.index, selectedItemValue?.type]);
 
   return (
     <MapMarker
@@ -86,8 +87,41 @@ const RestaurantMarkers = ({ position, item }: Props) => {
         // map level에 따라 마커 위치 위로 올리기
         // 하단 Info box가 가릴수도 있기 때문
         const mapLevel = map.getLevel();
-        const calcLat = mapLevel > 4 ? 0.003 : 0.0005;
-        const lat = marker.getPosition().getLat() - calcLat;
+        const calcLat = () => {
+          switch (mapLevel) {
+            case 1:
+              return 0.0003;
+            case 2:
+              return 0.0005;
+            case 3:
+              return 0.001;
+            case 4:
+              return 0.002;
+            case 5:
+              return 0.004;
+            case 6:
+              return 0.008;
+            case 7:
+              return 0.015;
+            case 8:
+              return 0.03;
+            case 9:
+              return 0.06;
+            case 10:
+              return 0.1;
+            case 11:
+              return 0.2;
+            case 12:
+              return 0.4;
+            case 13:
+              return 0.8;
+            case 14:
+              return 1.6;
+            default:
+              return 0.0045;
+          }
+        };
+        const lat = marker.getPosition().getLat() - calcLat();
         const lng = marker.getPosition().getLng();
         const moveLatLon = new kakao.maps.LatLng(lat, lng);
         map.panTo(moveLatLon);

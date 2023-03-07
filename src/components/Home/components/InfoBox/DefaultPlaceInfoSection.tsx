@@ -11,6 +11,23 @@ function DefaultPlaceInfoSection(): ReactElement {
   const { watch } = useFormContext();
   const selectedItemValue: ItemType | undefined = watch('selectedItem');
 
+  // 네이버 평점
+  const naverReviewScore = useMemo(() => {
+    if (!selectedItemValue?.naver_review_score) return;
+    if (!selectedItemValue.naver_review_score.includes('.'))
+      return `${selectedItemValue.naver_review_score}.`.padEnd(4, '0');
+    return selectedItemValue?.naver_review_score?.padEnd(4, '0');
+  }, [selectedItemValue?.naver_review_score]);
+
+  // 카카오 평점
+  const kakaoReviewScore = useMemo(() => {
+    if (!selectedItemValue?.kakao_score) return;
+    if (!selectedItemValue.kakao_score.includes('.'))
+      return `${selectedItemValue.kakao_score}.`.padEnd(4, '0');
+    return selectedItemValue?.kakao_score?.padEnd(4, '0');
+  }, [selectedItemValue?.kakao_score]);
+
+  // 네이버 리뷰 수
   const naverReviewCount = useMemo(() => {
     const visitorReviewCount = Number(
       selectedItemValue?.naver_visitor_review_count?.replace(',', '') ?? 0
@@ -21,6 +38,7 @@ function DefaultPlaceInfoSection(): ReactElement {
     return visitorReviewCount + blogReviewCount;
   }, [selectedItemValue?.naver_blog_review_count, selectedItemValue?.naver_visitor_review_count]);
 
+  // 카카오 리뷰 수
   const kakaoReviewCount = useMemo(() => {
     return Number(selectedItemValue?.kakao_review_count?.replace(',', '') ?? 0);
   }, [selectedItemValue?.kakao_review_count]);
@@ -39,8 +57,7 @@ function DefaultPlaceInfoSection(): ReactElement {
           <Spacing height={1} width={6} />
           {selectedItemValue?.naver_review_score && (
             <ReviewText>
-              {selectedItemValue?.naver_review_score.padEnd(4, '0')}/
-              <span className="default">5</span>
+              {naverReviewScore}/<span className="default">5</span>
             </ReviewText>
           )}
           {naverReviewCount && (
@@ -58,9 +75,9 @@ function DefaultPlaceInfoSection(): ReactElement {
           <Spacing height={1} width={9} />
           <ReviewStarIconImage src={ReviewStarIcon} />
           <Spacing height={1} width={6} />
-          {selectedItemValue?.kakao_score && (
+          {kakaoReviewScore && (
             <ReviewText>
-              {selectedItemValue?.kakao_score.padEnd(4, '0')}/<span className="default">5</span>
+              {kakaoReviewScore}/<span className="default">5</span>
             </ReviewText>
           )}
           {kakaoReviewCount && (

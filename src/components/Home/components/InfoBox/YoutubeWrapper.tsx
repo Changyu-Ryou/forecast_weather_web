@@ -39,6 +39,7 @@ function YoutubeWrapper({ index, youtubeUrl }: Props): ReactElement {
     <Wrapper ref={ref} width={width}>
       {videoId && (
         <Thumbnail
+          width={width}
           src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
           onClick={() => {
             setValue('infoBoxHeight', '100%');
@@ -100,9 +101,9 @@ const YouTubeWrapper = styled.div<{ isReady: boolean | undefined }>`
   z-index: ${({ isReady }) => (isReady ? 99 : -1)};
 `;
 
-const Thumbnail = styled.div<{ src: string }>`
+const Thumbnail = styled.div<{ src: string; width: number }>`
   width: 100%;
-  height: 100%;
+  height: ${({ width }) => (width / youTubeRatio).toFixed(0) + 'px'};
   object-fit: cover;
   position: absolute;
   background-image: ${({ src }) => `url(${src})`};
