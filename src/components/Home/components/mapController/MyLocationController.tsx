@@ -56,6 +56,7 @@ const Button = styled.button`
 
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
+  border-radius: 10px;
 `;
 
 export default MyLocationController;

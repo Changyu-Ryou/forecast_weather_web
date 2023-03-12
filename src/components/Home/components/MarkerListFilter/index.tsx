@@ -81,7 +81,7 @@ const Wrapper = styled.div`
 
 const Item = styled.div<{ selected: boolean }>`
   flex-shrink: 0;
-  padding: 7px 10px;
+  padding: 10px 14px;
   border-radius: 30px;
   background-color: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -92,18 +92,18 @@ const Item = styled.div<{ selected: boolean }>`
       return `
         background-color: #3b70ff;
         color: white;
-        font-weight: bold;
+        font-weight: 900;
       `;
     }
     return `
       border: none;
       color: #000;
-      font-weight: normal;
+      font-weight: 500;
       
     `;
   }};
 
-  font-size: 14px;
+  font-size: 15px;
   box-sizing: border-box;
 `;
 
