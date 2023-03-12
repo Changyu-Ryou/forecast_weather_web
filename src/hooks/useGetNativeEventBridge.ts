@@ -2,7 +2,16 @@ import { useEffect } from 'react';
 
 function useGetNativeEventBridge() {
   const nativeEventHandler = (e: any) => {
-    alert(e.data);
+    const parsedData = JSON.parse(e.data);
+    if (parsedData.eventName === 'getLocation') {
+      const event = new CustomEvent('getLocation', {
+        ...parsedData.data,
+        detail:{
+          ...parsedData.data
+        }
+      });
+      window.dispatchEvent(event);
+    }
   };
   useEffect(() => {
     console.log('[[run bridge interface]]');

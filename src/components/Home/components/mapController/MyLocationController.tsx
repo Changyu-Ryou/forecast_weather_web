@@ -4,16 +4,14 @@ import styled from '@emotion/styled';
 import { CureentPositionType, moveToMyLocation } from '../../hooks/useMapCenter';
 import { useMap } from 'react-kakao-maps-sdk';
 import { useFormContext } from 'react-hook-form';
+import useSendNativeEventBridge from '../../../../hooks/useSendNativeEventBridge';
 
 function MyLocationController(): ReactElement {
   const map = useMap();
   const { setValue, watch } = useFormContext();
   const currentLocationValue: CureentPositionType = watch('currentLocation');
+  const { sendToNative } = useSendNativeEventBridge();
 
-  const setCurrentLocationIconHandler = (position: CureentPositionType) => {
-    if (!position) return;
-    setValue('currentLocation', position);
-  };
   return (
     <Wrapper className="my-location">
       <Button
@@ -22,15 +20,16 @@ function MyLocationController(): ReactElement {
             map.panTo(new kakao.maps.LatLng(currentLocationValue.lat, currentLocationValue.lng));
             return;
           }
+          sendToNative('permissionLocation', {});
 
-          const result = await moveToMyLocation({
-            mapEl: map,
-            setCurrentLocationIconHandler,
-            panToMyLocation: true,
-          });
-          if (!result) {
-            alert('위치정보를 찾을 수 없습니다.');
-          }
+          // const result = await moveToMyLocation({
+          //   mapEl: map,
+          //   setCurrentLocationIconHandler,
+          //   panToMyLocation: true,
+          // });
+          // if (!result) {
+          //   alert('위치정보를 찾을 수 없습니다.' + currentLocationValue ?? '');
+          // }
         }}
       >
         <MyLocationRounded style={{}} />

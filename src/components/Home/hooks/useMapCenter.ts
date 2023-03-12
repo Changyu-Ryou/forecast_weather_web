@@ -49,7 +49,7 @@ export const moveToMyLocation = async ({
     setCurrentLocationIconHandler?.(postion);
     return true;
   } catch (e) {
-    console.log("Can't get location");
+    console.log("Can't get location", e);
     return false;
   }
 };

@@ -1,4 +1,4 @@
-import { ReactElement, useMemo, useRef, useState } from 'react';
+import { ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { Map, useInjectKakaoMapApi } from 'react-kakao-maps-sdk';
 
@@ -39,6 +39,24 @@ function MapView(): ReactElement {
     if (error) return '에러가 발생했어요. 재시작 해주세요.';
     return 'loading...';
   }, [error]);
+
+  // Native로 부터 bridge를 통해 location 좌표를 가져옴
+  useEffect(() => {
+    const currentLocationHandler = (event: any) => {
+      setValue("currentLocation",{
+        lat: Math.abs(Number(event.detail.lat)),
+        lng: Math.abs(Number(event.detail.lng)),
+      });
+      setPosition({
+        lat: Math.abs(Number(event.detail.lat)),
+        lng: Math.abs(Number(event.detail.lng)),
+      })
+    };
+    (window as any).addEventListener('getLocation', currentLocationHandler);
+    return () => {
+      (window as any).removeEventListener('getLocation', currentLocationHandler);
+    };
+  }, []);
 
   return !loading ? (
     <Map

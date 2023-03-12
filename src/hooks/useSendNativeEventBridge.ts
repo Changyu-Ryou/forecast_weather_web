@@ -6,7 +6,7 @@ type EventObject = {
 // RN -> REACT
 type RNToReactEventNames = 'pressButton';
 // REACT -> RN
-type ReactToRNEventNames = 'tabChange';
+type ReactToRNEventNames = 'tabChange' | 'permissionLocation';
 
 function useSendNativeEventBridge() {
   const sendToNative = (eventName: ReactToRNEventNames, data: object) => {
