@@ -101,7 +101,7 @@ const YouTubeWrapper = styled.div<{ isReady: boolean | undefined }>`
   z-index: ${({ isReady }) => (isReady ? 99 : -1)};
 `;
 
-const Thumbnail = styled.div<{ src: string; width: number }>`
+const Thumbnail = styled.img<{ src: string; width: number }>`
   width: 100%;
   height: ${({ width }) => (width / youTubeRatio).toFixed(0) + 'px'};
   object-fit: cover;

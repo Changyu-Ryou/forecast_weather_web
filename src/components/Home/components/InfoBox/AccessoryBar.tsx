@@ -5,11 +5,19 @@ import { ItemType } from '../Markers/RestaurantMarkers';
 import NaverLogoIcon from '../../../../assets/Icon/naver_logo_icon.png';
 import KakaoMapIcon from '../../../../assets/Icon/kakao_map_icon.png';
 import { openKakaoMap, openNaverMap } from '../../../../utils/deeplink';
+import useSendNativeEventBridge from '../../../../hooks/useSendNativeEventBridge';
 
 function AccessoryBar() {
   const { watch } = useFormContext();
   const selectedItemValue: ItemType | undefined = watch('selectedItem');
   const infoBoxHeightValue = watch('infoBoxHeight');
+
+  const { sendToNative } = useSendNativeEventBridge();
+
+  // 전면광고 Open 함수
+  const openAds = () => {
+    sendToNative('showInterstitialAd', {});
+  };
   const show = useMemo(() => {
     return (
       infoBoxHeightValue === '100%' &&
@@ -21,7 +29,10 @@ function AccessoryBar() {
       {selectedItemValue?.naver_map_url !== undefined && (
         <button
           className="naver"
-          onClick={() => openNaverMap(selectedItemValue?.naver_map_url ?? '')}
+          onClick={() => {
+            openNaverMap(selectedItemValue?.naver_map_url ?? '');
+            // openAds();
+          }}
         >
           <img src={NaverLogoIcon} />
           네이버 지도
@@ -30,7 +41,10 @@ function AccessoryBar() {
       {selectedItemValue?.kakao_detail_url && (
         <button
           className="kakao"
-          onClick={() => openKakaoMap(selectedItemValue?.kakao_detail_url ?? '')}
+          onClick={() => {
+            openKakaoMap(selectedItemValue?.kakao_detail_url ?? '');
+            // openAds();
+          }}
         >
           <img src={KakaoMapIcon} />
           카카오맵
