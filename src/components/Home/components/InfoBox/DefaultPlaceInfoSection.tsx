@@ -6,6 +6,7 @@ import { ItemType } from '../Markers/RestaurantMarkers';
 import NaverMapIcon from '../../../../assets/Icon/naver_map_icon.png';
 import KakaoMapIcon from '../../../../assets/Icon/kakao_map_icon.png';
 import ReviewStarIcon from '../../../../assets/Icon/review_star.png';
+import { openKakaoMap, openNaverMap } from '../../../../utils/deeplink';
 
 function DefaultPlaceInfoSection(): ReactElement {
   const { watch } = useFormContext();
@@ -50,7 +51,8 @@ function DefaultPlaceInfoSection(): ReactElement {
       <Title>{selectedItemValue?.title}</Title>
       <Spacing height={11} />
       <ReviewWrapper>
-        <ReviewRow>
+        {/* 네이버 평점/리뷰 */}
+        <ReviewRow onClick={() => openNaverMap(selectedItemValue?.naver_map_url ?? '')}>
           <IconImage src={NaverMapIcon} />
           <Spacing height={1} width={9} />
           <ReviewStarIconImage src={ReviewStarIcon} />
@@ -70,7 +72,8 @@ function DefaultPlaceInfoSection(): ReactElement {
           )}
         </ReviewRow>
         <Spacing height={6} />
-        <ReviewRow>
+        {/* 카카오 평점/리뷰 */}
+        <ReviewRow onClick={() => openKakaoMap(selectedItemValue?.kakao_detail_url ?? '')}>
           <IconImage src={KakaoMapIcon} />
           <Spacing height={1} width={9} />
           <ReviewStarIconImage src={ReviewStarIcon} />

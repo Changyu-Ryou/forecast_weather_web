@@ -2,6 +2,9 @@ import styled from '@emotion/styled';
 import React, { ReactElement, useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 
+// 필터 추가 후
+// 1. marker image 추가 필요
+// 2. marker data 추가 필요
 export const FilterList = [
   {
     name: '전체',
@@ -22,6 +25,11 @@ export const FilterList = [
     name: '빅페이스',
     value: 'bigface',
     id: 3,
+  },
+  {
+    name: '김사원세끼',
+    value: 'kim_sawon',
+    id: 4,
   },
 ];
 

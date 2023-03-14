@@ -5,6 +5,7 @@ import RestaurantMarkers from './RestaurantMarkers';
 import ssgData from '../../../../constants/ssg_all_data.json';
 import zzyangData from '../../../../constants/zzyang_all_data.json';
 import bigfaceData from '../../../../constants/bigface_all_data.json';
+import kimsawonData from '../../../../constants/kim_sawon_all_data_geo.json';
 import { useFormContext } from 'react-hook-form';
 
 function RestaurantList(): ReactElement {
@@ -21,8 +22,11 @@ function RestaurantList(): ReactElement {
     if (filterValue?.value === 'bigface') {
       return bigfaceData;
     }
+    if (filterValue?.value === 'kim_sawon') {
+      return kimsawonData;
+    }
 
-    return [...ssgData, ...zzyangData, ...bigfaceData];
+    return [...ssgData, ...zzyangData, ...bigfaceData, ...kimsawonData];
   }, [filterValue?.value]);
 
   return (

@@ -1,6 +1,18 @@
 import { useMemo } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { MapMarker, useMap } from 'react-kakao-maps-sdk';
+import {
+  BIGFACE_DEFAULT_PIN,
+  BIGFACE_SELECTED_PIN,
+  DEFAULT_PIN,
+  KIMSAWON_DEFAULT_PIN,
+  KIMSAWON_SELECTED_PIN,
+  SELECTED_PIN,
+  SSG_DEFAULT_PIN,
+  SSG_SELECTED_PIN,
+  ZZYANG_DEFAULT_PIN,
+  ZZYANG_SELECTED_PIN,
+} from './markerPinImage';
 
 export type ItemType = {
   type: string;
@@ -11,8 +23,8 @@ export type ItemType = {
   category: string;
   address?: string;
   phone?: string;
-  menus: string[];
-  pictures: string[];
+  menus?: string[];
+  pictures?: string[];
   x: string;
   y: string;
   naver_map_url?: string;
@@ -38,25 +50,6 @@ type Props = {
   item: ItemType;
 };
 
-const DEFAULT_PIN = 'https://blog.kakaocdn.net/dn/uH2dr/btr0Gbn9PEJ/11fhgd9KleULM2b9WdzrB1/img.png';
-const SELECTED_PIN =
-  'https://blog.kakaocdn.net/dn/bkSbb7/btr01TMjM93/BWE3z9mQBDJZY5Zou197Ek/img.png';
-
-const ZZYANG_DEFAULT_PIN =
-  'https://blog.kakaocdn.net/dn/b6Iosn/btr1UTyWR4d/6y6u9r77uw9Z6peorshgWK/img.png';
-const ZZYANG_SELECTED_PIN =
-  'https://blog.kakaocdn.net/dn/cC96uI/btr1Xxvw9F2/Yjl2IGnrrw6ka203eKo5p1/img.png';
-
-const SSG_DEFAULT_PIN =
-  'https://blog.kakaocdn.net/dn/b4dq03/btr1USUl9qD/2kwb9Ibu3skzqhLTfowokk/img.png';
-const SSG_SELECTED_PIN =
-  'https://blog.kakaocdn.net/dn/DaX2J/btr1XQuUhZs/wuopTcUtjWDKTJWHYzvy41/img.png';
-
-const BIGFACE_DEFAULT_PIN =
-  'https://blog.kakaocdn.net/dn/1s3If/btr2H6396mD/HN1lP84dNFnT8ymhIpm1vk/img.png';
-const BIGFACE_SELECTED_PIN =
-  'https://blog.kakaocdn.net/dn/GeDLy/btr2vVXLY3t/MWQjZ7Cs6tmvkJmhKA3b3K/img.png';
-
 const RestaurantMarkers = ({ position, item }: Props) => {
   const map = useMap();
 
@@ -67,7 +60,10 @@ const RestaurantMarkers = ({ position, item }: Props) => {
 
   const markerImageUrl = useMemo(() => {
     const isSelected =
-      selectedItemValue?.index === item.index && selectedItemValue?.type === item.type;
+      selectedItemValue?.index === item.index &&
+      selectedItemValue?.type === item.type &&
+      selectedItemValue.title === item.title;
+
     if (item.type === 'zzyang') {
       return isSelected ? ZZYANG_SELECTED_PIN : ZZYANG_DEFAULT_PIN;
     }
@@ -76,6 +72,9 @@ const RestaurantMarkers = ({ position, item }: Props) => {
     }
     if (item.type === 'bigface') {
       return isSelected ? BIGFACE_SELECTED_PIN : BIGFACE_DEFAULT_PIN;
+    }
+    if (item.type === 'kim_sawon') {
+      return isSelected ? KIMSAWON_SELECTED_PIN : KIMSAWON_DEFAULT_PIN;
     }
     return isSelected ? SELECTED_PIN : DEFAULT_PIN;
   }, [item.index, item.type, selectedItemValue?.index, selectedItemValue?.type]);
