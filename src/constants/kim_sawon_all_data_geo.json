@@ -3717,29 +3717,6 @@
   },
   {
     "type": "kim_sawon",
-    "index": 71,
-    "youtubeUrl": "https://www.youtube.com/watch?v=i_7WqJ8L3yQ",
-    "title": "이랑칼국수",
-    "category": "칼국수,만두",
-    "address": "서울 송파구 백제고분로41길 6 2층",
-    "naver_map_url": "https://m.place.naver.com/share?id=37915084&tabsPath=%2Fhome&appMode=detail",
-    "naver_review_score": "4.36",
-    "naver_visitor_review_count": "607",
-    "naver_blog_review_count": "183",
-    "phone": "02-416-0603",
-    "menus": ["닭한마리칼국수", "들깨수제비 (2인이상)", "들깨옹심이 (2인이상)", "바지락칼국수"],
-    "pictures": [
-      "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200604_128%2F1591264448042H6YHM_JPEG%2Fii9BXp15RcdoBaGQQ6_6TvW4.jpeg.jpg",
-      "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200626_300%2F1593122728093eEQYc_JPEG%2FJ4NClJLn4lwNceEODPQA-Mu1.jpg"
-    ],
-    "kakao_score": "3.7",
-    "kakao_review_count": "52",
-    "kakao_detail_url": "https://place.map.kakao.com/1708835011",
-    "x": "127.1086015",
-    "y": "37.5068086"
-  },
-  {
-    "type": "kim_sawon",
     "index": 114,
     "youtubeUrl": "https://www.youtube.com/watch?v=2tZQNbPwh2Y",
     "naver_map_url": "http://naver.me/GKmUuSq7",

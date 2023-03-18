@@ -34,7 +34,7 @@ function RestaurantList(): ReactElement {
       {restaurantList.map((item) => {
         return (
           <RestaurantMarkers
-            key={item.type + ' ' + item.index}
+            key={'marker_' + item.type + '_' + item.index + '_' + item.title}
             position={{ lat: parseFloat(item.y), lng: parseFloat(item.x) }}
             item={item}
           />

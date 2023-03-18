@@ -10,7 +10,7 @@ export const Linkify = ({ children }: Props) => (
   <ReactLinkify
     componentDecorator={(decoratedHref, decoratedText, key) => (
       <Link
-        key={key}
+        key={key + '_linkify'}
         href={decoratedHref}
         onClick={(event) => {
           event.preventDefault();

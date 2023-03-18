@@ -22,7 +22,7 @@ function NavigationBar(): ReactElement {
         <InfoOutlinedIcon />
       </MoreInfoButtonWrapper>
       <Modal
-        open={openModalValue}
+        open={openModalValue ?? false}
         onClose={() => setValue('openModal', false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
