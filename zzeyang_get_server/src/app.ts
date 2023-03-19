@@ -26,33 +26,31 @@ const parserName = 'kim_sawon';
 const main = async () => {
   // @files 엑셀 파일을 가져온다.
 
-  // const fileSwitcher = () => {
-  //   switch (parserName) {
-  //     case "ssg":
-  //       return "/constants/ssg.xlsx";
-  //     case "zzyang":
-  //       return "/constants/zzyang.xlsx";
-  //     case "bigface":
-  //       return "/constants/bigface.xlsx";
-  //     default:
-  //       return "/constants/ssg.xlsx";
-  //   }
-  // };
+  const fileSwitcher = () => {
+    switch (parserName as string) {
+      case 'ssg':
+        return '/constants/ssg.xlsx';
+      case 'zzyang':
+        return '/constants/zzyang.xlsx';
+      case 'bigface':
+        return '/constants/bigface.xlsx';
+      default:
+        return '/constants/ssg.xlsx';
+    }
+  };
 
-  // const excelFile = xlsx.readFile(__dirname + fileSwitcher(), {
-  //   sheetRows: 100,
-  // });
+  const excelFile = xlsx.readFile(__dirname + fileSwitcher(), {
+    sheetRows: 100,
+  });
 
-  // // @breif 엑셀 파일의 첫번째 시트의 정보를 추출
-  // const sheetName = excelFile.SheetNames[0]; // @details 첫번째 시트 정보 추출
-  // const firstSheet = excelFile.Sheets[sheetName]; // @details 시트의 제목 추출
+  // @breif 엑셀 파일의 첫번째 시트의 정보를 추출
+  const sheetName = excelFile.SheetNames[0]; // @details 첫번째 시트 정보 추출
+  const firstSheet = excelFile.Sheets[sheetName]; // @details 시트의 제목 추출
 
-  // // @details 엑셀 파일의 첫번째 시트를 읽어온다.
-  // const jsonData: ExcelData[] = xlsx.utils.sheet_to_json(firstSheet, {
-  //   defval: "",
-  // });
-
-  const jsonData = kimJson;
+  // @details 엑셀 파일의 첫번째 시트를 읽어온다.
+  const jsonData: ExcelData[] = xlsx.utils.sheet_to_json(firstSheet, {
+    defval: '',
+  });
 
   console.log(jsonData.length > 50 && '>>>>>>>>>>>>>>엑셀 가져오기 성공<<<<<<<<<<');
 
@@ -83,25 +81,19 @@ const main = async () => {
       });
       continue;
     }
-    // if (data.name.length < 2) {
-    //   console.log(
-    //     ">>" + data.index + " [" + data.name + "] << = 상호명이 입력되지 않음"
-    //   );
+    if (data.name.length < 2) {
+      console.log('>>' + data.index + ' [' + data.name + '] << = 상호명이 입력되지 않음');
 
-    //   await storeData({
-    //     data: {
-    //       index: data.index,
-    //       result:
-    //         ">>" +
-    //         data.index +
-    //         " [" +
-    //         data.name +
-    //         "] << = 상호명이 입력되지 않음",
-    //     },
-    //     filePathStr: `../data/${parserName}_log.json`,
-    //   });
-    //   continue;
-    // }
+      await storeData({
+        data: {
+          index: data.index,
+          result: '>>' + data.index + ' [' + data.name + '] << = 상호명이 입력되지 않음',
+        },
+        filePathStr: `../data/${parserName}_log.json`,
+      });
+      continue;
+    }
+
     if (data.naver_url.length === 0) {
       console.log('>>' + jsonData[i].naver_url + '<< = 네이버 링크 없음');
       await storeData({
@@ -130,10 +122,7 @@ const main = async () => {
 
     const result = await parser(
       driver,
-      // data?.video_id
-      //   ? `https://www.youtube.com/watch?v=${data?.video_id}`
-      //   : data.youtube_url,
-      data.youtube_url,
+      data?.video_id ? `https://www.youtube.com/watch?v=${data?.video_id}` : data.youtube_url,
       data.naver_url,
       data.index,
       parserName

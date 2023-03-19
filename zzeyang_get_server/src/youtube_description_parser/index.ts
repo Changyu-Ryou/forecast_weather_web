@@ -1,9 +1,9 @@
-import { WebDriver } from "selenium-webdriver";
-import xlsx from "xlsx";
-import { runChrome } from "../naver_parser/selenium";
-import { storeData } from "../naver_parser/storeData";
-import parserYoutubeChrominum from "./parserYoutubeChrominum";
-import path from "path";
+import { WebDriver } from 'selenium-webdriver';
+import xlsx from 'xlsx';
+import { runChrome } from '../naver_parser/selenium';
+import { storeData } from '../naver_parser/storeData';
+import parserYoutubeChrominum from './parserYoutubeChrominum';
+import path from 'path';
 // import { requestPlace } from "./parser";
 
 type ExcelData = {
@@ -18,8 +18,8 @@ type ExcelData = {
 
 // 어떤 엑셀 파일을 파싱할지 결정 및 타입 이름을 지정한다.
 // ex) "zzyang" or "ssg"
-const parserName: string = "kim_sawon";
-const filePath = "../constants/kim_sawon.xlsx";
+const parserName = 'kim_sawon' as string;
+const filePath = '../constants/kim_sawon.xlsx';
 
 const main = async () => {
   // @files 엑셀 파일을 가져온다.
@@ -34,12 +34,10 @@ const main = async () => {
 
   // @details 엑셀 파일의 첫번째 시트를 읽어온다.
   const jsonData: ExcelData[] = xlsx.utils.sheet_to_json(firstSheet, {
-    defval: "",
+    defval: '',
   });
 
-  console.log(
-    jsonData.length > 50 && ">>>>>>>>>>>>>>엑셀 가져오기 성공<<<<<<<<<<"
-  );
+  console.log(jsonData.length > 50 && '>>>>>>>>>>>>>>엑셀 가져오기 성공<<<<<<<<<<');
 
   // const maxFlag = jsonData.length;
 
@@ -47,7 +45,7 @@ const main = async () => {
   const maxFlag = undefined;
 
   const driver: WebDriver = await runChrome();
-  await driver.get("https://www.youtube.com/");
+  await driver.get('https://www.youtube.com/');
   await driver.sleep(12000);
 
   for await (const [i, data] of jsonData.entries()) {
@@ -55,31 +53,24 @@ const main = async () => {
     if (maxFlag && i > maxFlag) break;
 
     if (data.youtube_url.length === 0) {
-      console.log(">>" + data?.index + "<< = 비어있는 row");
+      console.log('>>' + data?.index + '<< = 비어있는 row');
 
       await storeData({
         data: {
           index: data.index,
-          result: ">>" + data?.index + "<< = 비어있는 row",
+          result: '>>' + data?.index + '<< = 비어있는 row',
         },
         filePathStr: `../data/${parserName}_log.json`,
       });
       continue;
     }
     if (data.name.length < 2) {
-      console.log(
-        ">>" + data.index + " [" + data.name + "] << = 상호명이 입력되지 않음"
-      );
+      console.log('>>' + data.index + ' [' + data.name + '] << = 상호명이 입력되지 않음');
 
       await storeData({
         data: {
           index: data.index,
-          result:
-            ">>" +
-            data.index +
-            " [" +
-            data.name +
-            "] << = 상호명이 입력되지 않음",
+          result: '>>' + data.index + ' [' + data.name + '] << = 상호명이 입력되지 않음',
         },
         filePathStr: `../data/${parserName}_log.json`,
       });
@@ -96,7 +87,7 @@ const main = async () => {
       parserName
     );
 
-    console.log("[[" + i + "]] finish = ", result);
+    console.log('[[' + i + ']] finish = ', result);
   }
 };
 main();

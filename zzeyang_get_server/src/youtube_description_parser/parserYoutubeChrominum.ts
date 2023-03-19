@@ -1,5 +1,5 @@
-import { By, Key, WebDriver, until } from "selenium-webdriver";
-import { storeData } from "../naver_parser/storeData";
+import { By, Key, WebDriver, until } from 'selenium-webdriver';
+import { storeData } from '../naver_parser/storeData';
 
 const parserYoutubeChrominum = async (
   driver: WebDriver,
@@ -7,6 +7,7 @@ const parserYoutubeChrominum = async (
   index: number,
   type: string
 ) => {
+  // eslint-disable-next-line no-async-promise-executor
   return new Promise(async (resolve, reject) => {
     // headless로 크롬 드라이버 실행
 
@@ -18,10 +19,10 @@ const parserYoutubeChrominum = async (
 
       // css selector로 가져온 element가 위치할때까지 최대 10초간 기다린다
 
-      let resultData: any = {
+      const resultData: any = {
         type,
         index,
-        name: "raw",
+        name: 'raw',
         youtube_url: youtube_url,
       };
 
@@ -32,25 +33,25 @@ const parserYoutubeChrominum = async (
 
       const descriptionUrls = await descriptionParsing(driver);
 
-      console.log(index, "== descriptionUrls: ", descriptionUrls);
+      console.log(index, '== descriptionUrls: ', descriptionUrls);
 
       if (!descriptionUrls) {
         await storeData({
-          data: { index, error: "url 없음" },
+          data: { index, error: 'url 없음' },
           filePathStr: `../data/${type}_log.json`,
         });
-        resolve("fail");
+        resolve('fail');
         return;
       }
 
       for await (const [i, data] of descriptionUrls.entries()) {
-        if (data.includes("naver.me")) {
+        if (data.includes('naver.me')) {
           resultData.naver_url = data;
           await storeData({
             data: resultData,
             filePathStr: `../data/${type}_data.json`,
           });
-          console.log("-----저장 성공-----", resultData);
+          console.log('-----저장 성공-----', resultData);
         }
       }
 
@@ -61,11 +62,11 @@ const parserYoutubeChrominum = async (
         data: { index, error: e },
         filePathStr: `../data/${type}_log.json`,
       });
-      console.log("-----실패 내용 저장 성공-----");
-      resolve("fail");
+      console.log('-----실패 내용 저장 성공-----');
+      resolve('fail');
     } finally {
       driver.sleep(300);
-      resolve("done");
+      resolve('done');
     }
   });
 };
@@ -75,16 +76,14 @@ export default parserYoutubeChrominum;
 // 설명 더보기 클릭
 export const moreButtonClick = async (driver: WebDriver) => {
   try {
-    const moreButton = await driver.findElement(
-      By.css("#bottom-row > #description")
-    );
+    const moreButton = await driver.findElement(By.css('#bottom-row > #description'));
     if (moreButton) await moreButton.click();
 
     driver.sleep(1000);
 
     return;
   } catch (e) {
-    console.log("moreButtonClick error", e);
+    console.log('moreButtonClick error', e);
     return 0;
   }
 };
@@ -93,7 +92,7 @@ export const moreButtonClick = async (driver: WebDriver) => {
 export const descriptionParsing = async (driver: WebDriver) => {
   try {
     const description = await driver.findElements(
-      By.css("#description-inline-expander > yt-attributed-string > span a")
+      By.css('#description-inline-expander > yt-attributed-string > span a')
     );
 
     const list: string[] = [];
@@ -107,7 +106,7 @@ export const descriptionParsing = async (driver: WebDriver) => {
 
     return list;
   } catch (e) {
-    console.log("descriptionParsing error", e);
+    console.log('descriptionParsing error', e);
     return undefined;
   }
 };
