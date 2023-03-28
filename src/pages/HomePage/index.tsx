@@ -4,7 +4,7 @@ import { ActivityComponentType, useActivity } from '@stackflow/react';
 import MainContents from '../../components/Home/MainContents';
 import { AppScreen } from '../../stackflow/components';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import Fade from '@mui/material/Fade';
+
 import { CustomTooltip } from '../../components/common/CustomToolTip';
 import { useFlow } from '../../stackflow';
 import { useState } from 'react';

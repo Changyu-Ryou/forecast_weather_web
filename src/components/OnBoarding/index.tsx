@@ -65,9 +65,6 @@ function MainContents(): ReactElement {
         </Title>
         <Spacing height={31} />
         <FlippyCard imageUrl="https://blog.kakaocdn.net/dn/bdMBNq/btrbWeHU9Ui/itmiT8htt9Y8OdxculRhM0/img.jpg" />
-        {/* <CardImage
-          src={'https://blog.kakaocdn.net/dn/bdMBNq/btrbWeHU9Ui/itmiT8htt9Y8OdxculRhM0/img.jpg'}
-        /> */}
 
         <Spacing height={30} />
       </View>

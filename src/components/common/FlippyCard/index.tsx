@@ -32,11 +32,11 @@ function FlippyCard({ imageUrl }: Props): ReactElement {
     parent.classList.add('animated');
     // Get the x position of the users mouse, relative to the button itself
     const x = Math.abs(
-      item.getBoundingClientRect().x - ((e as any).clientX ?? (e as any)?.touches?.[0].clientX)
+      item.getBoundingClientRect().x - ((e as any)?.clientX ?? (e as any)?.touches[0]?.clientX)
     );
     // Get the y position relative to the button
     const y = Math.abs(
-      item.getBoundingClientRect().y - ((e as any).clientY ?? (e as any)?.touches?.[0].clientY)
+      item.getBoundingClientRect().y - ((e as any)?.clientY ?? (e as any)?.touches[0]?.clientY)
     );
 
     // Calculate half the width and height
@@ -55,6 +55,7 @@ function FlippyCard({ imageUrl }: Props): ReactElement {
     // And set its container's perspective.
     parent.style.perspective = `${halfWidth * 6}px`;
     item.style.perspective = `${halfWidth * 6}px`;
+    innerCardBackfaceRef.current.style.perspective = `${halfWidth * 6}px`;
 
     // Set the items transform CSS property
     item.style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04)`;
@@ -76,15 +77,15 @@ function FlippyCard({ imageUrl }: Props): ReactElement {
     <div
       className="card blastoise"
       ref={cardRef}
-      onTouchMove={(e) => {
-        if (!innerCardRef.current) return;
-        calculateAngle(e, innerCardRef.current);
-      }}
       onTouchStart={(e) => {
         if (!innerCardRef.current) return;
         calculateAngle(e, innerCardRef.current);
       }}
-      onTouchEnd={(e) => {
+      onTouchMove={(e) => {
+        if (!innerCardRef.current) return;
+        calculateAngle(e, innerCardRef.current);
+      }}
+      onTouchCancel={(e) => {
         if (!innerCardRef.current) return;
         calculateAngle(e, innerCardRef.current);
       }}
@@ -135,7 +136,5 @@ function FlippyCard({ imageUrl }: Props): ReactElement {
     </div>
   );
 }
-
-const Card = styled.div``;
 
 export default FlippyCard;
