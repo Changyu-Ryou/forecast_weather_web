@@ -36,6 +36,16 @@ export const NotFoundView = ({ message }: Props) => {
           홈으로 이동
         </Button>
       </ButtonWrapper>
+      <ButtonWrapper>
+        <Button
+          onClick={() => {
+            replace('OnBoardPage', {});
+          }}
+          style={{ width: '100%' }}
+        >
+          온보딩으로 이동
+        </Button>
+      </ButtonWrapper>
     </Container>
   );
 };

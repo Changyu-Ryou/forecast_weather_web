@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 import useGetNativeEventBridge from './hooks/useGetNativeEventBridge';
 import './utils/firebase';
 import 'react-spring-bottom-sheet/dist/style.css';
