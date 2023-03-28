@@ -28,6 +28,7 @@ function MainContents(): ReactElement {
   const { push } = useFlow();
   return (
     <AppScreen
+      noAppBar
       accessoryBar={
         <ButtonWrapper
           variants={{
@@ -99,11 +100,7 @@ const Title = styled(motion.div)`
 
   text-align: center;
   word-break: keep-all;
-`;
-
-const CardImage = styled.img`
-  width: 185px;
-  height: auto;
+  flex-shrink: 0;
 `;
 
 const ButtonWrapper = styled(motion.div)`
@@ -113,6 +110,7 @@ const ButtonWrapper = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 `;
 
 export default MainContents;

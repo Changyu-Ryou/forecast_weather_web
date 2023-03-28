@@ -12,6 +12,7 @@ export type AppScreenProps = Parameters<typeof AppBar>[0] & {
   accessoryBar?: React.ReactNode;
   onPull?: () => void;
   layoutRef?: Ref<LayoutRefProps>;
+  noAppBar?: boolean;
 };
 
 export const AppScreen = ({
@@ -20,24 +21,29 @@ export const AppScreen = ({
   accessoryBar,
   onPull,
   layoutRef,
+  noAppBar = false,
   ...props
 }: AppScreenProps) => {
   return (
     <AppBar
       {...props}
-      appBar={{
-        borderSize: '0',
+      appBar={
+        noAppBar
+          ? undefined
+          : {
+              borderSize: '0',
 
-        closeButton: {
-          renderIcon: () => <ArrowBackIosNewIcon sx={{ fontSize: '24px', color: 'black' }} />,
-        },
-        backButton: {
-          renderIcon: () => <ArrowBackIosNewIcon sx={{ fontSize: '24px', color: 'black' }} />,
-        },
-        ...appBar,
+              closeButton: {
+                renderIcon: () => <ArrowBackIosNewIcon sx={{ fontSize: '24px', color: 'black' }} />,
+              },
+              backButton: {
+                renderIcon: () => <ArrowBackIosNewIcon sx={{ fontSize: '24px', color: 'black' }} />,
+              },
+              ...appBar,
 
-        title: appBar?.title && <TitleWrapper>{appBar.title}</TitleWrapper>,
-      }}
+              title: appBar?.title && <TitleWrapper>{appBar.title}</TitleWrapper>,
+            }
+      }
     >
       <Layout ref={layoutRef} accessoryBar={accessoryBar}>
         {children}
