@@ -79,7 +79,6 @@ function OnBoardGoal(): ReactElement {
   const { mutate, isLoading } = usePutUserGoal();
 
   const startHandler = async () => {
-    alert('목표와 연관된 카테고리를 가져오고 있어요');
     await mutate(
       { deviceId: userData.deviceId, goal: goalValue },
       {
