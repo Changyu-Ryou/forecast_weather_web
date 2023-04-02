@@ -79,6 +79,7 @@ function OnBoardGoal(): ReactElement {
   const { mutate, isLoading } = usePutUserGoal();
 
   const startHandler = async () => {
+    alert('목표와 연관된 카테고리를 가져오고 있어요');
     await mutate(
       { deviceId: userData.deviceId, goal: goalValue },
       {
@@ -91,6 +92,7 @@ function OnBoardGoal(): ReactElement {
           replace('HomePage', {}, { animate: true });
         },
         onError: (error) => {
+          alert('목표와 연관된 카테고리를 가져오는데 에러가 발생했어요.');
           console.log(error);
         },
       }
@@ -119,7 +121,7 @@ function OnBoardGoal(): ReactElement {
           <Button
             disabled={!isValid || isLoading}
             onClick={() => {
-              if (!isValid || isLoading) return;
+              if (isLoading) return;
               startHandler();
             }}
           >
