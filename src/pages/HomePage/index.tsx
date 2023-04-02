@@ -7,12 +7,43 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 import { CustomTooltip } from '../../components/common/CustomToolTip';
 import { useFlow } from '../../stackflow';
-import { useState } from 'react';
+import { ReactElement } from 'react';
+import useFormContextHook from '../../hooks/useFormContextHook';
 
 const HomePage: ActivityComponentType = () => {
   const { push } = useFlow();
   const { isTop } = useActivity();
-  const [showTooltip, setShowTooltip] = useState(true);
+
+  const { watch, setValue } = useFormContextHook();
+  const clickedLike = watch('clickedLike');
+  const clikedMyPageTooltip = watch('clickedMyPageTooltip');
+
+  const showTooltip = clickedLike && !clikedMyPageTooltip && isTop;
+
+  const renderMyPage = (children: ReactElement) => {
+    if (showTooltip) {
+      return (
+        <CustomTooltip
+          TransitionProps={{ timeout: 600 }}
+          placement="bottom-start"
+          title={
+            <span
+              onClick={() => {
+                setValue('clickedMyPageTooltip', true);
+              }}
+            >
+              저장한 한마디는 여기서 볼 수 있어요
+            </span>
+          }
+          open={showTooltip}
+          arrow
+        >
+          {children}
+        </CustomTooltip>
+      );
+    }
+    return children;
+  };
 
   return (
     <AppScreen
@@ -29,31 +60,15 @@ const HomePage: ActivityComponentType = () => {
         },
 
         appendRight: () => {
-          return (
-            <CustomTooltip
-              TransitionProps={{ timeout: 600 }}
-              placement="bottom-start"
-              title={
-                <span
-                  onClick={() => {
-                    setShowTooltip(false);
-                  }}
-                >
-                  여기서 확인해라
-                </span>
-              }
-              open={showTooltip && isTop}
-              arrow
+          return renderMyPage(
+            <MyIconWrapper
+              onClick={() => {
+                setValue('clickedMyPageTooltip', true);
+                push('MyPage', {});
+              }}
             >
-              <MyIconWrapper
-                onClick={() => {
-                  setShowTooltip(false);
-                  push('MyPage', {});
-                }}
-              >
-                <PersonOutlineIcon sx={{ fontSize: '30px' }} />
-              </MyIconWrapper>
-            </CustomTooltip>
+              <PersonOutlineIcon sx={{ fontSize: '30px' }} />
+            </MyIconWrapper>
           );
         },
       }}

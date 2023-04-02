@@ -97,6 +97,9 @@ function FlippyCard({ imageUrl }: Props): ReactElement {
         if (!innerCardRef.current) return;
         calculateAngle(e, innerCardRef.current);
       }}
+      onClick={() => {
+        cardRef.current?.classList.toggle('flipped');
+      }}
       onMouseLeave={(e) => {
         let dropShadowColor = `rgba(0, 0, 0, 0.3)`;
         if (!innerCardRef.current || !cardRef.current || !innerCardBackfaceRef.current) return;
@@ -111,26 +114,9 @@ function FlippyCard({ imageUrl }: Props): ReactElement {
       }}
     >
       <span className="inner-card-backface" ref={innerCardBackfaceRef}>
-        <span className="image">
-          <span
-            className="unflip"
-            onClick={() => {
-              cardRef.current?.classList.remove('flipped');
-            }}
-          >
-            Unflip
-          </span>
-        </span>
+        <span className="image"></span>
       </span>
       <span className="inner-card" ref={innerCardRef}>
-        <span
-          className="flip"
-          onClick={() => {
-            cardRef.current?.classList.add('flipped');
-          }}
-        >
-          Flip
-        </span>
         <span className="glare" ref={glareRef} />
       </span>
     </div>

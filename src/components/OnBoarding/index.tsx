@@ -1,73 +1,60 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
+
+import { fetchPostUserRegister } from '../../api/fetchPostUserRegister';
+import { useStorage } from '../../hooks/useStorage';
 
 import { useFlow } from '../../stackflow';
 import { AppScreen } from '../../stackflow/components';
-import { Button } from '../common/Button';
-import FlippyCard from '../common/FlippyCard';
+import { DeviceUUID } from 'device-uuid';
+
+import NormalFlippyCard from '../common/NormalFlippyCard';
 import { Spacing } from '../common/Spacing';
+import useFormContextHook from '../../hooks/useFormContextHook';
 
 const transition = {
-  duration: 2,
-  delay: 0.5,
+  duration: 0.5,
 };
 
 const textReveal = {
   initial: {
-    y: '200%',
     opacity: 0,
   },
   animate: {
-    y: '0%',
     opacity: 1,
   },
 };
 
 function MainContents(): ReactElement {
   const { push } = useFlow();
+
+  const { setValue } = useFormContextHook();
+
+  const onOnboardHandler = async () => {
+    const uuid = new DeviceUUID().get();
+    const data = await fetchPostUserRegister({ deviceId: uuid });
+
+    if (data) {
+      setValue('userData', data.data);
+    }
+    push('OnBoardGoalPage', {}, { animate: false });
+  };
+
   return (
-    <AppScreen
-      noAppBar
-      accessoryBar={
-        <ButtonWrapper
-          variants={{
-            initial: {
-              opacity: 0,
-            },
-            animate: {
-              opacity: 1,
-            },
-          }}
-          initial="initial"
-          animate="animate"
-          transition={{ ...transition, delay: 2 }}
-        >
-          <Button
-            onClick={() => {
-              push('OnBoardGoalPage', {});
-            }}
-          >
-            명언 받기
-          </Button>
-        </ButtonWrapper>
-      }
-    >
+    <AppScreen noAppBar>
       <View>
-        <Title
-          variants={textReveal}
-          initial="initial"
-          animate="animate"
-          transition={{ ...transition, delay: 0.5 }}
-        >
+        <Title variants={textReveal} initial="initial" animate="animate" transition={transition}>
           명언을 어쩌구
           <br />
           갓생 살기 가즈아
         </Title>
-        <Spacing height={31} />
-        <FlippyCard imageUrl="https://blog.kakaocdn.net/dn/bdMBNq/btrbWeHU9Ui/itmiT8htt9Y8OdxculRhM0/img.jpg" />
-
-        <Spacing height={30} />
+        <Spacing height={55} />
+        <NormalFlippyCard
+          onClick={onOnboardHandler}
+          imageUrl="https://blog.kakaocdn.net/dn/bdMBNq/btrbWeHU9Ui/itmiT8htt9Y8OdxculRhM0/img.jpg"
+          frontImage="https://user-images.githubusercontent.com/56837413/228339554-e3dc0092-71b7-4dac-b79e-01f8db2961e4.png"
+        />
       </View>
     </AppScreen>
   );
@@ -91,7 +78,6 @@ const Title = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px 20px;
   overflow: hidden;
 
   font-weight: 700;
@@ -100,16 +86,6 @@ const Title = styled(motion.div)`
 
   text-align: center;
   word-break: keep-all;
-  flex-shrink: 0;
-`;
-
-const ButtonWrapper = styled(motion.div)`
-  width: 100%;
-  padding: 16px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
 `;
 

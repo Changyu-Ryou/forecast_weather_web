@@ -6,6 +6,9 @@ import { useActivityParams } from '@stackflow/react';
 
 export interface ActivityQueryParams {
   from?: string;
+  image?: string;
+  quote?: string;
+  author?: string;
 }
 
 export const useQueryParams = (): ActivityQueryParams => {

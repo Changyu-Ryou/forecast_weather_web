@@ -4,12 +4,15 @@ export const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: '#598CF2',
+    backgroundColor: '#1F2023',
     color: 'white',
     fontSize: '14px',
-    lineHeight: '150%',
+    lineHeight: '140%',
+    letterSpacing: '-0.01em',
+    padding: '12px 16px',
+    fontWeight: '400',
     ['.css-kudwh-MuiTooltip-arrow']: {
-      color: '#598CF2',
+      color: '#1F2023',
     },
   },
 }));

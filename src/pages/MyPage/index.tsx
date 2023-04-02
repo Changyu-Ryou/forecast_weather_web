@@ -5,7 +5,7 @@ import { AppScreen } from '../../stackflow/components';
 
 const MyPage: ActivityComponentType = () => {
   return (
-    <AppScreen>
+    <AppScreen appBar={{ title: <AppBarTitle>마이페이지</AppBarTitle> }}>
       <Wrapper>
         <MyInfoContents />
       </Wrapper>
@@ -22,6 +22,14 @@ const Wrapper = styled.div`
   justify-content: flex-start;
 
   overflow: hidden;
+`;
+
+const AppBarTitle = styled.span`
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 145%;
+  letter-spacing: -0.01em;
+  color: #1f2023;
 `;
 
 export default MyPage;

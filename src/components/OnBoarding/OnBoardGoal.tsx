@@ -1,9 +1,13 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { DeviceUUID } from 'device-uuid';
 
 import { motion } from 'framer-motion';
 import { ReactElement, useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { fetchPutUserGoal } from '../../api/fetchPutUserGoal';
+import useFormContextHook from '../../hooks/useFormContextHook';
+import { useStorage } from '../../hooks/useStorage';
 import { useFlow } from '../../stackflow';
 import { AppScreen } from '../../stackflow/components';
 import { Button } from '../common/Button';
@@ -17,37 +21,36 @@ const transition = {
 
 const textReveal = {
   initial: {
-    y: '30%',
     opacity: 0,
     display: 'none',
   },
   open: {
-    y: '0%',
     opacity: 1,
     display: 'flex',
   },
   close: {
-    y: '30%',
     opacity: 0,
   },
 };
 
 const TEMPLATE_CHIP = [
-  { id: 0, title: '운동하기' },
-  { id: 1, title: '독서하기' },
-  { id: 2, title: '취미생활' },
-  { id: 3, title: '취업하기' },
-  { id: 4, title: '취미생활' },
+  { id: 0, title: '주3회 운동하기', icon: '💪' },
+  { id: 1, title: '수업 끝나면 복습하기', icon: '📚' },
+  { id: 2, title: '긍정적으로 생각하기', icon: '😀' },
+  { id: 3, title: '목표가 또 뭐가 있니', icon: '🧐' },
 ];
 
 function OnBoardGoal(): ReactElement {
   const { replace, pop } = useFlow();
+  const [, setOnBoardValue] = useStorage('onBoard', 'false');
   const [selectedChip, setSelectedChip] = useState<number | null>(null);
   const { watch, setValue } = useForm({
     defaultValues: {
       goal: '',
     },
   });
+
+  const { watch: watchGlobal, setValue: setValueGlobal } = useFormContextHook();
 
   const resize = (event: any) => {
     if (!event?.target) return;
@@ -71,6 +74,20 @@ function OnBoardGoal(): ReactElement {
     return true;
   }, [goalValue]);
 
+  const userData = watchGlobal('userData');
+
+  const startHandler = async () => {
+    const uuid = new DeviceUUID().get();
+
+    const data = await fetchPutUserGoal({ deviceId: uuid, goal: goalValue });
+    if (data) {
+      setValueGlobal('userData', { ...userData, ...data.data?.user, goal: goalValue });
+    }
+    pop({ animate: false });
+    setOnBoardValue('true');
+    replace('HomePage', {}, { animate: true });
+  };
+
   return (
     <AppScreen
       appBar={{
@@ -79,6 +96,7 @@ function OnBoardGoal(): ReactElement {
             <SkipButton
               onClick={() => {
                 pop();
+                setOnBoardValue('true');
                 replace('HomePage', {}, { animate: true });
               }}
             >
@@ -89,25 +107,22 @@ function OnBoardGoal(): ReactElement {
       }}
       accessoryBar={
         <BottomWrapper>
-          <Button
-            disabled={!isValid}
-            onClick={() => {
-              pop();
-              replace('HomePage', {}, { animate: true });
-            }}
-          >
-            명언 받기
+          <Button disabled={!isValid} onClick={startHandler}>
+            한마디 시작하기
           </Button>
         </BottomWrapper>
       }
     >
       <View>
-        <Title animate={'open'} variants={textReveal} initial="initial" transition={transition}>
-          어떤 목표를
-          <br />
-          이루고 싶나요?
-        </Title>
-        <Spacing />
+        <TitleWrapper>
+          <Title animate={'open'} variants={textReveal} initial="initial" transition={transition}>
+            어떤 목표를
+            <br />
+            이루고 싶나요?
+          </Title>
+          <Spacing height={10} />
+          <SubText>목표를 입력하면 맞춤 명언을 보여드려요</SubText>
+        </TitleWrapper>
         <TextareaWrapper>
           <Textarea
             autoFocus
@@ -137,6 +152,7 @@ function OnBoardGoal(): ReactElement {
                 }}
                 selected={selectedChip === chip.id}
               >
+                {chip.icon && <ChipIcon>{chip.icon}</ChipIcon>}
                 {chip.title}
               </Chip>
             ))}
@@ -147,14 +163,29 @@ function OnBoardGoal(): ReactElement {
   );
 }
 
+const TitleWrapper = styled.div`
+  width: 100%;
+  padding: 20px;
+`;
+
 const Title = styled(motion.div)`
-  padding: 24px 20px;
   font-weight: 700;
   font-size: 28px;
   line-height: 130%;
-  color: #000000;
+  color: #1f2023;
 
   overflow: hidden;
+  flex-shrink: 0;
+`;
+
+const SubText = styled.span`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  color: #4d525b;
+
   flex-shrink: 0;
 `;
 
@@ -174,9 +205,10 @@ const Textarea = styled.textarea`
   height: 26px;
   max-height: 78px;
 
-  caret-color: #3c4fff;
+  caret-color: #1f2023;
 
   border: none;
+
   &:focus {
     outline: none;
   }
@@ -231,9 +263,9 @@ const SubTitle = styled(Title)`
   font-weight: 600;
   font-size: 14px;
   line-height: 140%;
-  padding: 12px 0;
+  padding: 12px 20px;
   letter-spacing: -0.01em;
-  color: #000000;
+  color: #4d525b;
 `;
 
 const ChipsWrapper = styled.div`
@@ -243,6 +275,7 @@ const ChipsWrapper = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 12px;
+  padding: 0 20px;
 `;
 
 const Chip = styled.div<{ selected: boolean }>`
@@ -272,14 +305,30 @@ const Chip = styled.div<{ selected: boolean }>`
 `;
 
 const SkipButton = styled.p`
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  /* identical to box height, or 20px */
+
+  text-align: center;
+  letter-spacing: -0.01em;
+  margin-right: 0.5rem;
+
+  color: #8b919c;
+`;
+
+const ChipIcon = styled.div`
+  font-family: 'TossFaceFontMac';
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  margin-right: 0.5rem;
+  /* identical to box height, or 20px */
 
   letter-spacing: -0.01em;
 
-  color: #666666;
+  /* content/primary */
+
+  color: #1f2023;
 `;
 
 export default OnBoardGoal;

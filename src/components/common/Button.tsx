@@ -6,13 +6,13 @@ export const Button = styled.div<{ disabled?: boolean }>`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 17px 20px;
+  padding: 16px 20px;
   gap: 8px;
 
   width: 100%;
 
-  background: #3c4fff;
-  border-radius: 12px;
+  background: #1f2023;
+  border-radius: 10px;
 
   color: white;
   font-style: normal;
@@ -23,8 +23,8 @@ export const Button = styled.div<{ disabled?: boolean }>`
   ${({ disabled }) => {
     if (disabled) {
       return css`
-        background: #f0f3f6;
-        color: #cccccd;
+        background: #f3f3f4;
+        color: #cacccf;
       `;
     }
   }}

@@ -13,8 +13,12 @@ import OnBoardPage from '../pages/OnBoardPage';
 import OnBoardGoalPage from '../pages/OnBoardGoalPage';
 import NotFoundPage from '../pages/NotFound';
 import MyPage from '../pages/MyPage';
+import { storage } from '../hooks/useStorage';
+import EditGoalBottomSheet from '../components/MyInfo/EditGoalBottomSheet';
+import ArriveCardPage from '../pages/CardPage/ArriveCardPage';
 
 const initStackflow = () => {
+  const onBoardStorage = storage('onBoard');
   return stackflow({
     transitionDuration: 350,
     activities: {
@@ -23,6 +27,8 @@ const initStackflow = () => {
       OnBoardGoalPage,
       NotFoundPage,
       MyPage,
+      ArriveCardPage,
+      'BottomSheet/EditGoalBottomSheet': EditGoalBottomSheet,
     },
     plugins: [
       historySyncPlugin({
@@ -32,11 +38,19 @@ const initStackflow = () => {
           OnBoardPage: ROUTE_PATHS.ON_BOARD,
           OnBoardGoalPage: ROUTE_PATHS.ON_BOARD_INPUT,
           NotFoundPage: ROUTE_PATHS.NOT_FOUND,
+          ArriveCardPage: ROUTE_PATHS.ARRIVE_CARD,
+          'BottomSheet/EditGoalBottomSheet': ROUTE_PATHS.BOTTOMSHEET.EDIT_GOAL,
         },
-        fallbackActivity: () => 'NotFoundPage',
+        fallbackActivity: () => {
+          const onBoardValue = onBoardStorage.get();
+
+          if (!onBoardValue || onBoardValue === '' || onBoardValue === 'false')
+            return 'OnBoardPage';
+          return 'HomePage';
+        },
       }),
       basicRendererPlugin(),
-      basicUIPlugin({ theme: 'android' }),
+      basicUIPlugin({ theme: 'cupertino' }),
     ],
   });
 };

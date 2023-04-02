@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { ReactElement } from 'react';
-import { useFormContext } from 'react-hook-form';
+import useFormContextHook from '../../../hooks/useFormContextHook';
 
 function PageWrapper({ children }: { children: ReactElement }): ReactElement {
-  const { watch } = useFormContext();
+  const { watch } = useFormContextHook();
   const fontFamily = watch('fontFamily');
   return <Wrapper fontFamily={fontFamily}>{children}</Wrapper>;
 }
