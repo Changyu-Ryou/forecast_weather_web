@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { ReactElement, useEffect } from 'react';
+import { ReactElement } from 'react';
 
-import { fetchPostUserRegister } from '../../api/fetchPostUserRegister';
-import { useStorage } from '../../hooks/useStorage';
+import { fetchPostUserRegister, usePostUserRegister } from '../../api/fetchPostUserRegister';
 
 import { useFlow } from '../../stackflow';
 import { AppScreen } from '../../stackflow/components';
@@ -12,6 +11,9 @@ import { DeviceUUID } from 'device-uuid';
 import NormalFlippyCard from '../common/NormalFlippyCard';
 import { Spacing } from '../common/Spacing';
 import useFormContextHook from '../../hooks/useFormContextHook';
+import { v4 as uuidv4 } from 'uuid';
+import DimmerWrapper from '../common/DimmerWrapper';
+import CircularProgress from '../../assets/CircularProgress';
 
 const transition = {
   duration: 0.5,
@@ -31,14 +33,22 @@ function MainContents(): ReactElement {
 
   const { setValue } = useFormContextHook();
 
-  const onOnboardHandler = async () => {
-    const uuid = new DeviceUUID().get();
-    const data = await fetchPostUserRegister({ deviceId: uuid });
+  const { mutate, isLoading } = usePostUserRegister();
 
-    if (data) {
-      setValue('userData', data.data);
-    }
-    push('OnBoardGoalPage', {}, { animate: false });
+  const onOnboardHandler = async () => {
+    const uuid = new DeviceUUID().get() || uuidv4();
+
+    await mutate(
+      { deviceId: uuid },
+      {
+        onSuccess: (data) => {
+          if (data) {
+            setValue('userData', data.data);
+          }
+          push('OnBoardGoalPage', {}, { animate: false });
+        },
+      }
+    );
   };
 
   return (
@@ -58,6 +68,11 @@ function MainContents(): ReactElement {
           />
         </CardWrapper>
       </View>
+      {isLoading && (
+        <DimmerWrapper>
+          <CircularProgress />
+        </DimmerWrapper>
+      )}
     </AppScreen>
   );
 }

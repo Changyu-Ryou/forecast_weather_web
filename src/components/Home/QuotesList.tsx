@@ -66,6 +66,7 @@ const QuotesCarousel = () => {
     <Swiper
       onSwiper={(core) => (swiperRef.current = core)}
       onSlideChange={(swiper) => {
+        !clickedLike && setValue('clickedLike', true);
         setSlideIndex(swiper.activeIndex);
       }}
       style={{

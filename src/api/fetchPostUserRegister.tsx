@@ -19,3 +19,6 @@ export const fetchPostUserRegister = async (req: RegisterUserProps) => {
   const result = await fetchInstance().post(postUserRegisterPath, req);
   return result.data;
 };
+
+export const usePostUserRegister = () =>
+  useMutation<RegisterUserResponse, AxiosError, RegisterUserProps>(fetchPostUserRegister);

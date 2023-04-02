@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { DeviceUUID } from 'device-uuid';
 
 import { motion } from 'framer-motion';
 import { ReactElement, useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { fetchPutUserGoal } from '../../api/fetchPutUserGoal';
+import { fetchPutUserGoal, usePutUserGoal } from '../../api/fetchPutUserGoal';
+import CircularProgress from '../../assets/CircularProgress';
 import useFormContextHook from '../../hooks/useFormContextHook';
 import { useStorage } from '../../hooks/useStorage';
 import { useFlow } from '../../stackflow';
@@ -76,16 +76,25 @@ function OnBoardGoal(): ReactElement {
 
   const userData = watchGlobal('userData');
 
-  const startHandler = async () => {
-    const uuid = new DeviceUUID().get();
+  const { mutate, isLoading } = usePutUserGoal();
 
-    const data = await fetchPutUserGoal({ deviceId: uuid, goal: goalValue });
-    if (data) {
-      setValueGlobal('userData', { ...userData, ...data.data?.user, goal: goalValue });
-    }
-    pop({ animate: false });
-    setOnBoardValue('true');
-    replace('HomePage', {}, { animate: true });
+  const startHandler = async () => {
+    await mutate(
+      { deviceId: userData.deviceId, goal: goalValue },
+      {
+        onSuccess: (data) => {
+          if (data) {
+            setValueGlobal('userData', { ...userData, ...data.data?.user, goal: goalValue });
+          }
+          pop({ animate: false });
+          setOnBoardValue('true');
+          replace('HomePage', {}, { animate: true });
+        },
+        onError: (error) => {
+          console.log(error);
+        },
+      }
+    );
   };
 
   return (
@@ -107,8 +116,14 @@ function OnBoardGoal(): ReactElement {
       }}
       accessoryBar={
         <BottomWrapper>
-          <Button disabled={!isValid} onClick={startHandler}>
-            한마디 시작하기
+          <Button
+            disabled={!isValid || isLoading}
+            onClick={() => {
+              if (!isValid || isLoading) return;
+              startHandler();
+            }}
+          >
+            {isLoading ? <CircularProgress /> : '한마디 시작하기'}
           </Button>
         </BottomWrapper>
       }
@@ -147,6 +162,7 @@ function OnBoardGoal(): ReactElement {
               <Chip
                 key={chip.id}
                 onClick={() => {
+                  if (!isRenderTemplateSection) return;
                   setSelectedChip(chip.id);
                   setValue('goal', chip.title);
                 }}
