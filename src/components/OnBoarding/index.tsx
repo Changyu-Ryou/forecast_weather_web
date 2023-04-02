@@ -50,11 +50,13 @@ function MainContents(): ReactElement {
           갓생 살기 가즈아
         </Title>
         <Spacing height={55} />
-        <NormalFlippyCard
-          onClick={onOnboardHandler}
-          imageUrl="https://blog.kakaocdn.net/dn/bdMBNq/btrbWeHU9Ui/itmiT8htt9Y8OdxculRhM0/img.jpg"
-          frontImage="https://user-images.githubusercontent.com/56837413/228339554-e3dc0092-71b7-4dac-b79e-01f8db2961e4.png"
-        />
+        <CardWrapper>
+          <NormalFlippyCard
+            onClick={onOnboardHandler}
+            imageUrl="https://blog.kakaocdn.net/dn/bdMBNq/btrbWeHU9Ui/itmiT8htt9Y8OdxculRhM0/img.jpg"
+            frontImage="https://user-images.githubusercontent.com/56837413/228339554-e3dc0092-71b7-4dac-b79e-01f8db2961e4.png"
+          />
+        </CardWrapper>
       </View>
     </AppScreen>
   );
@@ -87,6 +89,14 @@ const Title = styled(motion.div)`
   text-align: center;
   word-break: keep-all;
   flex-shrink: 0;
+`;
+
+const CardWrapper = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default MainContents;

@@ -297,7 +297,7 @@ const Chip = styled.div<{ selected: boolean }>`
   ${({ selected }) => {
     if (selected) {
       return css`
-        background: #3c4fff;
+        background: #1f2023;
         color: #ffffff;
       `;
     }
