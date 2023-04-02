@@ -79,7 +79,7 @@ const QuotesCarousel = () => {
     >
       {AllQuotesList.map((slideContent, index) => {
         const indexOfStoredQuotes = storedQuotes?.findIndex((el: QuoteType) => {
-          return el.author === slideContent.author;
+          return JSON.stringify(el) === JSON.stringify(slideContent);
         });
 
         return (
