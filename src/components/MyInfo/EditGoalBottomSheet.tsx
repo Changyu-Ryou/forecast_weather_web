@@ -23,7 +23,7 @@ const EditGoalBottomSheet = () => {
         <Wrapper>
           <Title>목표</Title>
           <TextareaWrapper>
-            <Textarea value={editValue} onChange={(e) => setEditValue(e.target.value)} />
+            <Textarea value={editValue} onChange={(e) => setEditValue(e.target.value)} autoFocus />
           </TextareaWrapper>
           <StoreBtn onClick={storeHandler}>저장</StoreBtn>
         </Wrapper>
@@ -76,7 +76,6 @@ const Textarea = styled.textarea`
   }
   resize: none;
 
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
