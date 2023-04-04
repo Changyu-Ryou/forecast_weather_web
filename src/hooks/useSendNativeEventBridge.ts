@@ -29,3 +29,11 @@ function useSendNativeEventBridge() {
 }
 
 export default useSendNativeEventBridge;
+
+/** bridge 호출부 정리
+ *
+ * showInterstitialAd = 전면 광고 호출
+ * permissionLocation = matzip용 위치정보 요청
+ *
+ *
+ * */

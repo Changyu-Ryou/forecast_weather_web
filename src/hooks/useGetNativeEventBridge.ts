@@ -3,12 +3,13 @@ import { useEffect } from 'react';
 function useGetNativeEventBridge() {
   const nativeEventHandler = (e: any) => {
     const parsedData = JSON.parse(e.data);
+    // matzip용 현재 location 호출부
     if (parsedData.eventName === 'getLocation') {
       const event = new CustomEvent('getLocation', {
         ...parsedData.data,
-        detail:{
-          ...parsedData.data
-        }
+        detail: {
+          ...parsedData.data,
+        },
       });
       window.dispatchEvent(event);
     }
