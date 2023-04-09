@@ -1,3 +1,4 @@
+import { querystring } from '@firebase/util';
 import { useEffect } from 'react';
 
 function useGetNativeEventBridge() {
@@ -15,7 +16,12 @@ function useGetNativeEventBridge() {
       return;
     }
     if (parsedData.eventName === 'newCard') {
-      window.location.href = '/arrive-card';
+      const quoteData = {
+        author: parsedData.data?.author ?? undefined,
+        quote: parsedData.data?.quote ?? undefined,
+      };
+      const queryString = parsedData.data?.quote ? `?${querystring(quoteData)}` : '';
+      window.location.href = `/arrive-card${queryString}`;
       return;
     }
   };

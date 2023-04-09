@@ -8,6 +8,7 @@ import SwipeUpOnboard from './SwipeUpOnboard';
 function MainContents(): ReactElement {
   const { watch } = useFormContextHook();
   const showedSwipeUpOnboard = watch('showedSwipeUpOnboard');
+
   return (
     <View>
       <QuotesCarousel />

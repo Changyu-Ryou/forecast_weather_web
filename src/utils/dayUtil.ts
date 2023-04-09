@@ -10,7 +10,11 @@ export function getPadssedMondayCount(startDate: string) {
 
   // 시작 이후부터 지나온 월요일의 수 계산
   const dayOfWeek: number = (startTime.getDay() + diffDays) % 7;
-  const mondayCount: number = Math.floor((diffDays - dayOfWeek + 1) / 7);
+  let mondayCount: number = Math.floor((diffDays - dayOfWeek + 1) / 7);
+
+  if (now.getDay() === 1) {
+    mondayCount += 1;
+  }
 
   return mondayCount;
 }

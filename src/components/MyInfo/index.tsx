@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
-import React, { ReactElement, useCallback } from 'react';
+import React, { ReactElement, useCallback, useEffect } from 'react';
 import { AllQuotesList, cardQuotes, QuoteType } from '../../assets/data';
 import useFormContextHook from '../../hooks/useFormContextHook';
 import { useFlow } from '../../stackflow';
 import { useQueryParams } from '../../stackflow/hooks/useQueryParams';
-import { getPadssedMondayCount } from '../../utils/dayUtil';
+import { getPadssedMondayCount, isMondayToday } from '../../utils/dayUtil';
 import { Button } from '../common/Button';
 import { View } from '../common/Layout';
 import { Spacing } from '../common/Spacing';
@@ -18,10 +18,25 @@ function MyInfoContents(): ReactElement {
     activeTabIdx ? parseInt(activeTabIdx) : 0
   );
 
-  const { watch } = useFormContextHook();
+  const { watch, setValue } = useFormContextHook();
   const userData = watch('userData');
   const storedQuotes = watch('storedQuotes') || [];
   const startDate = watch('startDate');
+
+  useEffect(() => {
+    const firstCard = watch('showFirstCard');
+    console.log('firstCard', firstCard, isMondayToday());
+    if (!firstCard) {
+      if (isMondayToday()) {
+        setValue('showFirstCard', true);
+        return;
+      }
+      setValue('showFirstCard', true);
+      push('ArriveCardPage', {
+        ...cardQuotes[0],
+      });
+    }
+  }, []);
 
   const renderQuotes = useCallback(() => {
     if (storedQuotes.length === 0) {
@@ -66,7 +81,8 @@ function MyInfoContents(): ReactElement {
   }, []);
 
   const renderCards = useCallback(() => {
-    const openedCardsCount = getPadssedMondayCount(startDate ?? Date.now());
+    // 무조건 첫 가입시에 1개 받도록 되어져 있음
+    const openedCardsCount = getPadssedMondayCount(startDate ?? Date.now()) + 1;
 
     if (openedCardsCount === 0) {
       return <EmptyText>한마디 카드는 매주 월요일에 도착해요</EmptyText>;

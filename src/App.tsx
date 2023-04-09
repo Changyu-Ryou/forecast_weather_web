@@ -24,6 +24,8 @@ function App(): ReactElement {
 
   // 유저 데이터 전송용
   const userData = storage('userData').get() || {};
+  //가입시 받는 첫번째 카드 수령여부
+  const showFirstCard = storage('showFirstCard').get() || false;
 
   useEffect(() => {
     //앱을 처음 시작하는 경우 시작일을 저장
@@ -44,6 +46,7 @@ function App(): ReactElement {
       slideIndex: parseInt(slideIndex) + 1,
       userData,
       showedSwipeUpOnboard,
+      showFirstCard,
     },
   });
 

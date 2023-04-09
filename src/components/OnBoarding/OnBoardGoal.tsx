@@ -81,7 +81,7 @@ function OnBoardGoal(): ReactElement {
 
   const startHandler = async () => {
     await mutate(
-      { deviceId: userData.user.deviceId, goal: goalValue },
+      { deviceId: userData?.user?.deviceId ?? userData.deviceId, goal: goalValue },
       {
         onSuccess: (data) => {
           if (data) {

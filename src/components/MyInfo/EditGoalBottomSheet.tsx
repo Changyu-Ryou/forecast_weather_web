@@ -19,7 +19,7 @@ const EditGoalBottomSheet = () => {
   const storeGoalHandler = async () => {
     if (isLoading) return;
     await mutate(
-      { deviceId: userData.deviceId, goal: editValue ?? '' },
+      { deviceId: userData?.user?.deviceId ?? userData.deviceId, goal: editValue ?? '' },
       {
         onSuccess: (data) => {
           if (data) {

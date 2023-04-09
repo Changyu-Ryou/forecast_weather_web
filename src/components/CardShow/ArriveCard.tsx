@@ -27,7 +27,7 @@ const ArriveCard = () => {
 
   useEffect(() => {
     const isMonday = isMondayToday();
-    console.log(!isMonday, todaysCard);
+    // queryParams에 quotes도 없고 월요일도 아니면 홈으로
     if (!quote && !isMonday) {
       replace('HomePage', {});
     }
