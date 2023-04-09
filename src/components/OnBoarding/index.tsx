@@ -15,6 +15,7 @@ import { v4 as uuidv4 } from 'uuid';
 import DimmerWrapper from '../common/DimmerWrapper';
 import CircularProgress from '../../assets/CircularProgress';
 import backCardImage from '../../assets/Image/card_back.png';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 const transition = {
   duration: 0.5,
@@ -65,6 +66,11 @@ function MainContents(): ReactElement {
         <CardWrapper>
           <NormalFlippyCard onClick={onOnboardHandler} frontImage={backCardImage} />
         </CardWrapper>
+
+        <Spacing height={20} />
+        <ClickableCardText>
+          카드를 눌러보세요 <ArrowDropUpIcon />
+        </ClickableCardText>
       </View>
       {isLoading && (
         <DimmerWrapper>
@@ -110,6 +116,18 @@ const CardWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+const ClickableCardText = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  color: #4d525b;
 `;
 
 export default MainContents;
