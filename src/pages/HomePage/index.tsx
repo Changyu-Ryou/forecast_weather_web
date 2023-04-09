@@ -3,12 +3,12 @@ import { ActivityComponentType, useActivity } from '@stackflow/react';
 
 import MainContents from '../../components/Home/MainContents';
 import { AppScreen } from '../../stackflow/components';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 import { CustomTooltip } from '../../components/common/CustomToolTip';
 import { useFlow } from '../../stackflow';
 import { ReactElement } from 'react';
 import useFormContextHook from '../../hooks/useFormContextHook';
+import MyIcon from '../../assets/Icon/iconoir_user.svg';
 
 const HomePage: ActivityComponentType = () => {
   const { push } = useFlow();
@@ -67,7 +67,9 @@ const HomePage: ActivityComponentType = () => {
                 push('MyPage', {});
               }}
             >
-              <PersonOutlineIcon sx={{ fontSize: '30px' }} />
+              <img src={MyIcon} />
+              {/* <MyIcon /> */}
+              {/* <PersonOutlineIcon sx={{ fontSize: '30px' }} /> */}
             </MyIconWrapper>
           );
         },

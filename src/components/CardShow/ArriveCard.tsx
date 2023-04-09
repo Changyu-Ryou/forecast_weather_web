@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 import { Button } from '../common/Button';
-import NormalFlippyCard from '../common/NormalFlippyCard';
+import NormalFlippyCard, { InnerRefProps } from '../common/NormalFlippyCard';
 import { Spacing } from '../common/Spacing';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { useQueryParams } from '../../stackflow/hooks/useQueryParams';
@@ -10,13 +10,14 @@ import { useFlow } from '../../stackflow';
 import { getPadssedMondayCount, isMondayToday } from '../../utils/dayUtil';
 import useFormContextHook from '../../hooks/useFormContextHook';
 import { cardQuotes } from '../../assets/data';
+import React from 'react';
 
 const ArriveCard = () => {
   const { watch } = useFormContextHook();
   const startDate = watch('startDate');
-  const [clickedCard, setClickedCard] = useState(false);
+  const { quote, author, image, isStoredCard } = useQueryParams();
+  const [clickedCard, setClickedCard] = useState(Boolean(isStoredCard) ?? false);
   const [opened, setOpened] = useState(false);
-  const { quote, author, image } = useQueryParams();
 
   const todaysCard = cardQuotes[getPadssedMondayCount(startDate)];
 
@@ -27,10 +28,10 @@ const ArriveCard = () => {
   useEffect(() => {
     const isMonday = isMondayToday();
     console.log(!isMonday, todaysCard);
-    if (!todaysCard.author) {
+    if (!quote && !isMonday) {
       replace('HomePage', {});
     }
-  }, [author, image, quote, replace, todaysCard, todaysCard.author]);
+  }, [quote, replace, todaysCard]);
 
   const cardQuote = {
     category: 'Card',
@@ -38,6 +39,8 @@ const ArriveCard = () => {
     quote: quote ?? todaysCard.quote,
     author: author ?? todaysCard.author,
   };
+
+  const cardRef = React.useRef<InnerRefProps>(null);
 
   return (
     <PageWrapper>
@@ -51,12 +54,12 @@ const ArriveCard = () => {
         <CardWrapper>
           <CardInnerWrapper clickedCard={clickedCard}>
             <NormalFlippyCard
+              ref={cardRef}
               blockFlip={!clickedCard}
               onClick={() => {
                 clickedCard && setOpened(true);
               }}
               quote={cardQuote}
-              imageUrl={'https://upload3.inven.co.kr/upload/2023/04/02/bbs/i15620170590.jpg?MW=800'}
               frontImage={image ?? todaysCard.image ?? ''}
             />
           </CardInnerWrapper>
@@ -77,12 +80,17 @@ const ArriveCard = () => {
               setClickedCard(true);
               return;
             }
-            const isExist = isExistSpecificActivities('HomePage');
+            if (!opened) {
+              cardRef.current?.getInnerRef()?.click();
+
+              return;
+            }
+            const isExist = isExistSpecificActivities('MyPage');
             if (isExist) {
               pop();
               return;
             }
-            replace('HomePage', {});
+            replace('MyPage', { activeTabIdx: 1 });
           }}
         >
           {opened ? '카드 저장하기' : '카드 확인하기'}

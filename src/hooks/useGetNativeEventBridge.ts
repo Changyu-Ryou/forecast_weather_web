@@ -15,7 +15,7 @@ function useGetNativeEventBridge() {
       return;
     }
     if (parsedData.eventName === 'newCard') {
-      window.location.href = '/onboard';
+      window.location.href = '/arrive-card';
       return;
     }
   };

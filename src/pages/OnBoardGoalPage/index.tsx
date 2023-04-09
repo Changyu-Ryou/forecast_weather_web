@@ -1,13 +1,9 @@
 import styled from '@emotion/styled';
 import { ActivityComponentType } from '@stackflow/react';
 
-import { useForm } from 'react-hook-form';
-
 import OnBoardGoal from '../../components/OnBoarding/OnBoardGoal';
 
 const OnBoardGoalPage: ActivityComponentType = () => {
-  const formMathods = useForm({});
-
   return (
     <Wrapper>
       <OnBoardGoal />

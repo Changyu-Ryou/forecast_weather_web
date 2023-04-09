@@ -1,11 +1,29 @@
 import styled from '@emotion/styled';
-import { ActivityComponentType } from '@stackflow/react';
+import { ActivityComponentType, useActivity } from '@stackflow/react';
 import MyInfoContents from '../../components/MyInfo';
+import { useFlow } from '../../stackflow';
 import { AppScreen } from '../../stackflow/components';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const MyPage: ActivityComponentType = () => {
+  const { pop, replace } = useFlow();
+  const { isTop } = useActivity();
   return (
-    <AppScreen appBar={{ title: <AppBarTitle>마이페이지</AppBarTitle> }}>
+    <AppScreen
+      appBar={{
+        title: <AppBarTitle>마이페이지</AppBarTitle>,
+        closeButton: {
+          renderIcon: () => <ArrowBackIosNewIcon sx={{ fontSize: '24px', color: 'black' }} />,
+          onClick: () => {
+            if (isTop) {
+              replace('HomePage', {});
+              return;
+            }
+            pop();
+          },
+        },
+      }}
+    >
       <Wrapper>
         <MyInfoContents />
       </Wrapper>

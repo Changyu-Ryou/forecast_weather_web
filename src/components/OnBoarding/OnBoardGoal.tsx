@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { ReactElement, useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { fetchPutUserGoal, usePutUserGoal } from '../../api/fetchPutUserGoal';
+import { usePutUserGoal } from '../../api/fetchPutUserGoal';
 import CircularProgress from '../../assets/CircularProgress';
 import useFormContextHook from '../../hooks/useFormContextHook';
 import { useStorage } from '../../hooks/useStorage';
@@ -37,13 +37,14 @@ const TEMPLATE_CHIP = [
   { id: 0, title: '주3회 운동하기', icon: '💪' },
   { id: 1, title: '수업 끝나면 복습하기', icon: '📚' },
   { id: 2, title: '긍정적으로 생각하기', icon: '😀' },
-  { id: 3, title: '목표가 또 뭐가 있니', icon: '🧐' },
+  { id: 3, title: '돈 버는 것만 집중', icon: '💰' },
 ];
 
 function OnBoardGoal(): ReactElement {
   const { replace, pop } = useFlow();
-  const [, setOnBoardValue] = useStorage('onBoard', 'false');
+
   const [selectedChip, setSelectedChip] = useState<number | null>(null);
+
   const { watch, setValue } = useForm({
     defaultValues: {
       goal: '',
@@ -80,14 +81,15 @@ function OnBoardGoal(): ReactElement {
 
   const startHandler = async () => {
     await mutate(
-      { deviceId: userData.deviceId, goal: goalValue },
+      { deviceId: userData.user.deviceId, goal: goalValue },
       {
         onSuccess: (data) => {
           if (data) {
             setValueGlobal('userData', { ...userData, ...data.data?.user, goal: goalValue });
           }
           pop({ animate: false });
-          setOnBoardValue('true');
+          setValueGlobal('onBoard', true);
+
           replace('HomePage', {}, { animate: true });
         },
         onError: (error) => {
@@ -106,7 +108,9 @@ function OnBoardGoal(): ReactElement {
             <SkipButton
               onClick={() => {
                 pop();
-                setOnBoardValue('true');
+                setValueGlobal('userData', { ...userData, goal: undefined });
+
+                setValueGlobal('onBoard', true);
                 replace('HomePage', {}, { animate: true });
               }}
             >
@@ -148,6 +152,7 @@ function OnBoardGoal(): ReactElement {
             onKeyDown={resize}
             onKeyUp={resize}
             placeholder="간단하게 적어주세요"
+            maxLength={100}
           />
         </TextareaWrapper>
         <Spacing height={16} />

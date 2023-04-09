@@ -1,86 +1,97 @@
 import styled from '@emotion/styled';
-import React, { ReactElement, useEffect, useRef } from 'react';
+import React, {
+  forwardRef,
+  HTMLAttributes,
+  ReactElement,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from 'react';
 
 import { motion } from 'framer-motion';
 import { keyframes } from '@emotion/react';
 import { QuoteType } from '../../../assets/data';
 import { Spacing } from '../Spacing';
+import backCardImage from '../../../assets/Image/card_back.png';
 
-interface Props {
-  imageUrl: string;
+type Props = {
   frontImage: string;
   spinFirst?: boolean;
   onClick?: () => void;
   blockFlip?: boolean;
   quote?: QuoteType;
-}
+};
 
-function NormalFlippyCard({
-  imageUrl,
-  frontImage,
-  onClick,
-  quote,
-  spinFirst = false,
-  blockFlip = false,
-}: Props): ReactElement {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = React.useState<string | undefined>(undefined);
-  const innerCardRef = useRef<HTMLDivElement>(null);
-  const innerCardBackfaceRef = useRef<HTMLDivElement>(null);
+export type InnerRefProps = {
+  getInnerRef: () => HTMLDivElement | null;
+};
 
-  useEffect(() => {
-    //resize observer card
-    const resize = () => {
-      setHeight(cardRef.current?.clientWidth + 'px');
-    };
-    const resizeObserver = new ResizeObserver(resize);
-    cardRef.current && resizeObserver.observe(cardRef.current!);
-    return () => {
-      cardRef.current && resizeObserver.unobserve(cardRef.current!);
-    };
-  }, []);
+const NormalFlippyCard = forwardRef(
+  ({ frontImage, onClick, quote, spinFirst = false, blockFlip = false }: Props, ref) => {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [height, setHeight] = React.useState<string | undefined>(undefined);
+    const innerCardRef = useRef<HTMLDivElement>(null);
+    const innerCardBackfaceRef = useRef<HTMLDivElement>(null);
 
-  return (
-    <Card
-      className={`card ${spinFirst ? 'flipping' : ''}`}
-      ref={cardRef}
-      initial={{
-        opacity: 0,
-      }}
-      variants={{
-        open: {
-          opacity: 1,
-        },
-        closed: {
+    useEffect(() => {
+      //resize observer card
+      const resize = () => {
+        setHeight(cardRef.current?.clientWidth + 'px');
+      };
+      const resizeObserver = new ResizeObserver(resize);
+      cardRef.current && resizeObserver.observe(cardRef.current!);
+      return () => {
+        cardRef.current && resizeObserver.unobserve(cardRef.current!);
+      };
+    }, []);
+
+    // 외부에서 주입된 Ref에 대한 접근 메소드를 생성
+    useImperativeHandle(ref, () => ({
+      // 외부에서 내부 Ref에 접근할 수 있는 함수 정의
+      getInnerRef() {
+        return cardRef.current;
+      },
+    }));
+
+    return (
+      <Card
+        className={`card ${spinFirst ? 'flipping' : ''}`}
+        ref={cardRef}
+        initial={{
           opacity: 0,
-        },
-      }}
-      animate={height !== '100%' ? 'open' : 'closed'}
-      transition={{
-        duration: 1,
-      }}
-      height={height}
-      onClick={() => {
-        if (blockFlip) return;
-        cardRef.current?.classList.toggle('flipped');
-        onClick?.();
-      }}
-    >
-      <FrontImage className="inner-card" ref={innerCardRef} image={frontImage} />
+        }}
+        variants={{
+          open: {
+            opacity: 1,
+          },
+          closed: {
+            opacity: 0,
+          },
+        }}
+        animate={height !== '100%' ? 'open' : 'closed'}
+        height={height}
+        onClick={() => {
+          if (blockFlip) return;
+          cardRef.current?.classList.toggle('flipped');
+          onClick?.();
+        }}
+      >
+        <FrontImage className="inner-card" ref={innerCardRef} image={frontImage ?? backCardImage} />
 
-      <BackFace className="inner-card-backface" ref={innerCardBackfaceRef}>
-        {quote && (
-          <Quotes className="quote-wrapper">
-            <p className="quote">{quote?.quote}</p>
-            <Spacing height={20} />
-            <p className="author">- {quote?.author} -</p>
-          </Quotes>
-        )}
-        <BackImage className="image" image={imageUrl}></BackImage>
-      </BackFace>
-    </Card>
-  );
-}
+        <BackFace className="inner-card-backface" ref={innerCardBackfaceRef}>
+          {quote && (
+            <Quotes className="quote-wrapper">
+              <p className="quote">{quote?.quote}</p>
+              <Spacing height={20} />
+              <p className="author">- {quote?.author} -</p>
+            </Quotes>
+          )}
+          <BackImage className="image"></BackImage>
+        </BackFace>
+      </Card>
+    );
+  }
+);
 
 export default NormalFlippyCard;
 
@@ -112,7 +123,7 @@ const Card = styled(motion.div)<{ height?: string }>`
   letter-spacing: 1px;
   transform: rotateY(0deg);
 
-  transition: all 0.6s ease-out;
+  transition: transform 0.6s ease-out;
 
   &.flipped {
     transform: rotateY(180deg);
@@ -133,14 +144,14 @@ const Card = styled(motion.div)<{ height?: string }>`
 
 const BackFace = styled.span`
   transform: rotateX(0) rotateY(0deg) scale(1) translateZ(-4px);
-  border-radius: 14px;
+  border-radius: 24px;
   background: linear-gradient(45deg, #0b0b2a, #0b0b2a);
   position: absolute;
   top: 0;
   color: white;
   padding: 2rem;
   box-sizing: border-box;
-  transition: all 0.15s ease-out;
+
   will-change: transform, filter;
   left: 0;
   width: 100%;
@@ -151,7 +162,8 @@ const BackFace = styled.span`
   z-index: 0;
 `;
 
-const BackImage = styled.span<{ image: string }>`
+const BackImage = styled.span`
+  background-color: #f3f3f4;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -160,10 +172,9 @@ const BackImage = styled.span<{ image: string }>`
   top: 0;
   left: 0;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 24px;
   height: 100%;
   transform: rotateY(180deg);
-  background-image: url(${(props: { image: string }) => props.image});
 `;
 
 const FrontImage = styled.span`
@@ -176,9 +187,9 @@ const FrontImage = styled.span`
   background-size: calc(100% + 6px) auto;
   background-position: -3px -3px;
   margin: 0;
-  transition: all 0.15s ease-out;
+
   height: auto;
-  border-radius: 14px;
+  border-radius: 24px;
   box-sizing: border-box;
   overflow: hidden;
   display: block;
@@ -204,7 +215,7 @@ const Quotes = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #1f2023;
   z-index: 9999;
   padding: 30px;
 
@@ -213,10 +224,11 @@ const Quotes = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 24px;
   height: 100%;
 
   opacity: 0;
+  transition: opacity 0.6s ease-out;
 
   .quote {
     font-weight: 500;

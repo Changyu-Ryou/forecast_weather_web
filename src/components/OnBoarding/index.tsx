@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { ReactElement } from 'react';
 
-import { fetchPostUserRegister, usePostUserRegister } from '../../api/fetchPostUserRegister';
+import { usePostUserRegister } from '../../api/fetchPostUserRegister';
 
 import { useFlow } from '../../stackflow';
 import { AppScreen } from '../../stackflow/components';
@@ -14,6 +14,7 @@ import useFormContextHook from '../../hooks/useFormContextHook';
 import { v4 as uuidv4 } from 'uuid';
 import DimmerWrapper from '../common/DimmerWrapper';
 import CircularProgress from '../../assets/CircularProgress';
+import backCardImage from '../../assets/Image/card_back.png';
 
 const transition = {
   duration: 0.5,
@@ -36,6 +37,7 @@ function MainContents(): ReactElement {
   const { mutate, isLoading } = usePostUserRegister();
 
   const onOnboardHandler = async () => {
+    if (isLoading) return;
     const uuid = new DeviceUUID().get() || uuidv4();
 
     await mutate(
@@ -55,17 +57,13 @@ function MainContents(): ReactElement {
     <AppScreen noAppBar>
       <View>
         <Title variants={textReveal} initial="initial" animate="animate" transition={transition}>
-          명언을 어쩌구
+          당신을 일으켜 세울
           <br />
-          갓생 살기 가즈아
+          오늘의 한마디
         </Title>
-        <Spacing height={55} />
+        <Spacing height={33} />
         <CardWrapper>
-          <NormalFlippyCard
-            onClick={onOnboardHandler}
-            imageUrl="https://blog.kakaocdn.net/dn/bdMBNq/btrbWeHU9Ui/itmiT8htt9Y8OdxculRhM0/img.jpg"
-            frontImage="https://user-images.githubusercontent.com/56837413/228339554-e3dc0092-71b7-4dac-b79e-01f8db2961e4.png"
-          />
+          <NormalFlippyCard onClick={onOnboardHandler} frontImage={backCardImage} />
         </CardWrapper>
       </View>
       {isLoading && (
@@ -107,7 +105,7 @@ const Title = styled(motion.div)`
 `;
 
 const CardWrapper = styled.div`
-  width: 60%;
+  width: calc(100% - 80px);
   display: flex;
   flex-direction: column;
   align-items: center;

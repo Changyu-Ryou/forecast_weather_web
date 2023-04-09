@@ -17,7 +17,9 @@ const ArriveCardPage: ActivityComponentType = () => {
           <CloseIcon
             onClick={() => {
               if (isRoot) {
-                replace('HomePage', {});
+                replace('MyPage', {
+                  activeTabIdx: 1,
+                });
                 return;
               }
               pop();

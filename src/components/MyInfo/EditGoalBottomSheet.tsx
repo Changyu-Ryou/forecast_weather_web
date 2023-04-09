@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { BottomSheet } from '@stackflow/plugin-basic-ui';
 import React from 'react';
+import { usePutUserGoal } from '../../api/fetchPutUserGoal';
+import CircularProgress from '../../assets/CircularProgress';
 import useFormContextHook from '../../hooks/useFormContextHook';
 import { useFlow } from '../../stackflow';
 import AsyncBoundary from '../common/AsyncBoundary/AsyncBoundary';
@@ -12,9 +14,24 @@ const EditGoalBottomSheet = () => {
   const userData = watch('userData');
   const [editValue, setEditValue] = React.useState<string | undefined>(userData?.goal ?? '');
 
-  const storeHandler = () => {
-    setValue('userData', { ...userData, goal: editValue });
-    pop();
+  const { mutate, isLoading } = usePutUserGoal();
+
+  const storeGoalHandler = async () => {
+    if (isLoading) return;
+    await mutate(
+      { deviceId: userData.deviceId, goal: editValue ?? '' },
+      {
+        onSuccess: (data) => {
+          if (data) {
+            setValue('userData', { ...userData, ...data.data?.user, goal: editValue });
+          }
+          pop();
+        },
+        onError: (error) => {
+          alert('목표와 연관된 카테고리를 가져오는데 에러가 발생했어요. 다시 한번 시도해주세요');
+        },
+      }
+    );
   };
 
   return (
@@ -23,9 +40,16 @@ const EditGoalBottomSheet = () => {
         <Wrapper>
           <Title>목표</Title>
           <TextareaWrapper>
-            <Textarea value={editValue} onChange={(e) => setEditValue(e.target.value)} autoFocus />
+            <Textarea
+              value={editValue}
+              onChange={(e) => setEditValue(e.target.value)}
+              autoFocus
+              maxLength={100}
+            />
           </TextareaWrapper>
-          <StoreBtn onClick={storeHandler}>저장</StoreBtn>
+          <StoreBtn onClick={storeGoalHandler} disabled={isLoading}>
+            {isLoading ? <CircularProgress /> : '저장'}
+          </StoreBtn>
         </Wrapper>
       </AsyncBoundary>
     </BottomSheet>

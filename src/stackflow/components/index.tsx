@@ -4,7 +4,7 @@ import { Ref } from 'react';
 
 import { LayoutRefProps } from './Layout/components/ContentsLayout';
 import { AppScreen as AppBar } from '@stackflow/plugin-basic-ui';
-import { ChevronLeft } from '@mui/icons-material';
+
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 export type AppScreenProps = Parameters<typeof AppBar>[0] & {

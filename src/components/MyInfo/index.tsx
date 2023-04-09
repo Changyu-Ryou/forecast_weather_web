@@ -4,6 +4,7 @@ import React, { ReactElement, useCallback } from 'react';
 import { AllQuotesList, cardQuotes, QuoteType } from '../../assets/data';
 import useFormContextHook from '../../hooks/useFormContextHook';
 import { useFlow } from '../../stackflow';
+import { useQueryParams } from '../../stackflow/hooks/useQueryParams';
 import { getPadssedMondayCount } from '../../utils/dayUtil';
 import { Button } from '../common/Button';
 import { View } from '../common/Layout';
@@ -12,7 +13,10 @@ import { Segment } from './Segment';
 
 function MyInfoContents(): ReactElement {
   const { pop, push } = useFlow();
-  const [selectedTab, setSelectedTab] = React.useState<number>(0);
+  const { activeTabIdx } = useQueryParams();
+  const [selectedTab, setSelectedTab] = React.useState<number>(
+    activeTabIdx ? parseInt(activeTabIdx) : 0
+  );
 
   const { watch } = useFormContextHook();
   const userData = watch('userData');
@@ -78,7 +82,7 @@ function MyInfoContents(): ReactElement {
                 src={image}
                 key={i}
                 onClick={() => {
-                  push('ArriveCardPage', { quote, author, image });
+                  push('ArriveCardPage', { quote, author, image, isStoredCard: true });
                 }}
               />
             );
@@ -101,8 +105,11 @@ function MyInfoContents(): ReactElement {
         )}
 
         <Spacing height={16} />
-        <EditGoalBtn onClick={() => push('BottomSheet/EditGoalBottomSheet', {})}>
-          {userData?.goal ? '목표 수정' : '목표 추가'}
+        <EditGoalBtn
+          onClick={() => push('BottomSheet/EditGoalBottomSheet', {})}
+          hasGoal={userData?.goal && userData.goal.length > 1}
+        >
+          {userData?.goal ? '목표 수정하기' : '목표 추가하기'}
         </EditGoalBtn>
       </HeaderWrapper>
       <Divider height={8} />
@@ -137,13 +144,12 @@ const GoalText = styled.div`
   letter-spacing: -0.01em;
 `;
 
-const EditGoalBtn = styled.div`
+const EditGoalBtn = styled.div<{ hasGoal: boolean }>`
   font-weight: 600;
   font-size: 14px;
   line-height: 140%;
   text-align: center;
   letter-spacing: -0.01em;
-  color: #ffffff;
 
   display: flex;
   flex-direction: row;
@@ -151,7 +157,8 @@ const EditGoalBtn = styled.div`
   align-items: center;
   padding: 10px 20px;
   gap: 4px;
-  background: #1f2023;
+  color: ${({ hasGoal }) => (hasGoal ? '#4d525b' : '#FFFFFF')};
+  background: ${({ hasGoal }) => (hasGoal ? '#F3F3F4' : '#1F2023')};
   border-radius: 8px;
   width: 100%;
 `;
