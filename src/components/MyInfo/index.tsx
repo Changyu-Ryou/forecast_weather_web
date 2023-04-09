@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 
 import React, { ReactElement, useCallback } from 'react';
-import { AllQuotesList, QuoteCardType, QuoteType } from '../../assets/data';
+import { AllQuotesList, cardQuotes, QuoteType } from '../../assets/data';
 import useFormContextHook from '../../hooks/useFormContextHook';
 import { useFlow } from '../../stackflow';
+import { getPadssedMondayCount } from '../../utils/dayUtil';
 import { Button } from '../common/Button';
 import { View } from '../common/Layout';
 import { Spacing } from '../common/Spacing';
@@ -16,7 +17,7 @@ function MyInfoContents(): ReactElement {
   const { watch } = useFormContextHook();
   const userData = watch('userData');
   const storedQuotes = watch('storedQuotes') || [];
-  const storedCards = watch('storedCards') || [];
+  const startDate = watch('startDate');
 
   const renderQuotes = useCallback(() => {
     if (storedQuotes.length === 0) {
@@ -61,20 +62,23 @@ function MyInfoContents(): ReactElement {
   }, []);
 
   const renderCards = useCallback(() => {
-    if (storedCards.length === 0) {
+    const openedCardsCount = getPadssedMondayCount(startDate ?? Date.now());
+
+    if (openedCardsCount === 0) {
       return <EmptyText>한마디 카드는 매주 월요일에 도착해요</EmptyText>;
     }
     return (
       <>
         <Spacing height={24} />
         <StoreCardLayout>
-          {storedCards.map(({ image }: QuoteCardType, i: number) => {
+          {cardQuotes.map(({ image, quote, author }: QuoteType, i: number) => {
+            if (i >= openedCardsCount) return;
             return (
               <CardImage
                 src={image}
                 key={i}
                 onClick={() => {
-                  push('ArriveCardPage', { id: 30 });
+                  push('ArriveCardPage', { quote, author, image });
                 }}
               />
             );

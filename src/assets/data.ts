@@ -3,13 +3,197 @@ export type QuoteType = {
   category: string;
   quote: string;
   author: string;
+  image?: string;
 };
 
-export type QuoteCardType = {
-  image: string;
-  quote: string;
-  author: string;
-};
+// export type QuoteCardType = {
+//   image: string;
+//   quote: string;
+//   author: string;
+// };
+
+export const cardQuotes: QuoteType[] = [
+  {
+    category: 'Card',
+    quote: '자신감이란 자신의 가능성을 믿는 것입니다.',
+    author: '빈스 롬바르디',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '현재의 노력이 미래의 성취를 결정짓는다.',
+    author: '데일 카네기',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '당신의 머리와 마음은 당신이 정하는 것보다 훨씬 더 강합니다.',
+    author: '마이크 김',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '당신이 꿈꾸는 것은 이미 누군가의 현실입니다.',
+    author: '존 레논',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '시작하기 위해 기다릴 때보다 실패할 용기를 가지는 것이 낫습니다.',
+    author: '로빈 쉐르마',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '성공은 단순한 일이 아니며, 당신이 어렵게 얻은 것입니다.',
+    author: '라리 페이지',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote:
+      '성공하는 것은 그것을 달성하기 위해 노력한 모든 시간과 에너지의 가치를 인정하는 것입니다.',
+    author: '월트 디즈니',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '행동하는 것이 생각하는 것보다 더 좋습니다.',
+    author: '윌 로저스',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '당신의 노력은 결국 당신의 결과가 됩니다.',
+    author: '스티브 마블리',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '성공은 실패에서 옵니다. 이유가 있어서 실패하는 것입니다.',
+    author: '헨리 포드',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '행복하게 살기 위해서는 먼저 원하는 것을 찾아야 합니다.',
+    author: '로이 T. 베넷',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '당신의 꿈이 살아있는 한, 희망은 존재합니다.',
+    author: '롤리 블랙',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '당신이 노력하고 기도하는 것보다 더 중요한 것은 믿음입니다.',
+    author: '조엘 오스틴',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '시작이 어렵다면 끝도 어렵습니다. 하지만 시작하지 않으면 결코 끝내지 못합니다.',
+    author: '토니 로빈스',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '성공의 열쇠는 시도하는 것입니다.',
+    author: '프랭크 라이트',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '어디서든 누구나 시작할 수 있습니다. 중요한 것은 시작하는 것입니다.',
+    author: '존 시든',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '시도하지 않으면 실패하지 않을 뿐입니다.',
+    author: '케네디',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '성공은 세부적인 것에서 비롯됩니다.',
+    author: '존 폴 게티',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote:
+      '현재의 상황은 미래를 결정하지 않습니다. 하지만 현재 상황을 변경하는 방법에 따라 미래는 달라질 수 있습니다.',
+    author: '로버트 T. 커요사키',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '일을 미루면 미룰수록 그 일에 대한 두려움은 더욱 커집니다.',
+    author: '레온 브라운',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '성공한 사람들은 실패할 수 있는 두려움보다 더 큰 용기를 가지고 있습니다.',
+    author: '로버트 F. 케네디',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '최선을 다하고, 결과에 대해 걱정하지 마세요. 결과는 자신의 노력에 대한 보상입니다.',
+    author: '조지 버나드 쇼',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '당신은 자신의 인생의 주인공입니다. 어떻게 연기할 것인가는 당신의 선택입니다.',
+    author: '존 C. 맥스웰',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote:
+      '당신이 할 수 있는 최선을 다하고 두려움 없이 모든 것을 살펴보세요. 그것이 성공에 가까워질 수 있는 가장 좋은 방법입니다.',
+    author: '존 원',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote:
+      '당신은 어떤 상황에서든 능력이 있습니다. 당신의 열정, 인내, 인내력, 믿음, 인내, 결단력을 모두 사용하십시오.',
+    author: '데비드 J. 슈왈츠',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote:
+      '성공은 우리가 원하는 것을 얻는 것이 아니라, 우리가 이루고자 하는 것을 추구하는 것입니다.',
+    author: '로버트 J. 콜리어',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote:
+      '성공은 당신이 무엇을 하는가에 따라 달라집니다. 그것은 당신의 행동, 선택, 노력, 그리고 인내력에 따라 결정됩니다.',
+    author: '로이 T. 베넷',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '성공은 행동으로 이루어집니다. 말로만 말하지 마십시오. 행동으로 보여주세요.',
+    author: '더글러스 매케이',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+  {
+    category: 'Card',
+    quote: '당신이 가진 것이 무엇보다도 중요한 것은 당신이 누구인가입니다.',
+    author: '알버트 슈바이처',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
+  },
+];
 
 // 동기 부여
 export const MotivationQuotes: QuoteType[] = [
@@ -17,6 +201,7 @@ export const MotivationQuotes: QuoteType[] = [
     category: 'Motivation',
     quote: '자신감이란 자신의 가능성을 믿는 것입니다.',
     author: '빈스 롬바르디',
+    image: 'https://pbs.twimg.com/profile_images/1326578374085472256/zBYZNAJN_400x400.jpg',
   },
   {
     category: 'Motivation',

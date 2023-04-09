@@ -15,13 +15,13 @@ import { AllQuotesList, QuoteType } from '../../assets/data';
 import { useActivity } from '@stackflow/react';
 import useFormContextHook from '../../hooks/useFormContextHook';
 import { CustomTooltip } from '../common/CustomToolTip';
-import { useStorage } from '../../hooks/useStorage';
 
 // install Virtual module
 
 const QuotesCarousel = () => {
   const swiperRef = useRef<any>(null);
-  const [slideIndex, setSlideIndex] = useStorage('slideIndex', 0);
+  const { watch, setValue } = useFormContextHook();
+  const slideIndex = watch('slideIndex') || 0;
 
   useEffect(() => {
     swiperRef?.current.slideTo(slideIndex, 0);
@@ -29,7 +29,6 @@ const QuotesCarousel = () => {
 
   const { isTop } = useActivity();
 
-  const { watch, setValue } = useFormContextHook();
   const clickedLike = watch('clickedLike');
   const storedQuotes = watch('storedQuotes') || [];
 
@@ -67,7 +66,7 @@ const QuotesCarousel = () => {
       onSwiper={(core) => (swiperRef.current = core)}
       onSlideChange={(swiper) => {
         !clickedLike && setValue('clickedLike', true);
-        setSlideIndex(swiper.activeIndex);
+        setValue('slideIndex', swiper.activeIndex);
       }}
       style={{
         width: '100%',

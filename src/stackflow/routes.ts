@@ -4,7 +4,7 @@ export const ROUTE_PATHS = {
   ON_BOARD: '/onboard',
   ON_BOARD_INPUT: '/onboard/goal',
   NOT_FOUND: '/not-found',
-  ARRIVE_CARD: '/arrive-card/:id',
+  ARRIVE_CARD: '/arrive-card',
   BOTTOMSHEET: {
     EDIT_GOAL: '/bottomsheet/edit-goal',
   },

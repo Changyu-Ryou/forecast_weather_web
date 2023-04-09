@@ -3,7 +3,7 @@ import React, { ReactElement, useEffect, useRef } from 'react';
 
 import { motion } from 'framer-motion';
 import { keyframes } from '@emotion/react';
-import { QuoteCardType } from '../../../assets/data';
+import { QuoteType } from '../../../assets/data';
 import { Spacing } from '../Spacing';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   spinFirst?: boolean;
   onClick?: () => void;
   blockFlip?: boolean;
-  quote?: QuoteCardType;
+  quote?: QuoteType;
 }
 
 function NormalFlippyCard({
@@ -67,9 +67,10 @@ function NormalFlippyCard({
       }}
     >
       <FrontImage className="inner-card" ref={innerCardRef} image={frontImage} />
+
       <BackFace className="inner-card-backface" ref={innerCardBackfaceRef}>
         {quote && (
-          <Quotes>
+          <Quotes className="quote-wrapper">
             <p className="quote">{quote?.quote}</p>
             <Spacing height={20} />
             <p className="author">- {quote?.author} -</p>
@@ -115,6 +116,10 @@ const Card = styled(motion.div)<{ height?: string }>`
 
   &.flipped {
     transform: rotateY(180deg);
+
+    .quote-wrapper {
+      opacity: 1;
+    }
   }
 
   &.flipping {
@@ -168,7 +173,6 @@ const FrontImage = styled.span`
   line-height: 3rem;
   will-change: transform, filter;
   float: none;
-  background: black;
   background-size: calc(100% + 6px) auto;
   background-position: -3px -3px;
   margin: 0;
@@ -202,6 +206,7 @@ const Quotes = styled.div`
   align-items: center;
   color: white;
   z-index: 9999;
+  padding: 30px;
 
   transform: rotateY(180deg);
   position: absolute;
@@ -211,13 +216,14 @@ const Quotes = styled.div`
   border-radius: 14px;
   height: 100%;
 
+  opacity: 0;
+
   .quote {
     font-weight: 500;
     font-size: 18px;
     line-height: 145%;
     text-align: center;
     letter-spacing: -0.01em;
-    /* color: #1F2023; */
   }
 
   .author {

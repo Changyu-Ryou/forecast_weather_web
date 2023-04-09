@@ -1,27 +1,46 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../common/Button';
 import NormalFlippyCard from '../common/NormalFlippyCard';
 import { Spacing } from '../common/Spacing';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import useFormContextHook from '../../hooks/useFormContextHook';
 import { useQueryParams } from '../../stackflow/hooks/useQueryParams';
+import useActiveActivities from '../../stackflow/hooks/useActiveActivities';
+import { useFlow } from '../../stackflow';
+import { getPadssedMondayCount, isMondayToday } from '../../utils/dayUtil';
+import useFormContextHook from '../../hooks/useFormContextHook';
+import { cardQuotes } from '../../assets/data';
 
 const ArriveCard = () => {
+  const { watch } = useFormContextHook();
+  const startDate = watch('startDate');
   const [clickedCard, setClickedCard] = useState(false);
   const [opened, setOpened] = useState(false);
-  const { watch, setValue } = useFormContextHook();
-  const storedCards = watch('storedCards') || [];
-  const { image, quote, author } = useQueryParams();
+  const { quote, author, image } = useQueryParams();
+
+  const todaysCard = cardQuotes[getPadssedMondayCount(startDate)];
+
+  const { pop, replace } = useFlow();
+
+  const { isExistSpecificActivities } = useActiveActivities();
+
+  useEffect(() => {
+    const isMonday = isMondayToday();
+    console.log(!isMonday, todaysCard);
+    if (!todaysCard.author) {
+      replace('HomePage', {});
+    }
+  }, [author, image, quote, replace, todaysCard, todaysCard.author]);
 
   const cardQuote = {
-    image: image ?? '',
-    quote: quote ?? '',
-    author: author ?? '',
+    category: 'Card',
+    image: image ?? todaysCard.image ?? '',
+    quote: quote ?? todaysCard.quote,
+    author: author ?? todaysCard.author,
   };
 
   return (
-    <>
+    <PageWrapper>
       <Wrapper>
         {!clickedCard && (
           <>
@@ -38,9 +57,7 @@ const ArriveCard = () => {
               }}
               quote={cardQuote}
               imageUrl={'https://upload3.inven.co.kr/upload/2023/04/02/bbs/i15620170590.jpg?MW=800'}
-              frontImage={
-                'https://s.pstatic.net/shopping.phinf/20230224_18/e0266edc-9b2d-432c-9af1-60f02a8958d6.jpg'
-              }
+              frontImage={image ?? todaysCard.image ?? ''}
             />
           </CardInnerWrapper>
         </CardWrapper>
@@ -60,18 +77,30 @@ const ArriveCard = () => {
               setClickedCard(true);
               return;
             }
-
-            setValue('storedCards', [...storedCards, cardQuote]);
+            const isExist = isExistSpecificActivities('HomePage');
+            if (isExist) {
+              pop();
+              return;
+            }
+            replace('HomePage', {});
           }}
         >
           {opened ? '카드 저장하기' : '카드 확인하기'}
         </CheckBtn>
       </CheckCardButton>
-    </>
+    </PageWrapper>
   );
 };
 
 export default ArriveCard;
+const PageWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+`;
 
 const Wrapper = styled.div`
   width: 100%;

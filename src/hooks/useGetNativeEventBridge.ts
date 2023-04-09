@@ -12,6 +12,11 @@ function useGetNativeEventBridge() {
         },
       });
       window.dispatchEvent(event);
+      return;
+    }
+    if (parsedData.eventName === 'newCard') {
+      window.location.href = '/onboard';
+      return;
     }
   };
   useEffect(() => {

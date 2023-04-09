@@ -4,7 +4,7 @@ type EventObject = {
   data: object;
 };
 // RN -> REACT
-type RNToReactEventNames = 'pressButton';
+type RNToReactEventNames = 'pressButton' | 'newCard';
 // REACT -> RN
 type ReactToRNEventNames = 'tabChange' | 'showInterstitialAd' | 'permissionLocation';
 
