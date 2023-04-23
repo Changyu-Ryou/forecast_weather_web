@@ -5,6 +5,8 @@ import { storage } from '../../../hooks/useStorage';
 import { useFlow } from '../../../stackflow';
 import { generateBirthDayLottoNumbers, generateLottoNumbers } from './lottoGenerate';
 import { receive } from '@stackflow/compat-await-push';
+import useSendNativeEventBridge from '../../../hooks/useSendNativeEventBridge';
+import { Spacing } from '../../common/Spacing';
 
 // interface Props {}
 
@@ -13,13 +15,14 @@ const AccessoryBar = () => {
   const talks = watch('talks');
   const birthday = watch('birthday');
   const { push } = useFlow();
+  const { sendToNative } = useSendNativeEventBridge();
 
   const getNewNumberHandler = () => {
     setValue('talks', [
       ...talks,
       {
         author: 'USER',
-        message: '로또 1등 당첨될것 같은 숫자 6개 알려줘',
+        message: '로또 1등 당첨될 것 같은 숫자 6개 알려줘',
       },
     ]);
 
@@ -44,6 +47,7 @@ const AccessoryBar = () => {
       const recieveValue: any = await receive(push('BirthDayBottomSheet', {}));
       if (!recieveValue?.birthday) return;
       setValue('birthday', recieveValue?.birthday);
+      sendToNative('showInterstitialAd', {});
       const numberList = generateBirthDayLottoNumbers(recieveValue?.birthday);
 
       setValue('talks', [
@@ -70,7 +74,7 @@ const AccessoryBar = () => {
 
       return;
     }
-
+    sendToNative('showInterstitialAd', {});
     const numberList = generateBirthDayLottoNumbers(birthday);
 
     setValue('talks', [
@@ -98,9 +102,13 @@ const AccessoryBar = () => {
   console.log();
   return (
     <Wrapper>
+      <div className="gradient-overlay"></div>
       <ButtonListWrapper>
+        <Spacing width={8} />
         <Button onClick={getNewNumberHandler}>번호 추천 받기</Button>
         <Button onClick={getBirthdayNumberHandler}>내 생일에 맞는 번호 추천받기</Button>
+        <Button disabled>추가 기능 준비중...</Button>
+        <Spacing width={8} />
       </ButtonListWrapper>
     </Wrapper>
   );
@@ -110,9 +118,29 @@ export default AccessoryBar;
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 8px 12px 12px 12px;
+  padding: 8px 0 12px 0;
   background-color: #343541;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+
+  .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    z-index: 29;
+    width: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(52, 53, 65, 0.7) 0%,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0) 90%,
+      rgba(52, 53, 65, 1) 100%
+    );
+  }
 `;
 
 const ButtonListWrapper = styled.div`
@@ -121,12 +149,13 @@ const ButtonListWrapper = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
+  overflow-x: auto;
   gap: 8px;
 `;
 
-const Button = styled.div`
-  width: auto;
+const Button = styled.div<{ disabled?: boolean }>`
+  width: fit-content;
+  min-width: fit-content;
 
   color: white;
   background-color: rgba(16, 163, 127, 1);
@@ -137,4 +166,11 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: 500;
+
+  ${({ disabled }) =>
+    disabled &&
+    `
+    background-color: rgba(16, 163, 127, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+  `}
 `;

@@ -22,7 +22,6 @@ function MainContents(): ReactElement {
   return (
     <View>
       {talksValue.map((talk: TalkType, idx: number) => {
-        //is Eval
         const isEval = idx % 2 === 0;
         return (
           <Message key={idx} isEval={isEval}>
@@ -30,6 +29,7 @@ function MainContents(): ReactElement {
               <AuthorImage src={talk.author === 'AI' ? AIIcon : UserIcon} />
             </AuthorWrapper>
             <MessageContents
+              isAI={talk.author === 'AI'}
               message={talk.message}
               idx={idx}
               isLastMessage={talksValue.length === idx + 1}

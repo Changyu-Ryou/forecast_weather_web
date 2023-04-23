@@ -5,45 +5,21 @@ import { TypeAnimation } from 'react-type-animation';
 import { formatDate } from '../../../utils/dayUtil';
 interface Props {
   message: string;
+  isAI: boolean;
   idx: number;
   isLastMessage: boolean;
   scrollToBottom: () => void;
   createdAt?: Date;
 }
 
-const numberColorSwitch = (number: number) => {
-  let color = '';
-  if (number <= 10) {
-    color = '#fbc400';
-  } else if (number <= 20) {
-    color = '#60bbe3';
-  } else if (number <= 30) {
-    color = '#f86e6e'; // 노란색
-  } else if (number <= 40) {
-    color = '#a7a7a7'; // 연두색
-  } else {
-    color = '#b0d840'; // 초록색
-  }
-  return color;
-};
-
-function extractNumbersFromText(text: string) {
-  const regex = /\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]/;
-  const matches = regex.exec(text);
-
-  if (matches) {
-    const numbers = matches.slice(1).map(Number);
-    return numbers;
-  } else {
-    return null;
-  }
-}
-
-function splitNumbersIntoText(text: string) {
-  return text.split(/\[.*?\]/g);
-}
-
-const MessageContents = ({ createdAt, message, idx, isLastMessage, scrollToBottom }: Props) => {
+const MessageContents = ({
+  isAI,
+  createdAt,
+  message,
+  idx,
+  isLastMessage,
+  scrollToBottom,
+}: Props) => {
   const { watch, setValue } = useFormContextHook();
   const typingValue = watch('typing');
   const isWriting = typingValue && isLastMessage;
@@ -72,7 +48,7 @@ const MessageContents = ({ createdAt, message, idx, isLastMessage, scrollToBotto
   };
 
   return (
-    <MessageWrapper>
+    <MessageWrapper isAI={isAI}>
       {isWriting ? (
         <TypeAnimation
           cursor={false}
@@ -93,12 +69,49 @@ const MessageContents = ({ createdAt, message, idx, isLastMessage, scrollToBotto
 
 export default MessageContents;
 
-const MessageWrapper = styled.div`
+// 로또 공 색상
+const numberColorSwitch = (number: number) => {
+  let color = '';
+  if (number <= 10) {
+    color = '#fbc400';
+  } else if (number <= 20) {
+    color = '#60bbe3';
+  } else if (number <= 30) {
+    color = '#f86e6e'; // 노란색
+  } else if (number <= 40) {
+    color = '#a7a7a7'; // 연두색
+  } else {
+    color = '#b0d840'; // 초록색
+  }
+  return color;
+};
+
+// text내 [ ] 안에 있는 숫자 목록 파싱
+function extractNumbersFromText(text: string) {
+  const regex = /\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]/;
+  const matches = regex.exec(text);
+
+  if (matches) {
+    const numbers = matches.slice(1).map(Number);
+    return numbers;
+  } else {
+    return null;
+  }
+}
+
+// [] 를 기준으로 text를 split 후 arr로 리턴 (예시 : 오늘 행운의 번호는 [1,23,4,5,6,7] 입니다.)
+function splitNumbersIntoText(text: string) {
+  return text.split(/\[.*?\]/g);
+}
+
+const MessageWrapper = styled.div<{ isAI: boolean }>`
   width: 100%;
   height: auto;
   color: #d1d5db;
   line-height: 28px;
-  font-size: 1rem;
+
+  font-size: ${({ isAI }) => (isAI ? '0.9rem' : '0.8rem')};
+  font-weight: ${({ isAI }) => (isAI ? '600' : '300')};
 
   white-space: pre-wrap;
 `;
