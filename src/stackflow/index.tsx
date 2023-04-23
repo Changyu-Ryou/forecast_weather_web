@@ -8,44 +8,23 @@ import { basicUIPlugin } from '@stackflow/plugin-basic-ui';
 
 import '@stackflow/plugin-basic-ui/index.css';
 import { ROUTE_PATHS } from './routes';
-import HomePage from '../pages/HomePage';
-import OnBoardPage from '../pages/OnBoardPage';
-import OnBoardGoalPage from '../pages/OnBoardGoalPage';
-import NotFoundPage from '../pages/NotFound';
-import MyPage from '../pages/MyPage';
-import { storage } from '../hooks/useStorage';
-import EditGoalBottomSheet from '../components/MyInfo/EditGoalBottomSheet';
-import ArriveCardPage from '../pages/CardPage/ArriveCardPage';
+import HomePage from '../components/Home';
+import BirthDayBottomSheet from '../components/BirthDayBottomSheet';
 
 const initStackflow = () => {
-  const onBoardStorage = storage('onBoard');
   return stackflow({
     transitionDuration: 350,
     activities: {
       HomePage,
-      OnBoardPage,
-      OnBoardGoalPage,
-      NotFoundPage,
-      MyPage,
-      ArriveCardPage,
-      'BottomSheet/EditGoalBottomSheet': EditGoalBottomSheet,
+      BirthDayBottomSheet,
     },
     plugins: [
       historySyncPlugin({
         routes: {
           HomePage: ROUTE_PATHS.HOME,
-          MyPage: ROUTE_PATHS.MY,
-          OnBoardPage: ROUTE_PATHS.ON_BOARD,
-          OnBoardGoalPage: ROUTE_PATHS.ON_BOARD_INPUT,
-          NotFoundPage: ROUTE_PATHS.NOT_FOUND,
-          ArriveCardPage: ROUTE_PATHS.ARRIVE_CARD,
-          'BottomSheet/EditGoalBottomSheet': ROUTE_PATHS.BOTTOMSHEET.EDIT_GOAL,
+          BirthDayBottomSheet: ROUTE_PATHS.BIRTHDAY_BOTTOMSHEET,
         },
         fallbackActivity: () => {
-          const onBoardValue = onBoardStorage.get();
-
-          if (!onBoardValue || onBoardValue === '' || onBoardValue === 'false')
-            return 'OnBoardPage';
           return 'HomePage';
         },
       }),

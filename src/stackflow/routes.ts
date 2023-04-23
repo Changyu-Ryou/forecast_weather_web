@@ -1,13 +1,6 @@
 export const ROUTE_PATHS = {
   HOME: '/home',
-  MY: '/my',
-  ON_BOARD: '/onboard',
-  ON_BOARD_INPUT: '/onboard/goal',
-  NOT_FOUND: '/not-found',
-  ARRIVE_CARD: '/arrive-card',
-  BOTTOMSHEET: {
-    EDIT_GOAL: '/bottomsheet/edit-goal',
-  },
+  BIRTHDAY_BOTTOMSHEET: '/birthday-bottomsheet',
 };
 
 export const buildRoutePath = {

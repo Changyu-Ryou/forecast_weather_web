@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 // 몇번의 월요일이 지났는지 체크하는 함수
 export function getPadssedMondayCount(startDate: string) {
   const now: Date = new Date();
@@ -30,4 +32,10 @@ export function isMondayToday() {
     // 현재 요일이 월요일이 아닌 경우 false 반환
     return false;
   }
+}
+
+// 1995-11-07 11:22:00 형태로 포멧팅
+
+export function formatDate(date: Date) {
+  return moment(date).format('YYYY-MM-DD HH:mm:ss');
 }
