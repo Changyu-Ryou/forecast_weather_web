@@ -42,6 +42,7 @@ const BirthDayBottomSheet = () => {
     const birthday = watch('birthday') || '';
     if (isValidBirthdate(birthday)) {
       pop();
+      setValue('birthday', formatBirthdate(birthday));
       send({
         activityId: id,
         data: {

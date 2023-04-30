@@ -7,7 +7,9 @@ import { generateBirthDayLottoNumbers, generateLottoNumbers } from './lottoGener
 import { receive } from '@stackflow/compat-await-push';
 import useSendNativeEventBridge from '../../../hooks/useSendNativeEventBridge';
 import { Spacing } from '../../common/Spacing';
-
+import { usePostLottoQuestion } from '../../../api/fetchPostLottoQuestion';
+import { v4 as uuidv4 } from 'uuid';
+import { DeviceUUID } from 'device-uuid';
 // interface Props {}
 
 const AccessoryBar = () => {
@@ -16,6 +18,9 @@ const AccessoryBar = () => {
   const birthday = watch('birthday');
   const { push } = useFlow();
   const { sendToNative } = useSendNativeEventBridge();
+
+  const { mutate } = usePostLottoQuestion();
+  const uuid = new DeviceUUID().get() || uuidv4();
 
   const getNewNumberHandler = () => {
     setValue('talks', [
@@ -98,8 +103,53 @@ const AccessoryBar = () => {
     }, 1000);
   };
 
+  const askQuestionToAI = async () => {
+    const recieveValue: any = await receive(push('AskQuestionBottomSheet', {}));
+    if (!recieveValue?.question) {
+      return;
+    }
+    await mutate(
+      {
+        deviceId: uuid,
+        question: recieveValue.question,
+      },
+      {
+        onSuccess: (data) => {
+          if (data.data?.lottoQnA?.answer)
+            setTimeout(() => {
+              const newTalks = storage('talks').get();
+              setValue('talks', [
+                ...newTalks,
+                {
+                  author: 'AI',
+                  message: data.data?.lottoQnA?.answer,
+                  createdAt: new Date(),
+                },
+              ]);
+              setValue('typing', true);
+            }, 1000);
+        },
+        onError: (error) => {
+          console.log(error);
+          setTimeout(() => {
+            const newTalks = storage('talks').get();
+            setValue('talks', [
+              ...newTalks,
+              {
+                author: 'AI',
+                message:
+                  '죄송합니다. 일시적 에러가 발생해 답변을 드리지 못했습니다. 다시 시도해주세요',
+                createdAt: new Date(),
+              },
+            ]);
+            setValue('typing', true);
+          }, 1000);
+        },
+      }
+    );
+  };
+
   // 테스트용 예시
-  console.log();
   return (
     <Wrapper>
       <div className="gradient-overlay"></div>
@@ -107,6 +157,7 @@ const AccessoryBar = () => {
         <Spacing width={8} />
         <Button onClick={getNewNumberHandler}>번호 추천 받기</Button>
         <Button onClick={getBirthdayNumberHandler}>내 생일에 맞는 번호 추천받기</Button>
+        <Button onClick={askQuestionToAI}>AI에게 직접 번호 물어보기</Button>
         <Button disabled>추가 기능 준비중...</Button>
         <Spacing width={8} />
       </ButtonListWrapper>

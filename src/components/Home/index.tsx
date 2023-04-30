@@ -8,9 +8,14 @@ import useFormContextHook from '../../hooks/useFormContextHook';
 import AccessoryBar from './components/AccessoryBar';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { DEFAULT_TALKS } from '../../constants/messages';
+import { useState } from 'react';
+import { Drawer } from '@mui/material';
+import DrawerMenu from './components/DrawerMenu';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const HomePage: ActivityComponentType = () => {
   const { setValue } = useFormContextHook();
+  const [drawer, setDrawer] = useState(false);
 
   const clearHandler = () => {
     setValue('talks', DEFAULT_TALKS);
@@ -37,12 +42,36 @@ const HomePage: ActivityComponentType = () => {
         ),
         backButton: {
           renderIcon: () => {
-            return <></>;
+            return (
+              <MenuIcon
+                onClick={() => setDrawer(true)}
+                sx={{
+                  width: '20px',
+                  height: '20px',
+                  color: 'white',
+                }}
+              />
+            );
+          },
+          onClick: () => {
+            setDrawer(true);
           },
         },
         closeButton: {
           renderIcon: () => {
-            return <></>;
+            return (
+              <MenuIcon
+                onClick={() => setDrawer(true)}
+                sx={{
+                  width: '20px',
+                  height: '20px',
+                  color: 'white',
+                }}
+              />
+            );
+          },
+          onClick: () => {
+            setDrawer(true);
           },
         },
       }}
@@ -50,6 +79,9 @@ const HomePage: ActivityComponentType = () => {
     >
       <Wrapper>
         <MainContents />
+        <Drawer anchor={'left'} open={drawer} onClose={() => setDrawer(false)}>
+          <DrawerMenu onClose={() => setDrawer(false)} />
+        </Drawer>
       </Wrapper>
     </AppScreen>
   );
@@ -73,7 +105,7 @@ const Title = styled.div`
   color: white;
 `;
 
-const ClearButton = styled.img`
+const MenuButton = styled.img`
   width: 10px;
   height: 10px;
 `;

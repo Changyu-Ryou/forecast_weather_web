@@ -10,6 +10,7 @@ import '@stackflow/plugin-basic-ui/index.css';
 import { ROUTE_PATHS } from './routes';
 import HomePage from '../components/Home';
 import BirthDayBottomSheet from '../components/BirthDayBottomSheet';
+import AskQuestionBottomSheet from '../components/AskQuestionBottomSheet';
 
 const initStackflow = () => {
   return stackflow({
@@ -17,12 +18,14 @@ const initStackflow = () => {
     activities: {
       HomePage,
       BirthDayBottomSheet,
+      AskQuestionBottomSheet,
     },
     plugins: [
       historySyncPlugin({
         routes: {
           HomePage: ROUTE_PATHS.HOME,
           BirthDayBottomSheet: ROUTE_PATHS.BIRTHDAY_BOTTOMSHEET,
+          AskQuestionBottomSheet: ROUTE_PATHS.ASK_QUESTION_BOTTOMSHEET,
         },
         fallbackActivity: () => {
           return 'HomePage';
