@@ -16,6 +16,18 @@ const firebaseConfig = {
   measurementId: 'G-P2N4V8Z597',
 };
 
+const firebaseAlphaConfig = {
+  apiKey: 'AIzaSyB-aJCVq3S3p3rq9k3FZHjJEr-dpWzy5iU',
+  authDomain: 'personal-proj-alpha.firebaseapp.com',
+  projectId: 'personal-proj-alpha',
+  storageBucket: 'personal-proj-alpha.appspot.com',
+  messagingSenderId: '371202041319',
+  appId: '1:371202041319:web:9947587dea746504c18942',
+  measurementId: 'G-YJ6YRGEDHD',
+};
+
+const config = process.env.REACT_APP_ENV === 'dev' ? firebaseAlphaConfig : firebaseConfig;
+
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+export const app = initializeApp(config);
 export const analytics = getAnalytics(app);
