@@ -1,9 +1,14 @@
 export const ROUTE_PATHS = {
   HOME: '/home',
-  BIRTHDAY_BOTTOMSHEET: '/birthday-bottomsheet',
-  ASK_QUESTION_BOTTOMSHEET: '/ask-question',
+
+  BottomSheet: {
+    ShirineDetail: '/shrine/:shrineName',
+  },
 };
 
 export const buildRoutePath = {
-  arriveCard: (id: string) => `/arrive-card/${id}`,
+  BottomSheet: {
+    ShirineDetail: (name: string) =>
+      ROUTE_PATHS.BottomSheet.ShirineDetail.replace(':shrineName', name),
+  },
 };

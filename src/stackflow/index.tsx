@@ -9,23 +9,21 @@ import { basicUIPlugin } from '@stackflow/plugin-basic-ui';
 import '@stackflow/plugin-basic-ui/index.css';
 import { ROUTE_PATHS } from './routes';
 import HomePage from '../components/Home';
-import BirthDayBottomSheet from '../components/BirthDayBottomSheet';
-import AskQuestionBottomSheet from '../components/AskQuestionBottomSheet';
+
+import ShrineBottomSheet from '../components/ShrineBottomSheet';
 
 const initStackflow = () => {
   return stackflow({
     transitionDuration: 350,
     activities: {
       HomePage,
-      BirthDayBottomSheet,
-      AskQuestionBottomSheet,
+      'BottomSheet/ShrineBottomSheet': ShrineBottomSheet,
     },
     plugins: [
       historySyncPlugin({
         routes: {
           HomePage: ROUTE_PATHS.HOME,
-          BirthDayBottomSheet: ROUTE_PATHS.BIRTHDAY_BOTTOMSHEET,
-          AskQuestionBottomSheet: ROUTE_PATHS.ASK_QUESTION_BOTTOMSHEET,
+          'BottomSheet/ShrineBottomSheet': ROUTE_PATHS.BottomSheet.ShirineDetail,
         },
         fallbackActivity: () => {
           return 'HomePage';

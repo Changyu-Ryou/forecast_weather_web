@@ -1,24 +1,24 @@
 import styled from '@emotion/styled';
-import { ActivityComponentType, useActivity } from '@stackflow/react';
+import { ActivityComponentType } from '@stackflow/react';
 
 import MainContents from './components/MainContents';
 import { AppScreen } from '../../stackflow/components';
 
 import useFormContextHook from '../../hooks/useFormContextHook';
-import AccessoryBar from './components/AccessoryBar';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { DEFAULT_TALKS } from '../../constants/messages';
+
+import MapIcon from '@mui/icons-material/Map';
+
 import { useState } from 'react';
 import { Drawer } from '@mui/material';
 import DrawerMenu from './components/DrawerMenu';
 import MenuIcon from '@mui/icons-material/Menu';
+import { MSG } from '../../constants/text';
 
 const HomePage: ActivityComponentType = () => {
   const { setValue } = useFormContextHook();
   const [drawer, setDrawer] = useState(false);
 
   const clearHandler = () => {
-    setValue('talks', DEFAULT_TALKS);
     setValue('typing', true);
   };
 
@@ -29,9 +29,9 @@ const HomePage: ActivityComponentType = () => {
         borderColor: 'rgba(255, 255, 255, 0.2)',
         backgroundColor: '#40414F',
         borderSize: '1px',
-        title: <Title>Chat Lotto AI</Title>,
+        title: <Title>{MSG.HOME.TITLE}</Title>,
         appendRight: () => (
-          <DeleteForeverIcon
+          <MapIcon
             onClick={clearHandler}
             sx={{
               width: '20px',
@@ -75,7 +75,6 @@ const HomePage: ActivityComponentType = () => {
           },
         },
       }}
-      accessoryBar={<AccessoryBar />}
     >
       <Wrapper>
         <MainContents />
@@ -95,7 +94,6 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
 
-  overflow: hidden;
   background-color: #343541;
 `;
 

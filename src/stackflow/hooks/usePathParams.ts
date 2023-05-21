@@ -9,6 +9,7 @@ export interface ActivityPathParams {
   meetupId: string;
   userId: string;
   query: string;
+  shrineName: string;
 }
 
 export const usePathParams = (): ActivityPathParams => {
