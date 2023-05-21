@@ -12,8 +12,8 @@ const firebaseConfig = {
   projectId: 'qr-code-reader-a45a5',
   storageBucket: 'qr-code-reader-a45a5.appspot.com',
   messagingSenderId: '2981119270',
-  appId: '1:2981119270:web:5a8873884c31853a7e6de7',
-  measurementId: 'G-P2N4V8Z597',
+  appId: '1:2981119270:web:4ff75a9a57ed8a9f7e6de7',
+  measurementId: 'G-6PXSEENHMG',
 };
 
 const firebaseAlphaConfig = {
