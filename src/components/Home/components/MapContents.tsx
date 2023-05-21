@@ -70,7 +70,7 @@ export const MapContents: React.FC<any> = () => {
           minScale={imageScale}
           maxScale={imageScale * zoomFactor}
           wheel={{ step: 0.01 }}
-          pinch={{ step: 0.1, disabled: true }}
+          pinch={{ step: 0.01 }}
           centerOnInit
         >
           <SearchBarDialog />

@@ -11,8 +11,8 @@ const MarkersList = () => {
   const { resetTransform } = useControls();
 
   const { watch } = useFormContextHook();
-  const mapTypeValue = watch('mapType');
-  const viewFilter = watch('viewFilter');
+  const mapTypeValue = watch('mapType') ?? 'surface';
+  const viewFilter = watch('viewFilter') ?? 'all';
   const visitedShrines = useMemo(() => {
     return watch('visited') ?? [];
   }, [watch]);

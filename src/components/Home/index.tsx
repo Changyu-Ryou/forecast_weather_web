@@ -18,10 +18,6 @@ const HomePage: ActivityComponentType = () => {
   const { setValue } = useFormContextHook();
   const [drawer, setDrawer] = useState(false);
 
-  const clearHandler = () => {
-    setValue('typing', true);
-  };
-
   return (
     <AppScreen
       appBar={{
@@ -30,16 +26,16 @@ const HomePage: ActivityComponentType = () => {
         backgroundColor: '#40414F',
         borderSize: '1px',
         title: <Title>{MSG.HOME.TITLE}</Title>,
-        appendRight: () => (
-          <MapIcon
-            onClick={clearHandler}
-            sx={{
-              width: '20px',
-              height: '20px',
-              color: 'white',
-            }}
-          />
-        ),
+        // appendRight: () => (
+        //   <MapIcon
+        //     onClick={clearHandler}
+        //     sx={{
+        //       width: '20px',
+        //       height: '20px',
+        //       color: 'white',
+        //     }}
+        //   />
+        // ),
         backButton: {
           renderIcon: () => {
             return (
