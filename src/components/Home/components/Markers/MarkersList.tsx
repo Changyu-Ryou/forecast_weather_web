@@ -24,6 +24,7 @@ const MarkersList = () => {
         return item.location === mapTypeValue && visitedShrines?.includes(item.name);
       if (viewFilter === 'notVisitedOnly')
         return item.location === mapTypeValue && !visitedShrines?.includes(item.name);
+      return item.location === mapTypeValue;
     });
   }, [mapTypeValue, viewFilter, visitedShrines]);
 
