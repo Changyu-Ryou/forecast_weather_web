@@ -13,12 +13,16 @@ const MarkersList = () => {
   const { watch } = useFormContextHook();
   const mapTypeValue = watch('mapType') ?? 'surface';
   const viewFilter = watch('viewFilter') ?? 'all';
-  const visitedShrines = useMemo(() => {
-    return watch('visited') ?? [];
-  }, [watch]);
+  const visitedShrines = watch('visited') ?? [];
 
   const filteredMarkers = useMemo(() => {
     return Shrines.filter((item) => {
+      console.log(
+        'filteredMarkers',
+        viewFilter,
+        mapTypeValue.name,
+        visitedShrines.includes(item.name)
+      );
       if (viewFilter === 'all') return item.location === mapTypeValue;
       if (viewFilter === 'visitedOnly')
         return item.location === mapTypeValue && visitedShrines?.includes(item.name);

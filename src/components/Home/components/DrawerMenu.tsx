@@ -13,7 +13,7 @@ const DrawerMenu = ({ onClose }: Props) => {
   const { push } = useFlow();
   const { watch, setValue } = useFormContextHook();
   const viewFilter = watch('viewFilter') ?? 'all';
-  const mapType = watch('mapType') ?? 'sky';
+  const mapType = watch('mapType') ?? 'surface';
 
   const changeViewFilter = (value: string) => {
     setValue('viewFilter', value);
@@ -131,7 +131,7 @@ const Item = styled.div<{ selected?: boolean }>`
   }
 
   //is first child
-  &:first-child {
+  &:first-of-type {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 `;
@@ -145,7 +145,7 @@ const GroupWrappr = styled.div`
   margin-bottom: 10px;
 
   //not last child
-  & div:not(:first-child) {
+  & div:not(:first-of-type) {
     padding-left: 22px;
   }
 `;

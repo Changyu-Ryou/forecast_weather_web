@@ -25,7 +25,7 @@ function App(): ReactElement {
     if (!viewFilter) {
       storage('viewFilter').set('all');
     }
-  }, []);
+  }, [mapType, viewFilter, visited]);
 
   const formMathod = useForm({
     defaultValues: {

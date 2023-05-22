@@ -25,8 +25,8 @@ const MarkerItem = ({ shrine }: ItemProps) => {
   const { zoomToElement } = useControls();
   const { setValue, watch } = useFormContextHook();
 
-  const visitedValue: string[] = watch('visited');
-  const isVisited = visitedValue.includes(shrine.name || '');
+  const visitedValue: string[] = watch('visited', []) ?? [];
+  const isVisited = visitedValue?.includes(shrine.name || '');
 
   const itemClickHandler = async (e: React.MouseEvent<HTMLDivElement>) => {
     zoomToElement(e.target as HTMLDivElement, 0.9, 1000);

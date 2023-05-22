@@ -38,7 +38,7 @@ const ShrineBottomSheet = () => {
     });
   };
 
-  const visitedValue: string[] = watch('visited');
+  const visitedValue: string[] = watch('visited', []) ?? [];
   const isVisited = visitedValue.includes(detail?.name || '');
   const visitHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.checked;
