@@ -11,11 +11,13 @@ import { useActivity } from '@stackflow/react';
 import DefaultMarker from '../../assets/Image/shrine_marker_default.png';
 import DisabledMarker from '../../assets/Image/shrine_marker_visited.png';
 import useFormContextHook from '../../hooks/useFormContextHook';
+import useSendNativeEventBridge from '../../hooks/useSendNativeEventBridge';
 
 const ShrineBottomSheet = () => {
   const { pop } = useFlow();
   const { shrineName } = usePathParams();
   const { setValue, watch } = useFormContextHook();
+  const { sendToNative } = useSendNativeEventBridge();
 
   const detail = useMemo(() => {
     return Shrines.find((shrine) => shrine.name === shrineName);
@@ -46,6 +48,11 @@ const ShrineBottomSheet = () => {
 
     if (newValue === true) {
       const arr = [...visitedValue, detail.name];
+
+      if (arr.length % 5 === 0) {
+        sendToNative('showInterstitialAd', {});
+      }
+
       const uniqueArr = arr.filter((value, index, self) => {
         return self.indexOf(value) === index;
       });
