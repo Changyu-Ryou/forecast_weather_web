@@ -1,9 +1,10 @@
-import React, { useEffect, useMemo } from 'react';
-import Shrines from '../../constants/Shrines';
+import { useEffect } from 'react';
+
 import useFormContextHook from '../../../../hooks/useFormContextHook';
 import { useControls } from 'react-zoom-pan-pinch';
 
-import MarkerItem from './MarkerItem';
+import CaveMarkersList from './Cave/CaveMarkersList';
+import ShrinesMarkersList from './Shirine/ShrineMarkersList';
 
 export const MARKER_SIZE = 20;
 
@@ -13,36 +14,19 @@ const MarkersList = () => {
   const { watch } = useFormContextHook();
   const mapTypeValue = watch('mapType') ?? 'surface';
   const viewFilter = watch('viewFilter') ?? 'all';
-  const visitedShrines = watch('visited') ?? [];
 
-  const filteredMarkers = useMemo(() => {
-    return Shrines.filter((item) => {
-      console.log(
-        'filteredMarkers',
-        viewFilter,
-        mapTypeValue.name,
-        visitedShrines.includes(item.name)
-      );
-      if (viewFilter === 'all') return item.location === mapTypeValue;
-      if (viewFilter === 'visitedOnly')
-        return item.location === mapTypeValue && visitedShrines?.includes(item.name);
-      if (viewFilter === 'notVisitedOnly')
-        return item.location === mapTypeValue && !visitedShrines?.includes(item.name);
-      return item.location === mapTypeValue;
-    });
-  }, [mapTypeValue, viewFilter, visitedShrines]);
+  const contentFilter = watch('contentsFilter') ?? ['shrine'];
 
   useEffect(() => {
     resetTransform();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mapTypeValue, viewFilter]);
+  }, [mapTypeValue, viewFilter, contentFilter]);
 
   return (
     <>
-      {filteredMarkers?.map((item, index) => {
-        return <MarkerItem key={index} shrine={item} />;
-      })}
+      {contentFilter.includes('cave') && <CaveMarkersList />}
+      {contentFilter.includes('shrine') && <ShrinesMarkersList />}
     </>
   );
 };

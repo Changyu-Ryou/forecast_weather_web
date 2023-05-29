@@ -12,7 +12,10 @@ function App(): ReactElement {
   // 앱 시작일 저장 - 앱 시작일 기준으로 몇주차인지 계산하기 위함
   const mapType = storage('mapType').get();
   const visited = storage('visited').get();
+  const visitedCaves = storage('visitedCaves').get();
   const viewFilter = storage('viewFilter').get();
+  const contentsFilter = storage('contentsFilter').get();
+  const closeNoticeBanner = storage('closeNoticeBanner').get();
 
   useEffect(() => {
     //앱을 처음 시작하는 경우 defaultMessage를 저장
@@ -25,13 +28,25 @@ function App(): ReactElement {
     if (!viewFilter) {
       storage('viewFilter').set('all');
     }
-  }, [mapType, viewFilter, visited]);
+    if (!visitedCaves) {
+      storage('visitedCaves').set([]);
+    }
+    if (!contentsFilter) {
+      storage('contentsFilter').set(['shrine']);
+    }
+    if (!closeNoticeBanner) {
+      storage('closeNoticeBanner').set([]);
+    }
+  }, [closeNoticeBanner, contentsFilter, mapType, viewFilter, visited, visitedCaves]);
 
   const formMathod = useForm({
     defaultValues: {
       mapType,
       visited,
+      visitedCaves,
       viewFilter,
+      contentsFilter,
+      closeNoticeBanner,
     },
   });
 

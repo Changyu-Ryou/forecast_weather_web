@@ -16,7 +16,7 @@ import AsyncBoundary from '../../../../components/common/AsyncBoundary/AsyncBoun
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   padding?: string;
-
+  appendTop?: ReactNode;
   className?: string;
   accessoryBar?: ReactNode;
 };
@@ -42,6 +42,13 @@ const Layout = forwardRef((props: Props, ref: ForwardedRef<LayoutRefProps>) => {
 
   return (
     <ViewLayoutWrapper ref={internalRef} {...res} className="view-layout">
+      {props.appendTop && (
+        <AsyncBoundary>
+          <BottomWrapper ref={internalRef} className={'layer-bottom'} id="layer-bottom">
+            {props.appendTop}
+          </BottomWrapper>
+        </AsyncBoundary>
+      )}
       <ContentsSection padding={padding}>{children}</ContentsSection>
       {props.accessoryBar && (
         <AsyncBoundary>

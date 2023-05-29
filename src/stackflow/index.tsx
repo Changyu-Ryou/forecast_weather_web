@@ -11,6 +11,7 @@ import { ROUTE_PATHS } from './routes';
 import HomePage from '../components/Home';
 
 import ShrineBottomSheet from '../components/ShrineBottomSheet';
+import CaveBottomSheet from '../components/CaveBottomSheet';
 
 const initStackflow = () => {
   return stackflow({
@@ -18,12 +19,14 @@ const initStackflow = () => {
     activities: {
       HomePage,
       'BottomSheet/ShrineBottomSheet': ShrineBottomSheet,
+      'BottomSheet/CaveBottomSheet': CaveBottomSheet,
     },
     plugins: [
       historySyncPlugin({
         routes: {
           HomePage: ROUTE_PATHS.HOME,
           'BottomSheet/ShrineBottomSheet': ROUTE_PATHS.BottomSheet.ShirineDetail,
+          'BottomSheet/CaveBottomSheet': ROUTE_PATHS.BottomSheet.CaveDetail,
         },
         fallbackActivity: () => {
           return 'HomePage';

@@ -1,15 +1,10 @@
 import { useActivityParams } from '@stackflow/react';
 
 export interface ActivityPathParams {
-  groupId: string;
-  postId: string;
-  commentId: string;
-  roomId: string;
-  challengeId?: string;
-  meetupId: string;
-  userId: string;
   query: string;
   shrineName: string;
+  caveName: string;
+  position: string;
 }
 
 export const usePathParams = (): ActivityPathParams => {
