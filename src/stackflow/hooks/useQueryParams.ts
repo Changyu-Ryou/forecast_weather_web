@@ -11,6 +11,7 @@ export interface ActivityQueryParams {
   author?: string;
   activeTabIdx?: string;
   isStoredCard?: string;
+  position?: string;
 }
 
 export const useQueryParams = (): ActivityQueryParams => {

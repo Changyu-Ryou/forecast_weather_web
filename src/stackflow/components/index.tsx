@@ -10,6 +10,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 export type AppScreenProps = Parameters<typeof AppBar>[0] & {
   children: React.ReactNode;
   accessoryBar?: React.ReactNode;
+  appendTop?: React.ReactNode;
   onPull?: () => void;
   layoutRef?: Ref<LayoutRefProps>;
   noAppBar?: boolean;
@@ -18,6 +19,7 @@ export type AppScreenProps = Parameters<typeof AppBar>[0] & {
 export const AppScreen = ({
   children,
   appBar,
+  appendTop,
   accessoryBar,
   onPull,
   layoutRef,
@@ -45,7 +47,7 @@ export const AppScreen = ({
             }
       }
     >
-      <Layout ref={layoutRef} accessoryBar={accessoryBar}>
+      <Layout ref={layoutRef} accessoryBar={accessoryBar} appendTop={appendTop}>
         {children}
       </Layout>
     </AppBar>

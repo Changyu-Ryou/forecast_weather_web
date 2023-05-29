@@ -6,20 +6,22 @@ import { AppScreen } from '../../stackflow/components';
 
 import useFormContextHook from '../../hooks/useFormContextHook';
 
-import MapIcon from '@mui/icons-material/Map';
-
-import { useState } from 'react';
 import { Drawer } from '@mui/material';
-import DrawerMenu from './components/DrawerMenu';
+import DrawerMenu from './components/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import { MSG } from '../../constants/text';
+import NoticeBannerList from './components/NoticeBanner';
 
 const HomePage: ActivityComponentType = () => {
-  const { setValue } = useFormContextHook();
-  const [drawer, setDrawer] = useState(false);
+  const { watch, setValue } = useFormContextHook();
+  const setDrawer = (value: boolean) => {
+    setValue('drawer', value);
+  };
+  const drawer = watch('drawer', false) ?? false;
 
   return (
     <AppScreen
+      appendTop={<NoticeBannerList />}
       appBar={{
         border: true,
         borderColor: 'rgba(255, 255, 255, 0.2)',
@@ -97,11 +99,6 @@ const Title = styled.div`
   font-size: 1rem;
   line-height: 1.5rem;
   color: white;
-`;
-
-const MenuButton = styled.img`
-  width: 10px;
-  height: 10px;
 `;
 
 export default HomePage;
