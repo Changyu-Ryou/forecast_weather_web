@@ -13,9 +13,10 @@ function App(): ReactElement {
   const mapType = storage('mapType').get();
   const visited = storage('visited').get();
   const visitedCaves = storage('visitedCaves').get();
+  const visitedKorok = storage('visitedKoroks').get();
   const viewFilter = storage('viewFilter').get();
   const contentsFilter = storage('contentsFilter').get();
-  const closeNoticeBanner = storage('closeNoticeBanner').get();
+  const closedNoticeBanner = storage('closedNoticeBanner').get();
 
   useEffect(() => {
     //앱을 처음 시작하는 경우 defaultMessage를 저장
@@ -31,22 +32,36 @@ function App(): ReactElement {
     if (!visitedCaves) {
       storage('visitedCaves').set([]);
     }
+    if (!visitedKorok) {
+      storage('visitedKoroks').set([]);
+    }
     if (!contentsFilter) {
       storage('contentsFilter').set(['shrine']);
     }
-    if (!closeNoticeBanner) {
-      storage('closeNoticeBanner').set([]);
+    if (!closedNoticeBanner) {
+      console.log('no closedNoticeBanner');
+      storage('closedNoticeBanner').set([]);
     }
-  }, [closeNoticeBanner, contentsFilter, mapType, viewFilter, visited, visitedCaves]);
+    console.log('closedNoticeBanner', closedNoticeBanner);
+  }, [
+    closedNoticeBanner,
+    contentsFilter,
+    mapType,
+    viewFilter,
+    visited,
+    visitedCaves,
+    visitedKorok,
+  ]);
 
   const formMathod = useForm({
     defaultValues: {
       mapType,
       visited,
       visitedCaves,
+      visitedKorok,
       viewFilter,
       contentsFilter,
-      closeNoticeBanner,
+      closedNoticeBanner,
     },
   });
 

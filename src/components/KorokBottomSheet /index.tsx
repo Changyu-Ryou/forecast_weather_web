@@ -8,24 +8,24 @@ import { Spacing } from '../common/Spacing';
 import { send } from '@stackflow/compat-await-push';
 import { useActivity } from '@stackflow/react';
 
-import DefaultMarker from '../../assets/Image/cave_marker_default.png';
-import DisabledMarker from '../../assets/Image/cave_marker_visited.png';
+import DefaultMarker from '../../assets/Image/korok_marker_default.png';
+import DisabledMarker from '../../assets/Image/korok_marker_visited.png';
 import useFormContextHook from '../../hooks/useFormContextHook';
 import useSendNativeEventBridge from '../../hooks/useSendNativeEventBridge';
-import { Caves } from '../Home/constants/Caves';
+import { Koroks } from '../Home/constants/Koroks';
 import { useQueryParams } from '../../stackflow/hooks/useQueryParams';
 
-const CaveBottomSheet = () => {
+const KorokBottomSheet = () => {
   const { pop } = useFlow();
-  const { caveName } = usePathParams();
+  const { korokName } = usePathParams();
   const { position } = useQueryParams();
   const { setValue, watch } = useFormContextHook();
   const { sendToNative } = useSendNativeEventBridge();
-  const decodeName = decodeURIComponent(caveName);
+  const decodeName = decodeURIComponent(korokName);
 
   const detail = useMemo(() => {
-    const result = Caves.find((shrine) => {
-      return shrine.name === decodeName && JSON.stringify(shrine.position) === position;
+    const result = Koroks.find((item) => {
+      return item.name === decodeName && JSON.stringify(item.position) === position;
     });
     return result;
   }, [decodeName, position]);
@@ -48,7 +48,7 @@ const CaveBottomSheet = () => {
     });
   };
 
-  const visitedValue: string[] = watch('visitedCaves') ?? [];
+  const visitedValue: string[] = watch('visitedKoroks') ?? [];
   const visitedCheckName = detail?.name + JSON.stringify(detail?.position);
   const isVisited = visitedValue.includes(visitedCheckName || '');
   const visitHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,37 +67,36 @@ const CaveBottomSheet = () => {
       const uniqueArr = arr.filter((value, index, self) => {
         return self.indexOf(value) === index;
       });
-      setValue('visitedCaves', uniqueArr);
+      setValue('visitedKoroks', uniqueArr);
     } else {
       const uniqueArr = visitedValue.filter((value, index, self) => {
         return self.indexOf(value) === index;
       });
       setValue(
-        'visitedCaves',
+        'visitedKoroks',
         uniqueArr.filter((value: string) => value !== visitedCheckName)
       );
     }
   };
 
-  const renderCaveName = () => {
+  const renderKorokName = () => {
     if (detail?.koName) {
       return (
         <>
-          <SubTitle>{detail.name}</SubTitle>
+          <SubTitle>id: {detail.name}</SubTitle>
           <Spacing height={3} />
           <Title>{detail.koName}</Title>
         </>
       );
     }
-    return <Title>{detail?.name ?? '동굴 (이름 없음)'}</Title>;
+    return <Title>코로그({detail?.name ?? '(이름 없음)'})</Title>;
   };
 
   return detail ? (
     <BottomSheet onOutsideClick={handleClose}>
       <Wrapper>
-        {renderCaveName()}
+        {renderKorokName()}
         <Spacing height={20} />
-        <Description>🚧 동굴 이름은 한글화 중이에요</Description>
         <Spacing height={20} />
         <ToggleWrapper>
           <input type="checkbox" id="toggle" hidden onChange={visitHandler} checked={isVisited} />
@@ -112,7 +111,7 @@ const CaveBottomSheet = () => {
   ) : null;
 };
 
-export default CaveBottomSheet;
+export default KorokBottomSheet;
 
 const Wrapper = styled.div`
   width: 100%;

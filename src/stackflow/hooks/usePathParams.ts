@@ -4,6 +4,7 @@ export interface ActivityPathParams {
   query: string;
   shrineName: string;
   caveName: string;
+  korokName: string;
   position: string;
 }
 

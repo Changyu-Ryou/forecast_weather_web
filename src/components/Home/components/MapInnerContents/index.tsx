@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { useEffect } from 'react';
 import { useControls } from 'react-zoom-pan-pinch';
+import { copyToClipboard } from '../../../../utils/link';
 
 import Markers from '../Markers/MarkersList';
 

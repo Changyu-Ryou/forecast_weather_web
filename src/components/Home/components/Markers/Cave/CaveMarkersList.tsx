@@ -15,11 +15,12 @@ const CaveMarkersList = () => {
 
   const filteredCavesMarkers = useMemo(() => {
     return Caves.filter((item) => {
+      const visitedCheckName = item.name + JSON.stringify(item.position);
       if (viewFilter === 'all') return item.location === mapTypeValue;
       if (viewFilter === 'visitedOnly')
-        return item.location === mapTypeValue && visitedCaves?.includes(item.name);
+        return item.location === mapTypeValue && visitedCaves?.includes(visitedCheckName);
       if (viewFilter === 'notVisitedOnly')
-        return item.location === mapTypeValue && !visitedCaves?.includes(item.name);
+        return item.location === mapTypeValue && !visitedCaves?.includes(visitedCheckName);
       return item.location === mapTypeValue;
     });
   }, [mapTypeValue, viewFilter, visitedCaves]);

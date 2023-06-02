@@ -5,12 +5,21 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import styled from '@emotion/styled';
 import Shrine from '../../../../assets/Image/shrine_marker_default.png';
 import Cave from '../../../../assets/Image/cave_marker_default.png';
+import Korok from '../../../../assets/Image/korok_marker_default.png';
+
+import Shrines from '../../constants/Shrines';
+import { Caves } from '../../constants/Caves';
+import { Koroks } from '../../constants/Koroks';
 
 import CheckIcon from '@mui/icons-material/Check';
 
 const ContentsFilter = ({ onClose }: DrawerProps) => {
   const { watch, setValue } = useFormContextHook();
-  const contentsFilter = watch('contentsFilter', ['shrine']) ?? ['shrine'];
+  const contentsFilter = watch('contentsFilter') ?? ['shrine'];
+
+  const visitedShirnes = watch('visited') ?? [];
+  const visitedCaves = watch('visitedCaves') ?? [];
+  const visitedKoroks = watch('visitedKoroks') ?? [];
 
   const changeViewFilter = (value: string) => {
     const isIncludes = contentsFilter.includes(value);
@@ -44,6 +53,9 @@ const ContentsFilter = ({ onClose }: DrawerProps) => {
           <Label htmlFor="shrine">
             <Image src={Shrine} />
             사당
+            <CounterSpan>
+              ({visitedShirnes.length}/{Shrines.length})
+            </CounterSpan>
           </Label>
           {contentsFilter.includes('shrine') && <CheckIcon sx={{ fontSize: '17px' }} />}
         </LabelWrapper>
@@ -60,8 +72,30 @@ const ContentsFilter = ({ onClose }: DrawerProps) => {
           <Label htmlFor="cave">
             <Image src={Cave} />
             동굴
+            <CounterSpan>
+              ({visitedCaves.length}/{Caves.length})
+            </CounterSpan>
           </Label>
           {contentsFilter.includes('cave') && <CheckIcon sx={{ fontSize: '17px' }} />}
+        </LabelWrapper>
+      </Item>
+      <Item
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          changeViewFilter('korok');
+        }}
+        selected={contentsFilter.includes('korok')}
+      >
+        <LabelWrapper>
+          <Label htmlFor="korok">
+            <Image src={Korok} />
+            코로그
+            <CounterSpan>
+              ({visitedKoroks.length}/{Koroks.length})
+            </CounterSpan>
+          </Label>
+          {contentsFilter.includes('korok') && <CheckIcon sx={{ fontSize: '17px' }} />}
         </LabelWrapper>
       </Item>
     </GroupWrappr>
@@ -89,4 +123,11 @@ const LabelWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+`;
+
+const CounterSpan = styled.div`
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 3px;
+  color: darkgray;
 `;

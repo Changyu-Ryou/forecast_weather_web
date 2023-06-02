@@ -17,7 +17,7 @@ const HomePage: ActivityComponentType = () => {
   const setDrawer = (value: boolean) => {
     setValue('drawer', value);
   };
-  const drawer = watch('drawer', false) ?? false;
+  const drawer = watch('drawer') ?? false;
 
   return (
     <AppScreen

@@ -11,7 +11,7 @@ const ShrinesMarkersList = () => {
   const { watch } = useFormContextHook();
   const mapTypeValue = watch('mapType') ?? 'surface';
   const viewFilter = watch('viewFilter') ?? 'all';
-  const visitedShrines = watch('visited', []) ?? [];
+  const visitedShrines = watch('visited') ?? [];
 
   const filteredMarkers = useMemo(() => {
     return Shrines.filter((item) => {

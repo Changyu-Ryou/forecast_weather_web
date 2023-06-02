@@ -5,6 +5,7 @@ import { useControls } from 'react-zoom-pan-pinch';
 
 import CaveMarkersList from './Cave/CaveMarkersList';
 import ShrinesMarkersList from './Shirine/ShrineMarkersList';
+import KorokMarkersList from './Korok/KorokMarkersList';
 
 export const MARKER_SIZE = 20;
 
@@ -27,6 +28,7 @@ const MarkersList = () => {
     <>
       {contentFilter.includes('cave') && <CaveMarkersList />}
       {contentFilter.includes('shrine') && <ShrinesMarkersList />}
+      {contentFilter.includes('korok') && <KorokMarkersList />}
     </>
   );
 };

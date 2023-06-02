@@ -1,33 +1,32 @@
 import styled from '@emotion/styled';
+
 import CloseIcon from '@mui/icons-material/Close';
 import useFormContextHook from '../../../../hooks/useFormContextHook';
 
-const CaveFilterNotice = () => {
+const KorokFilterNotice = () => {
   const { setValue, watch } = useFormContextHook();
   const closedNoticeBanner = watch('closedNoticeBanner') ?? [];
 
-  const closeCaveFilterBannerHandler = () => {
-    console.log(closedNoticeBanner);
-    if (!closedNoticeBanner.includes('caveFilterNotice')) {
-      console.log('push');
-      setValue('closedNoticeBanner', [...closedNoticeBanner, 'caveFilterNotice']);
+  const closeKorokFilterBannerHandler = () => {
+    if (!closedNoticeBanner.includes('korokFilterNotice')) {
+      setValue('closedNoticeBanner', [...closedNoticeBanner, 'korokFilterNotice']);
     }
   };
 
   return (
     <Wrapper
       onClick={() => {
-        closeCaveFilterBannerHandler();
         setValue('drawer', true);
+        closeKorokFilterBannerHandler();
       }}
     >
-      🌟 왼쪽 상단 메뉴에 <span>동굴 필터</span>가 추가되었어요.
+      🌟 왼쪽 상단 메뉴에 <span>코로그 필터</span>가 추가되었어요.
       <CloseIcon sx={{ fontSize: '20px' }} className="close-btn" />
     </Wrapper>
   );
 };
 
-export default CaveFilterNotice;
+export default KorokFilterNotice;
 
 const Wrapper = styled.div`
   width: 100%;
@@ -44,7 +43,7 @@ const Wrapper = styled.div`
     margin-left: 5px;
 
     font-weight: 800;
-    color: yellow;
+    color: darkorange;
   }
 
   .close-btn {
