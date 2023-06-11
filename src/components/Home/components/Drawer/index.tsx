@@ -1,7 +1,4 @@
 import styled from '@emotion/styled';
-import ContentsFilter from './ContentsFilter';
-
-import MapTypeFilter from './MapTypeFilter';
 import ViewFilter from './ViewFilter';
 
 export interface DrawerProps {
@@ -12,9 +9,7 @@ const DrawerMenu = ({ onClose }: DrawerProps) => {
   return (
     <DrawerWrapper>
       <MenuTitle>Menu</MenuTitle>
-      <MapTypeFilter onClose={onClose} />
       <ViewFilter onClose={onClose} />
-      <ContentsFilter onClose={onClose} />
     </DrawerWrapper>
   );
 };

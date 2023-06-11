@@ -10,26 +10,16 @@ import '@stackflow/plugin-basic-ui/index.css';
 import { ROUTE_PATHS } from './routes';
 import HomePage from '../components/Home';
 
-import ShrineBottomSheet from '../components/ShrineBottomSheet';
-import CaveBottomSheet from '../components/CaveBottomSheet';
-import KorokBottomSheet from '../components/KorokBottomSheet ';
-
 const initStackflow = () => {
   return stackflow({
     transitionDuration: 350,
     activities: {
       HomePage,
-      'BottomSheet/ShrineBottomSheet': ShrineBottomSheet,
-      'BottomSheet/CaveBottomSheet': CaveBottomSheet,
-      'BottomSheet/KorokBottomSheet': KorokBottomSheet,
     },
     plugins: [
       historySyncPlugin({
         routes: {
           HomePage: ROUTE_PATHS.HOME,
-          'BottomSheet/ShrineBottomSheet': ROUTE_PATHS.BottomSheet.ShirineDetail,
-          'BottomSheet/CaveBottomSheet': ROUTE_PATHS.BottomSheet.CaveDetail,
-          'BottomSheet/KorokBottomSheet': ROUTE_PATHS.BottomSheet.KorokDetail,
         },
         fallbackActivity: () => {
           return 'HomePage';

@@ -1,5 +1,5 @@
 export const MSG = {
   HOME: {
-    TITLE: '젤다 사당지도',
+    TITLE: '비교날씨',
   },
 };

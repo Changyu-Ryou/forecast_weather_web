@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { ActivityComponentType } from '@stackflow/react';
 
-import MainContents from './components/MainContents';
 import { AppScreen } from '../../stackflow/components';
 
 import useFormContextHook from '../../hooks/useFormContextHook';
@@ -10,7 +9,6 @@ import { Drawer } from '@mui/material';
 import DrawerMenu from './components/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import { MSG } from '../../constants/text';
-import NoticeBannerList from './components/NoticeBanner';
 
 const HomePage: ActivityComponentType = () => {
   const { watch, setValue } = useFormContextHook();
@@ -21,23 +19,12 @@ const HomePage: ActivityComponentType = () => {
 
   return (
     <AppScreen
-      appendTop={<NoticeBannerList />}
       appBar={{
-        border: true,
-        borderColor: 'rgba(255, 255, 255, 0.2)',
-        backgroundColor: '#40414F',
-        borderSize: '1px',
+        border: false,
+        // borderColor: 'rgba(255, 255, 255, 0.2)',
+        // backgroundColor: '#40414F',
+        // borderSize: '1px',
         title: <Title>{MSG.HOME.TITLE}</Title>,
-        // appendRight: () => (
-        //   <MapIcon
-        //     onClick={clearHandler}
-        //     sx={{
-        //       width: '20px',
-        //       height: '20px',
-        //       color: 'white',
-        //     }}
-        //   />
-        // ),
         backButton: {
           renderIcon: () => {
             return (
@@ -75,7 +62,7 @@ const HomePage: ActivityComponentType = () => {
       }}
     >
       <Wrapper>
-        <MainContents />
+        <div>mainn</div>
         <Drawer anchor={'left'} open={drawer} onClose={() => setDrawer(false)}>
           <DrawerMenu onClose={() => setDrawer(false)} />
         </Drawer>
@@ -91,14 +78,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
-  background-color: #343541;
 `;
 
 const Title = styled.div`
   font-size: 1rem;
   line-height: 1.5rem;
-  color: white;
 `;
 
 export default HomePage;
