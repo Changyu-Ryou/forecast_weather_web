@@ -6,14 +6,15 @@ import { getAnalytics } from 'firebase/analytics';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// 웹은 personal-proj-alpha 프로젝트로, 앱은 personal-proj에 생성
 const firebaseConfig = {
-  apiKey: 'AIzaSyC93GD-pcTCKn-k79UBQ7m7gg3-587Xvqc',
-  authDomain: 'qr-code-reader-a45a5.firebaseapp.com',
-  projectId: 'qr-code-reader-a45a5',
-  storageBucket: 'qr-code-reader-a45a5.appspot.com',
-  messagingSenderId: '2981119270',
-  appId: '1:2981119270:web:4ff75a9a57ed8a9f7e6de7',
-  measurementId: 'G-6PXSEENHMG',
+  apiKey: 'AIzaSyB-aJCVq3S3p3rq9k3FZHjJEr-dpWzy5iU',
+  authDomain: 'personal-proj-alpha.firebaseapp.com',
+  projectId: 'personal-proj-alpha',
+  storageBucket: 'personal-proj-alpha.appspot.com',
+  messagingSenderId: '371202041319',
+  appId: '1:371202041319:web:e19f8c26a2e39396c18942',
+  measurementId: 'G-J5MXCY1E5Q',
 };
 
 const firebaseAlphaConfig = {
